@@ -16,6 +16,7 @@ Entrar al mercado de la música a través de nuestros servicios pos y pre venta.
 NUESTRO EQUIPO 
 
 Los integrantes del grupo esta formado por:
+
 -Ezequiel Echeverría: trabaja en un local de venta y reparacion de equipos electronicos. actualmente estudiando codigo.
 
 -Gonzalo Villagra: trabaja en una agencia de viajes, incursionando en el mundo de la programacion web.
