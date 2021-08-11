@@ -1,8 +1,8 @@
-# grupodh8-grupo_8_Lacasadelamusica
+# grupodh8-grupo_8_LaCasaDeLaMusica
 
 NUESTRO SITIO
 
-La temática del proyecto es la venta de instrumentos musicales, equipos de sonido y accesorios. Los productos serán instrumentos musicales, equipos de música y accesorios, también ofertaremos servicios de reparación de equipos e instrumentos. Los productos ofrecidos en nuestro sitio serán instrumentos musicales de calidad media alta! Apuntando a un mercado de músicos exigentes y a los cuales podamos responder con garantías firmes en caso de tener algún problema. También ofreceremos reparación de equipos e instrumentos, como valor agregado a nuestros servicios
+El nombre de nuestro proyecto es "La Casa de la Musica". La temática del proyecto es venta de instrumentos musicales, equipos de sonido y accesorios. Los productos serán instrumentos musicales, equipos de música y accesorios, también ofertaremos servicios de reparación de equipos e instrumentos. Los productos ofrecidos en nuestro sitio serán instrumentos musicales de calidad media alta! Apuntando a un mercado de músicos exigentes y a los cuales podamos responder con garantías firmes en caso de tener algún problema. También ofreceremos reparación de equipos e instrumentos, como valor agregado a nuestros servicios
 
 NUESTROS CLIENTES
 
