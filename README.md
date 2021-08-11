@@ -22,7 +22,8 @@ README.md en el repositorio con:
 
 ● Una breve descripción de los integrantes del equipo.
 (Los integrantes del grupo esta formado por Ezequiel Echeverría, Gonzalo Villagra y Leonardo Espinoza
-    • Leonardo Espinoza es técnico electrónico y actualmente se dedica a la video seguridad urbana, Iot para el agro dando cobertura en zonas rurales para el monitoreo remoto de los campos y por ultimo realiza gestión de proyectos de tecnología para empresas.
+    • Leonardo Espinoza es técnico electrónico y actualmente se dedica a la video seguridad urbana, Iot para el agro dando cobertura en zonas rurales para el monitoreo remoto de los campos y por ultimo realiza gestión de proyectos de tecnología para empresas..
+    
     • Ezequiel Echeverría trabaja en un local de venta y reparacion de equipos electronicos. actualmente estudiando codigo
 
 
