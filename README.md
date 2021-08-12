@@ -6,7 +6,7 @@ El nombre de nuestro proyecto es "La Casa de la Musica". La temática del proyec
 
 NUESTROS CLIENTES
 
-Nuestra audiencia serán músicos y personas o empresas dedicadas a la música.
+Nuestra audiencia serán músicos o empresas dedicadas a la música.
 
 NUESTRO OBJETIVO
 
