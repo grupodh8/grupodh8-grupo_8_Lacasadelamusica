@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto - La Casa de la Musica</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/js/slick/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/js/slick/slick/slick-theme.css">
+</head>
+
+<body>
+    <header class="header-principal">
+        <div class="logo">
+            <a href="/"><img class="imagen-logo" src="/images/logo.jpg" alt="logo de Casa de La Musica"></a>
+        </div>
+        <nav class="barra-navegacion">
+            <ul class="barra-items">
+                <li><a class="items-noshow-mobile" href="#">Guitarras <i class="fas fa-caret-down"></i></a></li>
+                <li><a class="items-noshow-mobile" href="#">Bajos<i class="fas fa-caret-down"></i></a></li>
+                <li><a class="items-noshow-mobile" href="#">Accesorios <i class="fas fa-caret-down"></i></a></li>
+                <li><a class="items-noshow-mobile" href="#">Audio <i class="fas fa-caret-down"></i></a></li>
+                <li><a class="items-noshow-mobile" href="#">Servicios <i class="fas fa-caret-down"></i></a></li>
+                <li><a class="items-show-mobile" href="/productCart"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a class="items-show-mobile" href="#"><i class="fas fa-search"></i></a></li>
+                <li><a class="items-show-mobile" href="/login"><i class="fas fa-user-circle"></i></a></li>
+                <li><a class="boton-sandwich" href="#"><i class="fas fa-bars"></i></a></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="seccion-product-detail">
+        <div class="titulo-product-detail">
+            <h4><a class="ancla-producto" href="#">CATEGORIAS</a> > <a class="ancla-producto" href="#">PRODUCTOS</a></h4>
+            <h3 class="nombre-producto">Noventa Stratocaster®</h3>
+        </div>
+        <div class="info-product-detail">
+            <i class="fas fa-cart-plus"></i>
+            <i class="fas fa-share-alt"></i>
+            <p>$230.500</p>
+            <button class="boton-compra">Comprar</button>
+        </div>
+        </section>
+        <div class="slider-producto">
+            <div><img class="img-slider-producto" src="/images/fender-1.jpg" alt=""></div>
+            <div><img class="img-slider-producto" src="/images/fender-2.jpg" alt=""></div>
+        </div>
+        <div class="descripcion-producto">
+        <h3 class="titulo-descripcion-product-detail">Acerca de este producto:</h3>
+        <p class="parrafo-product-detail">La Noventa Stratocaster® es una máquina de tonos autorizada, con pastillas Noventa de bobina simple,
+            controles de tono y volumen maestro y un puente Strat rígido, su llamativa buena apariencia se combina con
+            la mordida de rango medio, agudos nítidos y graves suaves de las pastillas Noventa. El rango dinámico de
+            estas pastillas ofrece una amplia gama de tonos potentes y versátiles, adecuados para todo, desde hard rock
+            hasta jazz y cualquier cosa intermedia. Un mástil en "C" moderno con 21 trastes jumbo medianos y un diapasón
+            de radio de 9,5 "ofrece una mezcla suave de jugabilidad moderna y vintage que es distintivamente Fender.</p>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div>
+            <a href="/"><img class="imagen-logo-footer" src="/images/logo.jpg" alt="logo de Casa de La Musica"></a>
+        </div>
+        <nav class="barra-navegacion-footer">
+            <ul class="barra-items-footer">
+                <h3>PRODUCTOS</h3>
+                <li><a class="items-footer" href="#">Guitarras</a></li>
+                <li><a class="items-footer" href="#">Bajos</a></li>
+                <li><a class="items-footer" href="#">Accesorios</a></li>
+                <li><a class="items-footer" href="#">Audio</a></li>
+            </ul>
+            <ul class="barra-items-footer">
+                <h3>EMPRESA</h3>
+                <li><a class="items-footer" href="#">Acerca de</a></li>
+                <li><a class="items-footer" href="#">Contacto</a></li>
+                <li><a class="items-footer" href="#">Sucursales</a></li>
+                <li><a class="items-footer" href="#">Noticias</a></li>
+            </ul>
+            <ul class="barra-items-footer">
+                <h3>SERVICIOS</h3>
+                <li><a class="items-footer" href="#">Soporte tecnico</a></li>
+                <li><a class="items-footer" href="#">Garantia</a></li>
+                <li><a class="items-footer" href="#">Manuales</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/slick/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider-producto').slick({
+                autoplay: true,
+            });
+
+        });
+    </script>
+</body>
+
+</html>
