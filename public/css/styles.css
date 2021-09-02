@@ -4,15 +4,11 @@
 
 body {
     font-family: 'Open Sans';
-    background-color: #CD9777;
-}
-
-header {
-    background-color : #9D6B53;
+    background-color: #ADB5BD;
 }
 
 main {
-    background-color: #CD9777;
+    background-color: #E9ECEF;
 }
 
 h3 {
@@ -25,34 +21,27 @@ a {
     color: black;
 }
 
-.imagen-logo {
-    border-radius: 20px;
-    width: 150px;
+/* ---------- BARRA SUPERIOR DE NAVEGACION ---------- */
+
+header {
+    background-color : #343a40;
+}
+
+.top-bar {
+    display: none;
+    width: 100%;
+    height: 30px;
+    background-color: #212529;
 }
 
 .barra-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 0px;
     list-style-type: none;
     margin: 0;
     padding: 0;    
-}
-
-.items-noshow-mobile {
-    display: none;
-    color: white;
-    text-decoration: none;
-    margin: 3px;
-    padding: 8px;
-    border: 1px solid white;
-    border-radius: 4px;
-}
-
-.items-show-mobile {
-    color: white;
-    text-decoration: none;
-    margin: 3px;
-    padding: 8px;
-    border: 1px solid white;
-    border-radius: 4px;
 }
 
 .header-principal {
@@ -63,16 +52,62 @@ a {
     padding: 10px 10px 10px 20px;
 }
 
-.barra-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 0px;
+/* ---------- LOGO BARRA SUPERIOR ---------- */
+
+.imagen-logo {
+    border-radius: 20px;
+    width: 150px;
 }
 
-.imagen-carousel {
-    width: 100vw;
+/* ---------- ITEMS DE BARRA DE NAVEGACION OCULTOS EN VERSION MOBILE ---------- */
+
+.items-noshow-mobile {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: none;
+    color: white;
+    text-decoration: none;
+    margin: 3px;
+    margin-right: 0px;
+    padding: 9px;
+    border-right: 3px solid white;
 }
+
+/* ---------- ULTIMO DE ITEMS OCULTOS EN VERSION MOBILE (PARA EVITAR BORDE DERECHO) ---------- */
+
+.items-noshow-mobile-last {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: none;
+    color: white;
+    text-decoration: none;
+    margin: 3px;
+    margin-right: 0px;
+    padding: 9px;
+}
+
+
+/* ---------- ITEMS DE BARRA DE NAVEGACION A MOSTRAR VERSION MOBILE Y DESKTOP ---------- */
+
+.items-show-mobile, .boton-sandwich {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin: 3px;
+    padding: 9px;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+/* ---------- IMAGENES DE CAROUSEL DE FOTOS (SCRIPT DE JAVASCRIPT EN EL PIE DE PAGINA) ---------- */
+
+.imagen-carousel {
+    width: 100%;
+}
+
+/* ---------- ARTICULOS PAGINA PRINCIPAL ---------- */
 
 .contenedor-articulos {
     display: flex;
@@ -81,6 +116,8 @@ a {
     margin: 20px 0 20px 0;
 }
 
+/* ---------- ARTICULOS DE PAGINA PRINCIPAL - SECCION OFERTAS ---------- */
+
 .contenedor-articulos-ofertas {
     display: flex;
     flex-direction: column;
@@ -88,7 +125,23 @@ a {
     margin: 20px 0 0px 0;
 }
 
-.articulo-1 {
+.articulo-3, .articulo-4, .articulo-5, .articulo-6 {
+    margin: 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;    
+    align-items: center;
+    border: 3px solid #adb5bd;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0px 0px 3px rgb(100, 100, 100);
+}
+
+/* ---------- ARTICULOS PRINCIPALES PAGINA PRINCIPAL (2) ---------- */
+
+.articulo-1, .articulo-2 {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -99,86 +152,15 @@ a {
     width: 80%;
     text-align: center;
     background-color: white;
+    box-shadow: 0px 0px 3px rgb(100, 100, 100);
 }
 
-.articulo-2 {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
-    border: 3px solid #adb5bd;
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
-    background-color: white;
-}
-
-.articulo-3 {
-    margin: 20px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
-    border: 3px solid #adb5bd;
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
-    background-color: white;
-}
-
-.articulo-4 {
-    margin: 20px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
-    border: 3px solid #adb5bd;
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
-    background-color: white;
-}
-
-.articulo-5 {
-    margin: 20px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
-    border: 3px solid #adb5bd;
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
-    background-color: white;
-}
-
-.articulo-6 {
-    margin: 20px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
-    border: 3px solid #adb5bd;
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
-    background-color: white;
-}
-
-.articulo-1:hover {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.articulo-2:hover {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
+/* ---------- DISEÑO DE CONTENEDORES DE ARTICULOS ---------- */
 
 .imagen-articulo {
     width: 100px;
     border-radius: 5px;
 }
-
 
 .seccion-imagen {
     padding: 15px;
@@ -190,8 +172,14 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-top: 3px solid #adb5bd;
+    border-top: 3px solid #ADB5BD;
     width: 100%;
+    background-color: #F8F9FA;
+}
+
+.precio-articulo {
+    font-size: 20px;
+    font-weight: 700;
 }
 
 #shipping {
@@ -206,33 +194,51 @@ a {
     margin-left: 70px;
 }
 
-.boton-compra {
+.boton-compra, .boton-login, .boton-crear {
     font-family: 'Open Sans';
-    background-color: grey;
-    padding: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: white;
+    padding: 10px 5px;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-right: 5px;
 }
+
+.boton-carro {
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: #DEE2E6;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+/* ---------- PIE DE PAGINA ---------- */
 
 .footer {
     display: flex;
     justify-content: center;
     align-items:center;
-    background-color: #6c757d;
-    padding-bottom: 20px;
+    background-color: #212529;
+    padding-bottom: 30px;
 }
 
 .imagen-logo-footer {
     margin-top: 25px;
     width: 200px;
     border-radius: 20px;
-    
 }
 
 .barra-navegacion-footer {
     display: none;
     flex-direction: row;
     margin: 0px 30px 0 0; 
+    padding-right: 100px;
+    margin-bottom: 30px;
 }
 
 .barra-items-footer {
@@ -243,58 +249,15 @@ a {
 .items-footer {
     text-decoration: none;
     color: white;
-
+    margin-bottom: 10px;
 }
 
-.img-slider-producto  {
-    width: 100vw;
-}
-
-.seccion-product-detail {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.nombre-producto {
+footer a {
+    text-decoration: none;
     color: white;
 }
 
-.info-product-detail {
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.ancla-producto {
-    text-decoration: none;
-    color: black;
-}
-
-.slider-producto {
-    margin: 20px 0 20px 0;
-    border-top: 3px solid grey;
-    border-bottom: 3px solid grey;
-}
-
-.parrafo-product-detail {
-    margin: 0px 20px 20px 20px;
-    text-align: justify;
-}
-
-.titulo-descripcion-product-detail {
-    margin: 0px 20px 20px 20px;
-    text-align: left;
-}
-
-.descripcion-producto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* ---------- CARRITO DE COMPRAS ---------- */
 
 .carrito-de-compras {
     display: flex;
@@ -305,9 +268,7 @@ a {
 }
 
 .titulo-carro-compras {
-    border: 2px solid black;
     padding: 0px 5px 0 5px;
-    border-radius: 20px;
     margin: 20px;
 }
 
@@ -316,8 +277,7 @@ a {
     align-items: center;
     height: 100px;
     width: 90%;
-    border-top: 2px solid grey;
-    
+    border-top: 3px solid grey;
 }
 
 .datos-carro-compras {
@@ -334,7 +294,7 @@ a {
     margin-left: 20px;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .datos-abajo {
@@ -347,33 +307,235 @@ a {
 
 #icono-carrito {
     margin-right: 20px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.cantidad-carrito {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.fotos-carrito {
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.suma-compra {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    font-weight: 700;
+    background-color: #DEE2E6;
 }
 
 .subtotal {
-    margin-top: 0px;
-    width: 100%;
     display: flex;
-    margin-left: 20px;
     justify-content: space-between;
-    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    border-top: 2px solid black; 
     font-size: 20px;
+    font-weight: 700;
+    padding: 0 10px 0 10px;
 }
 
-.boton-sandwich {
-    color: white;
-    text-decoration: none;
-    margin: 3px;
-    padding: 8px;
-    border: 1px solid white;
-    border-radius: 4px;
+.envio  {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    font-weight: 700;
+    padding: 0 10px 0 10px;
 }
 
+.boton-finalizar-compra {
+    margin: 30px;
+    align-self: right;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: white;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
 
+/* ---------- FORMULARIO LOGIN ---------- */
+
+.titulo-login {
+    margin: 0;
+    padding: 40px 0 0px;
+}
+
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 50px;
+    max-width: 450px;
+    margin: auto;
+}
+
+.casillero {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.label-1 {
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.input-1, .input-nombre, .input-apellido, .input-ciudad, .input-cp, .input-pass {
+    height: 30px;
+    border-radius: 5px;
+}
+
+.boton-login {
+    width: 60%;
+    margin-top: 15px;
+    align-self: center;
+}
+
+.pie-login {
+    text-align: center;
+}
+
+.boton-crear {
+    width: 60%;
+    align-self: center;
+    width: 30%;
+    max-width: 100px;
+}
+
+.pie-crear {
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.pie-crear button {
+    margin-left: 10px;
+}
+
+/* ---------- PAGINA DE PRODUCTO ---------- */
+
+.clasificacion-productos {
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 20px;
+    margin: 20px 10px;
+    padding-left: 30px;
+}
+
+.titulo-pagina-articulo {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 10px;
+    padding-left: 30px;
+}
+
+.imagen-articulo-detalle {
+    width: 100%;
+}
+
+.acerca-de, .acerca-de-detalle {
+    padding: 10px;
+}
+
+.acerca-de {
+    font-weight: 700;
+    line-height: 0px;
+}
+
+.acerca-de-detalle {
+    text-align: justify;
+}
+
+.footer-producto {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.precio-articulo-detalle {
+    font-weight: 700;
+    font-size: 30px;
+    align-items: center;
+}
+
+.botones-detalle {
+    display: flex;
+}
+
+.titulo-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.iconos-titulo {
+    display: flex;
+    font-size: 25px;
+    padding-right: 30px;
+}
+
+.icono-compartir {
+    margin-left: 20px;
+}
+
+.boton-compra-detalle {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: white;
+    padding: 10px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.boton-carro-detalle {
+
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: #DEE2E6;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+
+}
+
+/* ---------- DESCRIPCION DE PRODUCTO VERSION DESKTOP (OCULTO EN MOBILE) ---------- */
+
+.detalle-2 {
+    display: none;
+}
+
+/* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {
+
+    /* ---------- CAMBIO MARGENES BARRA DE NAVEGACION ---------- */
+
     .barra-items {
         margin-right: 15px;
     }
+
+    /* ---------- CAMBIO DE ARTICULOS PAGINA PRINCIPAL ---------- */
 
     .contenedor-articulos {
         display: flex;
@@ -381,7 +543,6 @@ a {
         justify-content: center;
         align-items: stretch;
     }
-
 
     .articulo-1 {
         width: 40%;
@@ -411,36 +572,55 @@ a {
         margin-left: 38px;
     }
     
+    /* ---------- CAMBIOS DE FUENTE CARRITO DE COMPRAS ---------- */
+
+    .datos-arriba {
+    font-size: 20px;
+    }
+
 }
 
+/* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 768PX ---------- */
+
 @media (min-width: 768px) {
+
+    /* ---------- CAMBIOS EN LOGO DE PAGINA TITULO ---------- */
+
     .logo {
         margin-left: 20px;
+    }
+
+    /* ---------- CAMBIOS EN BARRA DE NAVEGACION TOP EN VERSION DESKTOP ---------- */
+
+    .top-bar {
+        display: block;
     }
 
     .boton-sandwich {
         display: none;
     }
 
-    .items-noshow-mobile {
+    .items-noshow-mobile, .items-noshow-mobile-last {
         display: flex;
     }
 
     .items-show-mobile {
         display: flex;
-        margin: 3px;
-        padding: 8px;
         padding-bottom: 10px;
         align-items: center;
     }
+
+    /* ---------- CAMBIOS EN SUBTITULOS DE PIE DE PAGINA ---------- */
 
     .footer {
         justify-content: space-between;
         align-items:flex-start;
     }
 
-    .imagen-logo-footer {
-        margin: 20px 0 0 30px;
+    .h3-footer {
+        text-align: center;
+        margin: 30px 0 10px 0;
+        color: white;
     }
 
     .barra-navegacion-footer {
@@ -448,6 +628,15 @@ a {
         flex-direction: row;
         margin: 0px 30px 0 0; 
     }
+
+    .imagen-logo-footer {
+        margin-top: 25px;
+        width: 250px;
+        margin-left: 100px;
+        border-radius: 20px;
+    }
+
+    /* ---------- CAMBIOS ARTICULOS DE PAGINA PRINCIPAL ---------- */
 
     .contenedor-articulos-ofertas {
         display: flex;
@@ -464,4 +653,73 @@ a {
     .nombre-producto {
         font-size: 40px;
     }
+
+    /* ---------- CAMBIO CAROUSEL DE FOTOS PAGINA PRINCIPAL ---------- */
+    
+    .carousel-fotos {
+        background-image: url("/images/logo-chico.png");
+        background-repeat: repeat;
+        border-bottom: 5px #212529 solid;
+    }
+
+    .imagen-carousel {
+        align-items: center;
+        max-width: 60%;
+    }
+
+    /* ---------- CAMBIOS PAGINA DETALLE DE PRODUCTO ---------- */
+
+    .detalle-1 {
+        display: none;
+    }
+
+    .detalle-2 {
+        display: flex;
+    }
+
+    .clasificacion-productos {
+        font-size: 15px;
+        padding-left: 50px;
+    }
+
+    .titulo-pagina-articulo {
+        font-size: 25px;
+        padding-left:50px;
+    }
+
+    .iconos-titulo {
+        padding-right: 50px;
+    }
+
+    .detalle-2 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .descripcion-2 {
+        border: 2px solid #212529;
+        border-radius: 5px;
+        width: 40%;
+        padding: 10px;
+        margin: 20px;
+        box-shadow: 0px 0px 5px rgb(100, 100, 100);
+    }
+
+    .acerca-de-2 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .footer-producto-2 {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #212529;
+        border-radius: 5px;
+        width: 20%;
+        padding: 10px;
+        margin: 20px;
+        box-shadow: 0px 0px 5px rgb(100, 100, 100);
+        align-items: center;
+    }
+
 }

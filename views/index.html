@@ -12,35 +12,39 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/js/slick/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="/js/slick/slick/slick-theme.css" />
+    <link rel="shortcut icon" href="/images/logo-pestania.ico"/> 
 </head>
 
 <body>
+    <div class="top-bar"></div>
     <header class="header-principal">
         <div class="logo">
-            <a href="/"><img class="imagen-logo" src="/images/logo.jpg" alt="logo de Casa de La Musica"></a>
+            <a href="/"><img class="imagen-logo" src="/images/logo.png" alt="logo de Casa de La Musica"></a>
         </div>
         <nav class="barra-navegacion">
             <ul class="barra-items">
-                <li><a class="items-noshow-mobile" href="#">Guitarras <i class="fas fa-caret-down"></i></a></li>
-                <li><a class="items-noshow-mobile" href="#">Bajos<i class="fas fa-caret-down"></i></a></li>
-                <li><a class="items-noshow-mobile" href="#">Accesorios <i class="fas fa-caret-down"></i></a></li>
-                <li><a class="items-noshow-mobile" href="#">Audio <i class="fas fa-caret-down"></i></a></li>
-                <li><a class="items-noshow-mobile" href="#">Servicios <i class="fas fa-caret-down"></i></a></li>
-                <li><a class="items-show-mobile" href="/productCart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a class="items-show-mobile" href="#"><i class="fas fa-search"></i></a></li>
-                <li><a class="items-show-mobile" href="/login"><i class="fas fa-user-circle"></i></a></li>
-                <li><a class="boton-sandwich" href="#"><i class="fas fa-bars"></i></a></i></a></li>
+                <li><a class="items-noshow-mobile" href="#">Guitarras</a></li>
+                <li><a class="items-noshow-mobile" href="#">Bajos</a></li>
+                <li><a class="items-noshow-mobile" href="#">Accesorios</a></li>
+                <li><a class="items-noshow-mobile" href="#">Audio</a></li>
+                <li><a class="items-noshow-mobile-last" href="#">Servicios</a></li>
+                <li><a class="items-show-mobile" href="/productCart"><i id="iconos-barra"
+                            class="fas fa-shopping-cart"></i></a></li>
+                <li><a class="items-show-mobile" href="#"><i id="iconos-barra" class="fas fa-search"></i></a></li>
+                <li><a class="items-show-mobile" href="/login"><i id="iconos-barra" class="fas fa-user-circle"></i></a>
+                </li>
+                <li><a class="boton-sandwich" href="#"><i id="iconos-barra" class="fas fa-bars"></i></a></i></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <div class="carousel-fotos">
-            <div><img class="imagen-carousel" src="/images/instrumentos-1.jpeg" alt=""></div>
+        <div class="carousel-fotos" align="center">
+            <div><img class="imagen-carousel" src="/images/instrumentos-1.jpg" alt=""></div>
             <div><img class="imagen-carousel" src="/images/instrumentos-2.jpg" alt=""></div>
             <div><img class="imagen-carousel" src="/images/instrumentos-3.jpg" alt=""></div>
         </div>
-        <h3>NUEVOS PRODUCTOS</h3>
+        <h3>Nuevos Productos</h3>
         <section class="contenedor-articulos">
             <article class="articulo-1">
                 <section class="seccion-imagen">
@@ -55,6 +59,8 @@
                         </div>
                         <h3 class="descripcion-articulo">Cory Wong Stratocaster®</h3>
                         <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
+                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </section>
             </article>
@@ -71,6 +77,8 @@
                         </div>
                         <h3 class="descripcion-articulo">Noventa Stratocaster®</h3>
                         <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
+                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </section>
             </article>
@@ -90,6 +98,8 @@
                         </div>
                         <h3 class="descripcion-articulo">Micro Pedal Mooer Drive Mki</h3>
                         <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
+                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </section>
             </article>
@@ -106,6 +116,8 @@
                         </div>
                         <h3 class="descripcion-articulo">Pedal De Efecto Mooer</h3>
                         <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
+                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </section>
             </article>
@@ -122,6 +134,8 @@
                         </div>
                         <h3 class="descripcion-articulo">Microfono Condenser Samson</h3>
                         <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
+                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </section>
             </article>
@@ -138,40 +152,39 @@
                         </div>
                         <h3 class="descripcion-articulo">Microfono Corbatero</h3>
                         <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
+                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </section>
             </article>
         </section>
     </main>
     <footer class="footer">
-        <div>
-            <a href="/"><img class="imagen-logo-footer" src="/images/logo.jpg" alt="logo de Casa de La Musica"></a>
+        <div class="imagen-logo-footer-div">
+            <a href="/"><img class="imagen-logo-footer" src="/images/logo.png" alt="logo de Casa de La Musica"></a>
         </div>
         <nav class="barra-navegacion-footer">
             <ul class="barra-items-footer">
-                <h3>PRODUCTOS</h3>
-                <li><a class="items-footer" href="#">Guitarras</a></li>
-                <li><a class="items-footer" href="#">Bajos</a></li>
-                <li><a class="items-footer" href="#">Accesorios</a></li>
-                <li><a class="items-footer" href="#">Audio</a></li>
+                <h3 class="h3-footer">PRODUCTOS</h3>
+                <li class="items-footer"><a href="#">Guitarras</a></li>
+                <li class="items-footer"><a href="#">Bajos</a></li>
+                <li class="items-footer"><a href="#">Accesorios</a></li>
+                <li class="items-footer"><a href="#">Audio</a></li>
             </ul>
             <ul class="barra-items-footer">
-                <h3>EMPRESA</h3>
-                <li><a class="items-footer" href="#">Acerca de</a></li>
-                <li><a class="items-footer" href="#">Contacto</a></li>
-                <li><a class="items-footer" href="#">Sucursales</a></li>
-                <li><a class="items-footer" href="#">Noticias</a></li>
+                <h3 class="h3-footer">EMPRESA</h3>
+                <li class="items-footer"><a href="#">Acerca de</a></li>
+                <li class="items-footer"><a href="#">Contacto</a></li>
+                <li class="items-footer"><a href="#">Sucursales</a></li>
+                <li class="items-footer"><a href="#">Noticias</a></li>
             </ul>
             <ul class="barra-items-footer">
-                <h3>SERVICIOS</h3>
-                <li><a class="items-footer" href="#">Soporte tecnico</a></li>
-                <li><a class="items-footer" href="#">Garantia</a></li>
-                <li><a class="items-footer" href="#">Manuales</a></li>
+                <h3 class="h3-footer">SERVICIOS</h3>
+                <li class="items-footer"><a href="#">Soporte tecnico</a></li>
+                <li class="items-footer"><a href="#">Garantia</a></li>
+                <li class="items-footer"><a href="#">Manuales</a></li>
             </ul>
         </nav>
-
-
-
     </footer>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

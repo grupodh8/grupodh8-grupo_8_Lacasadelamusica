@@ -3,9 +3,9 @@ const app = express();
 
 const path = require('path');
 
-let puerto = 3000;
+let PORT = 3000;
 
-app.listen(3000, () => { console.log(`Servidor corriendo en http://localhost:${puerto}`) });
+app.listen(process.env.PORT || 3000, () => { console.log(`Servidor corriendo en http://localhost:${PORT}`) });
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, './views/index.html'))
