@@ -17,6 +17,22 @@
     },
     {
         "id": 3,
+        "name": "Noventa Stratocaster®",
+        "price": "245.230",
+        "category": "main-top",
+        "description": "Guitarra",
+        "image": "guitarra-2.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Noventa Stratocaster®",
+        "price": "245.230",
+        "category": "main-top",
+        "description": "Guitarra",
+        "image": "guitarra-2.jpg"
+    },
+    {
+        "id": 5,
         "name": "Micro Pedal Mooer Drive Mki",
         "price": "9819",
         "category": "main-bottom",
@@ -24,7 +40,7 @@
         "image": "pedal-1.jpg"
     },
     {
-        "id": 4,
+        "id": 6,
         "name": "Pedal De Efecto Mooer",
         "price": "10959",
         "category": "main-bottom",
@@ -32,7 +48,7 @@
         "image": "pedal-2.jpg"
     },
     {
-        "id": 5,
+        "id": 7,
         "name": "Condenser Samson",
         "price": "25.861",
         "category": "main-bottom",
@@ -40,7 +56,7 @@
         "image": "mic-1.jpg"
     },
     {
-        "id": 6,
+        "id": 8,
         "name": "Microfono Corbatero",
         "price": "18602",
         "category": "main-bottom",

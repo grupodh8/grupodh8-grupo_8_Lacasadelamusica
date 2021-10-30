@@ -114,6 +114,7 @@ header {
     flex-direction: column;
     align-items: center;
     margin: 20px 0 20px 0;
+    padding: 0 0 0 10px;
 }
 
 /* ---------- ARTICULOS DE PAGINA PRINCIPAL - SECCION OFERTAS ---------- */
