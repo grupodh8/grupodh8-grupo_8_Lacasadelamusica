@@ -4,7 +4,9 @@
         "name": "Cory Wong Stratocaster®",
         "price": "195.770",
         "category": "main-top",
-        "description": "Guitarra",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
+        "description": "La Noventa Stratocaster® es una máquina de tonos autorizada, con pastillas Noventa de bobina simple, controles de tono y volumen maestro y un puente Strat rígido, su llamativa buena apariencia se combina con la mordida de rango medio, agudos nítidos y graves suaves de las pastillas Noventa.",
         "image": "guitarra-1.jpg"
     },
     {
@@ -12,6 +14,8 @@
         "name": "Noventa Stratocaster®",
         "price": "245.230",
         "category": "main-top",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
         "description": "Guitarra",
         "image": "guitarra-2.jpg"
     },
@@ -20,6 +24,8 @@
         "name": "Noventa Stratocaster®",
         "price": "245.230",
         "category": "main-top",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
         "description": "Guitarra",
         "image": "guitarra-2.jpg"
     },
@@ -28,6 +34,8 @@
         "name": "Noventa Stratocaster®",
         "price": "245.230",
         "category": "main-top",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
         "description": "Guitarra",
         "image": "guitarra-2.jpg"
     },
@@ -36,6 +44,8 @@
         "name": "Micro Pedal Mooer Drive Mki",
         "price": "9819",
         "category": "main-bottom",
+        "clasificacion": "ACCESORIOS",
+        "tipo": "PEDALES",
         "description": "",
         "image": "pedal-1.jpg"
     },
@@ -44,14 +54,18 @@
         "name": "Pedal De Efecto Mooer",
         "price": "10959",
         "category": "main-bottom",
+        "clasificacion": "ACCESORIOS",
+        "tipo": "PEDALES",
         "description": "",
         "image": "pedal-2.jpg"
     },
     {
         "id": 7,
-        "name": "Condenser Samson",
+        "name": "Microfono Condenser Samson",
         "price": "25.861",
         "category": "main-bottom",
+        "clasificacion": "MICROFONOS",
+        "tipo": "DE MANO",
         "description": "",
         "image": "mic-1.jpg"
     },
@@ -60,6 +74,8 @@
         "name": "Microfono Corbatero",
         "price": "18602",
         "category": "main-bottom",
+        "clasificacion": "MICROFONOS",
+        "tipo": "DE SOPORTE",
         "description": "",
         "image": "mic-2.jpg"
     }

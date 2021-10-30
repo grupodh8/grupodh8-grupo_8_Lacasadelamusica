@@ -5,26 +5,21 @@
 
     <main>
         <div class="detalle-producto">
-            <p class="clasificacion-productos"> <a href="">CATEGORIAS</a> > <a href="">GUITARRAS</a> > <a
-                    href="">ELECTRICAS</a> > <a href="">NOVENTA STRATOCASTER</a></p>
+            <p class="clasificacion-productos"> <a href="">CATEGORIAS</a> > <a href=""><%= product.clasificacion %></a> > <a
+                    href=""><%= product.tipo %></a> > <a href=""><%= product.name.toUpperCase() %></a></p>
             <div class="titulo-2">
-                <h2 class="titulo-pagina-articulo">NOVENTA STRATOCASTER®</h2>
+                <h2 class="titulo-pagina-articulo"><%= product.name %></h2>
                 <div class="iconos-titulo">
                     <p><i class="fas fa-cart-plus"></i></p>
                     <p class="icono-compartir"><i class="fas fa-share-alt"></i></p>
                 </div>
             </div>
-            <img class="imagen-articulo-detalle" src="/images/fender-1.jpg" alt="noventa-stratocaster">
+            <img class="imagen-articulo-detalle" src="/images/<%= product.image %>" alt="noventa-stratocaster">
             <div class="detalle-1">
                 <p class="acerca-de">SOBRE ESTE PRODUCTO:</p>
-                <p class="acerca-de-detalle">La Noventa Stratocaster® es una máquina de tonos autorizada, con pastillas
-                    Noventa de bobina simple,
-                    controles de tono y volumen maestro y un puente Strat rígido, su llamativa buena apariencia se
-                    combina
-                    con
-                    la mordida de rango medio, agudos nítidos y graves suaves de las pastillas Noventa.</p>
+                <p class="acerca-de-detalle"><%= product.description %></p>
                 <div class="footer-producto">
-                    <p class="precio-articulo-detalle">$245.230</p>
+                    <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle">
                         <button class="boton-compra-detalle"><a href="/productDetail">Comprar</a></button>
                         <button class="boton-carro-detalle"><a href="/productCart"><i id="iconos-barra"
@@ -35,19 +30,13 @@
             <div class="detalle-2">
                 <div class="descripcion-2">
                     <p class="acerca-de-2">SOBRE ESTE PRODUCTO:</p>
-                    <p class="acerca-de-detalle-2">La Noventa Stratocaster® es una máquina de tonos autorizada, con
-                        pastillas
-                        Noventa de bobina simple,
-                        controles de tono y volumen maestro y un puente Strat rígido, su llamativa buena apariencia se
-                        combina
-                        con
-                        la mordida de rango medio, agudos nítidos y graves suaves de las pastillas Noventa.</p>
+                    <p class="acerca-de-detalle-2"><%= product.description %></p>
                 </div>
                 <div class="footer-producto-2">
-                    <p class="precio-articulo-detalle">$245.230</p>
+                    <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle-2">
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
+                        <button class="boton-compra"><a href="/products/detail/<%= product.id %>">Comprar</a></button>
+                        <button class="boton-carro"><a href="/products/cart"><i id="iconos-barra"
                                     class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </div>
