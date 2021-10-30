@@ -1,0 +1,49 @@
+<%- include('./partials/head') %>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <h3 class="titulo-login">INICIAR SESION</h3>
+
+        <form class="formulario-login" action="">
+            <div class="casillero">
+                <label for="correo-electornico" class="label-1">Correo electronico:</label>
+                <input type="text" name="correo-electronico" class="input-1" required>
+            </div>
+            <div class="casillero">
+                <label for="password" class="label-1">Contraseña:</label>
+                <input type="password" name="password" class="input-1" required>
+            </div>
+            <div class="casillero">
+                <label for="remember">
+                    <input type="checkbox"> Recordar contraseña
+                </label>
+            </div>
+            <div class="casillero">
+                <button type="submit" class="boton-login">Iniciar sesion</button>
+            </div>
+        </form>
+        <div class="pie-login">
+            <p class="pie-crear"><a href="/register">Recuperar contraseña</a></p>
+            <p class="pie-crear">No tienes cuenta?<a href="/register"><button type="submit"
+                        class="boton-crear">CREAR</button></a></p>
+        </div>
+
+    </main>
+    <%- include('./partials/footer') %>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/slick/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel-fotos').slick({
+                autoplay: true,
+            });
+
+        });
+    </script>
+</body>
+
+</html>

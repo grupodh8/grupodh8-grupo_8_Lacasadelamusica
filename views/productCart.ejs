@@ -1,0 +1,98 @@
+<%- include('./partials/head') %>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <div class="carrito-de-compras">
+            <div class="titulo-carro-compras">
+                <h3 class="titulo-login">CARRITO DE COMPRAS</h3>
+            </div>
+            <div class="producto-carro-compras">
+                <div>
+                    <img src="/images/product-default.png" alt="" width="70px" class="fotos-carrito">
+                </div>
+                <div class="datos-carro-compras">
+                    <div class="datos-arriba">
+                        <p>Nombre del producto</p>
+                        <p>$0.00</p>
+                    </div>
+                    <div class="datos-abajo">
+                        <a href="#"><i id="icono-carrito" class="fas fa-plus"></i></a>
+                        <p class="cantidad-carrito">0</p>
+                        <a href="#"><i id="icono-carrito" class="fas fa-minus"></i></a>
+                        <a href="#"><i id="icono-carrito" class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="producto-carro-compras">
+                <div>
+                    <img src="/images/product-default.png" alt="" width="70px" class="fotos-carrito">
+                </div>
+                <div class="datos-carro-compras">
+                    <div class="datos-arriba">
+                        <p>Nombre del producto</p>
+                        <p>$0.00</p>
+                    </div>
+                    <div class="datos-abajo">
+                        <a href="#"><i id="icono-carrito" class="fas fa-plus"></i></a>
+                        <p class="cantidad-carrito">0</p>
+                        <a href="#"><i id="icono-carrito" class="fas fa-minus"></i></a>
+                        <a href="#"><i id="icono-carrito" class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="producto-carro-compras">
+                <div>
+                    <img src="/images/product-default.png" alt="" width="70px" class="fotos-carrito">
+                </div>
+                <div class="datos-carro-compras">
+                    <div class="datos-arriba">
+                        <p>Nombre del producto</p>
+                        <p>$0.00</p>
+                    </div>
+                    <div class="datos-abajo">
+                        <a href="#"><i id="icono-carrito" class="fas fa-plus"></i></a>
+                        <p class="cantidad-carrito">0</p>
+                        <a href="#"><i id="icono-carrito" class="fas fa-minus"></i></a>
+                        <a href="#"><i id="icono-carrito" class="fas fa-trash-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="suma-compra">
+                <div class="subtotal">
+                    <p>SUBTOTAL: </p>
+                    <p>$0.00</p>
+                </div>
+                <div class="envio">
+                    <p>COSTO DE ENVIO: </p>
+                    <p>$0.00</p>
+                </div>
+            </div>
+            <div class="suma-compra">
+                <div class="subtotal">
+                    <p>TOTAL: </p>
+                    <p>$0.00</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </main>
+    <%- include('./partials/footer') %>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/slick/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.carousel-fotos').slick({
+                autoplay: true,
+            });
+
+        });
+    </script>
+</body>
+
+</html>

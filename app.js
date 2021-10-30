@@ -1,30 +1,19 @@
 const express = require('express');
 const app = express();
-
 const path = require('path');
 
-let PORT = 3000;
+app.use(express.static(path.join(__dirname, './public')));
 
-app.listen(process.env.PORT || 3000, () => { console.log(`Servidor corriendo en http://localhost:${PORT}`) });
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
 
-app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, './views/index.html'))
-});
+const mainRoutes = require('./routes/mainRoutes'); // Rutas main
+const productsRoutes = require('./routes/productsRoutes'); // Rutas /products
 
-app.get('/productDetail', (req,res) => {
-    res.sendFile(path.join(__dirname, './views/productDetail.html'))
-});
+app.use('/', mainRoutes);
+app.use('/products', productsRoutes);
 
-app.get('/productCart', (req,res) => {
-    res.sendFile(path.join(__dirname, './views/productCart.html'))
-});
 
-app.get('/register', (req,res) => {
-    res.sendFile(path.join(__dirname, './views/register.html'))
-});
+let puerto = 3000;
 
-app.get('/login', (req,res) => {
-    res.sendFile(path.join(__dirname, './views/login.html'))
-});
-
-app.use(express.static('./public'));
+app.listen(3000, () => { console.log(`Servidor corriendo en http://localhost:${puerto}`) });
