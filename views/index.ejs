@@ -11,42 +11,14 @@
         </div>
         <h3>Nuevos Productos</h3>
         <section class="contenedor-articulos">
-            <article class="articulo-1">
-                <section class="seccion-imagen">
-                    <img class="imagen-articulo" src="./images/guitarra-1.jpg" alt="cory wang stratocaster">
-                </section>
-                <section class="seccion-contenido">
-                    <div class="box-articulo">
-                        <i class="fas fa-truck" id="shipping"></i>
-                        <div class="precio-descuento-articulo">
-                            <p class="precio-articulo">$195.770</p>
-                            <p class="descuento-articulo"></p>
-                        </div>
-                        <h3 class="descripcion-articulo">Cory Wong Stratocaster®</h3>
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                    </div>
-                </section>
-            </article>
-            <article class="articulo-2">
-                <section class="seccion-imagen">
-                    <img class="imagen-articulo" src="./images/guitarra-2.jpg" alt="cory wang stratocaster">
-                </section>
-                <section class="seccion-contenido">
-                    <div class="box-articulo">
-                        <i class="fas fa-truck" id="shipping"></i>
-                        <div class="precio-descuento-articulo">
-                            <p class="precio-articulo">$245.230</p>
-                            <p class="descuento-articulo"></p>
-                        </div>
-                        <h3 class="descripcion-articulo">Noventa Stratocaster®</h3>
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                    </div>
-                </section>
-            </article>
+            <!-- PRODUCTOS PRINCIPALES INDEX-->
+			
+            <% products.forEach((producto) => { %>
+				<% if (producto.category == "main-top") { %>
+                    <%- include('./partials/product', {producto : producto}) %>
+			<% }}) %>            
+
+            <!-- PRODUCTOS SECCION INFERIOR-->
         </section>
         <h3>OFERTAS DESTACADAS</h3>
         <section class="contenedor-articulos-ofertas">
