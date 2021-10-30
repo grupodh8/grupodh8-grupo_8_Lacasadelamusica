@@ -14,6 +14,37 @@
         "category": "main-top",
         "description": "Guitarra",
         "image": "guitarra-2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Micro Pedal Mooer Drive Mki",
+        "price": "9819",
+        "category": "main-bottom",
+        "description": "",
+        "image": "pedal-1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Pedal De Efecto Mooer",
+        "price": "10959",
+        "category": "main-bottom",
+        "description": "",
+        "image": "pedal-2.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Condenser Samson",
+        "price": "25.861",
+        "category": "main-bottom",
+        "description": "",
+        "image": "mic-1.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Microfono Corbatero",
+        "price": "18602",
+        "category": "main-bottom",
+        "description": "",
+        "image": "mic-2.jpg"
     }
-
 ]

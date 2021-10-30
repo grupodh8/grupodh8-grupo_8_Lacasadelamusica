@@ -15,85 +15,17 @@
 			
             <% products.forEach((producto) => { %>
 				<% if (producto.category == "main-top") { %>
-                    <%- include('./partials/product', {producto : producto}) %>
+                    <%- include('./partials/productTop', {producto : producto}) %>
 			<% }}) %>            
 
             <!-- PRODUCTOS SECCION INFERIOR-->
         </section>
         <h3>OFERTAS DESTACADAS</h3>
         <section class="contenedor-articulos-ofertas">
-            <article class="articulo-3">
-                <section class="seccion-imagen">
-                    <img class="imagen-articulo" src="./images/pedal-1.jpg" alt="cory wang stratocaster">
-                </section>
-                <section class="seccion-contenido">
-                    <div class="box-articulo">
-                        <i class="fas fa-truck" id="shipping"></i>
-                        <div class="precio-descuento-articulo">
-                            <p class="precio-articulo">$9819</p>
-                            <p class="descuento-articulo"></p>
-                        </div>
-                        <h3 class="descripcion-articulo">Micro Pedal Mooer Drive Mki</h3>
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                    </div>
-                </section>
-            </article>
-            <article class="articulo-4">
-                <section class="seccion-imagen">
-                    <img class="imagen-articulo" src="./images/pedal-2.jpg" alt="cory wang stratocaster">
-                </section>
-                <section class="seccion-contenido">
-                    <div class="box-articulo">
-                        <i class="fas fa-truck" id="shipping"></i>
-                        <div class="precio-descuento-articulo">
-                            <p class="precio-articulo">$10959</p>
-                            <p class="descuento-articulo"></p>
-                        </div>
-                        <h3 class="descripcion-articulo">Pedal De Efecto Mooer</h3>
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                    </div>
-                </section>
-            </article>
-            <article class="articulo-5">
-                <section class="seccion-imagen">
-                    <img class="imagen-articulo" src="./images/mic-1.jpg" alt="cory wang stratocaster">
-                </section>
-                <section class="seccion-contenido">
-                    <div class="box-articulo">
-                        <i class="fas fa-truck" id="shipping"></i>
-                        <div class="precio-descuento-articulo">
-                            <p class="precio-articulo">$25861</p>
-                            <p class="descuento-articulo"></p>
-                        </div>
-                        <h3 class="descripcion-articulo">Microfono Condenser Samson</h3>
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                    </div>
-                </section>
-            </article>
-            <article class="articulo-6">
-                <section class="seccion-imagen">
-                    <img class="imagen-articulo" src="./images/mic-2.jpg" alt="cory wang stratocaster">
-                </section>
-                <section class="seccion-contenido">
-                    <div class="box-articulo">
-                        <i class="fas fa-truck" id="shipping"></i>
-                        <div class="precio-descuento-articulo">
-                            <p class="precio-articulo">$18602</p>
-                            <p class="descuento-articulo"></p>
-                        </div>
-                        <h3 class="descripcion-articulo">Microfono Corbatero</h3>
-                        <button class="boton-compra"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro"><a href="/productCart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                    </div>
-                </section>
-            </article>
+            <% products.forEach((producto) => { %>
+				<% if (producto.category == "main-bottom") { %>
+                    <%- include('./partials/productTop', {producto : producto}) %>
+			<% }}) %>  
         </section>
     </main>
     <%- include('./partials/footer') %>
