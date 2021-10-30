@@ -6,12 +6,8 @@ const router = express.Router();
 const productsController = require('../controllers/productsController');
 
 
-router.get('/productDetail', (req,res) => {
-    res.render('productDetail')
-});
+router.get('/detail', productsController.detail);
 
-router.get('/productCart', (req,res) => {
-    res.render('productCart')
-});
+router.get('/cart', productsController.cart);
 
 module.exports = router;

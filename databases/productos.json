@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Cory Wong Stratocaster®",
+        "price": "195770",
+        "category": "main-top",
+        "description": "Guitarra",
+        "image": "default.png"
+    },
+    {
+        "id": 2,
+        "name": "Noventa Stratocaster®",
+        "price": "245.230",
+        "category": "main-top",
+        "description": "Guitarra",
+        "image": "default.png"
+    }
+]
