@@ -1,0 +1,20 @@
+<%- include('./partials/head', {title: 'Todos nuestros productos - La Casa de la Musica' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+
+            <main>
+                <h3>Nuevos Productos</h3>
+                <section class="contenedor-articulos">
+                    <!-- TODOS LOS PRODUCTOS-->
+
+                    <% products.forEach((producto)=> { %>
+                        <% if (producto.category) { %>
+                            <%- include('./partials/productTop', {producto : producto}) %>
+                                <% }}) %>
+
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+    </html>
