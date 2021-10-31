@@ -6,7 +6,7 @@
     <main>
         <h3 class="titulo-login">INICIAR SESION</h3>
 
-        <form class="formulario-login" action="">
+        <form class="formulario-login" action="/users/register" method="POST">
             <div class="casillero">
                 <label for="correo-electornico" class="label-1">Correo electronico:</label>
                 <input type="text" name="correo-electronico" class="input-1" required>
@@ -25,8 +25,8 @@
             </div>
         </form>
         <div class="pie-login">
-            <p class="pie-crear"><a href="/register">Recuperar contraseña</a></p>
-            <p class="pie-crear">No tienes cuenta?<a href="/register"><button type="submit"
+            <p class="pie-crear"><a href="/users/register">Recuperar contraseña</a></p>
+            <p class="pie-crear">No tienes cuenta?<a href="/users/register"><button type="submit"
                         class="boton-crear">CREAR</button></a></p>
         </div>
 

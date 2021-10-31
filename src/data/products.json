@@ -1,1 +1,89 @@
-[{"id":1,"name":"Cory Wong Stratocaster®","price":"195.770","category":"main-top","clasificacion":"GUITARRAS","tipo":"ELECTRICAS","description":"La Fender Cory Wong Stratocaster es un tributo a la guitarra eléctrica de cuerpo sólido número uno de su homónimo. Este hacha de alto rendimiento cuenta con un cuerpo de aliso reducido para una comodidad de juego extrema a largo plazo, mientras que un trío de pastillas de bobina simple Seymour Duncan de Cory logran su tono inconfundible. También es un placer tocar esta Stratocaster, gracias a su mástil moderno en forma de 'D' y su diapasón de radio compuesto sin esfuerzo.","image":"cory-1.jpg","imagedetail":"cory-2.jpg"},{"id":2,"name":"Noventa Stratocaster®","price":"245.230","category":"main-top","clasificacion":"GUITARRAS","tipo":"ELECTRICAS","description":"La Noventa Stratocaster® es una máquina de tonos autorizada, con pastillas Noventa de bobina simple, controles de tono y volumen maestro y un puente Strat rígido, su llamativa buena apariencia se combina con la mordida de rango medio, agudos nítidos y graves suaves de las pastillas Noventa.","image":"noventa-1.jpg","imagedetail":"noventa-2.jpg"},{"id":4,"name":"Les Paul Junior®","price":"233.139","category":"main-top","clasificacion":"GUITARRAS","tipo":"ELECTRICAS","description":"La Les Paul Junior vuelve al diseño clásico que la hizo relevante, reproducida y amada, dando forma al sonido a través de generaciones y géneros musicales. Rinde homenaje a la era dorada de innovación de Gibson y devuelve la autenticidad a la vida. Presentada como una opción asequible para estudiantes y principiantes en 1954, la Les Paul Junior ha sido adoptada por músicos durante más de 60 años. El cuerpo de caoba de losa de corte único, la pastilla Dogear P-90 simple, los controles de tono y volumen únicos se suman a una gran cantidad de guitarra que es mayor que la suma de sus partes. El perfil del mástil estilo años 50 y el puente envolvente se suman a la ecuación para un tono sólido como una roca. Disponible en Tobacco Burst y el nuevo acabado Ebony con golpeador de caparazón de tortuga.","image":"les-paul-junior-1.jpg","imagedetail":"les-paul-junior-2.jpg"},{"id":5,"name":"Micro Pedal Mooer Drive Mki","price":"9.819","category":"main-bottom","clasificacion":"ACCESORIOS","tipo":"PEDALES","description":"El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.","image":"mooer-1.jpg","imagedetail":"mooer-2.jpg"},{"id":6,"name":"Pedal De Efecto Mooer","price":"10.959","category":"main-bottom","clasificacion":"ACCESORIOS","tipo":"PEDALES","description":"El pedal Blue Faze Fuzz produce un suave sonido vintage fuzz a partir de una unidad pequeña y exquisita. La carcasa totalmente metálica cuenta con un verdadero interruptor de pedal de derivación, luz indicadora LED y entrada y salida monofónica de 1/4. Ajuste fácilmente el volumen y la ganancia del sonido del Fuzz con los dos diales separados, o baje el volumen de su guitarra para crear la limpieza perfecta.","image":"mooer2-1.jpg","imagedetail":"mooer2-2.jpg"},{"id":7,"name":"Microfono Condenser Samson","price":"25.861","category":"main-bottom","clasificacion":"MICROFONOS","tipo":"DE MANO","description":"El C03 es un micrófono condensador de mano que sobresale en el rendimiento en vivo y grabación. Equipado con una frecuencia lineal de respuesta para la reproducción de calidad, que también está diseñada para soportar altos niveles de presión de sonido.","image":"samson-1.jpg","imagedetail":"samson-2.jpg"},{"id":8,"name":"Microfono Corbatero","price":"18.602","category":"main-bottom","clasificacion":"MICROFONOS","tipo":"DE SOPORTE","description":"Micrófono de patrón de captación omnidireccional el cual prioriza el sonido mas cercano por su sensibilidad, captando también el sonido ambiente en segundo plano.","image":"corbatero-1.jpg","imagedetail":"corbatero-2.jpg"},{"id":8,"name":"dasd","price":"dasd","category":"main-top","clasificacion":"guitars","tipo":"dasdada","description":"dasd","image1":"-","image2":"-"}]
+[
+    {
+        "id": 1,
+        "name": "Cory Wong Stratocaster®",
+        "price": "195.770",
+        "category": "main-top",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
+        "description": "La Fender Cory Wong Stratocaster es un tributo a la guitarra eléctrica de cuerpo sólido número uno de su homónimo. Este hacha de alto rendimiento cuenta con un cuerpo de aliso reducido para una comodidad de juego extrema a largo plazo, mientras que un trío de pastillas de bobina simple Seymour Duncan de Cory logran su tono inconfundible. También es un placer tocar esta Stratocaster, gracias a su mástil moderno en forma de 'D' y su diapasón de radio compuesto sin esfuerzo.",
+        "image1": "cory-1.jpg",
+        "image2": "cory-2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Noventa Stratocaster®",
+        "price": "245.230",
+        "category": "main-top",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
+        "description": "La Noventa Stratocaster® es una máquina de tonos autorizada, con pastillas Noventa de bobina simple, controles de tono y volumen maestro y un puente Strat rígido, su llamativa buena apariencia se combina con la mordida de rango medio, agudos nítidos y graves suaves de las pastillas Noventa.",
+        "image1": "noventa-1.jpg",
+        "image2": "noventa-2.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Les Paul Junior®",
+        "price": "233.139",
+        "category": "main-top",
+        "clasificacion": "GUITARRAS",
+        "tipo": "ELECTRICAS",
+        "description": "La Les Paul Junior vuelve al diseño clásico que la hizo relevante, reproducida y amada, dando forma al sonido a través de generaciones y géneros musicales. Rinde homenaje a la era dorada de innovación de Gibson y devuelve la autenticidad a la vida. Presentada como una opción asequible para estudiantes y principiantes en 1954, la Les Paul Junior ha sido adoptada por músicos durante más de 60 años. El cuerpo de caoba de losa de corte único, la pastilla Dogear P-90 simple, los controles de tono y volumen únicos se suman a una gran cantidad de guitarra que es mayor que la suma de sus partes. El perfil del mástil estilo años 50 y el puente envolvente se suman a la ecuación para un tono sólido como una roca. Disponible en Tobacco Burst y el nuevo acabado Ebony con golpeador de caparazón de tortuga.",
+        "image1": "les-paul-junior-1.jpg",
+        "image2": "les-paul-junior-2.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Micro Pedal Mooer Drive Mki",
+        "price": "9.819",
+        "category": "main-bottom",
+        "clasificacion": "ACCESORIOS",
+        "tipo": "PEDALES",
+        "description": "El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.",
+        "image1": "mooer-1.jpg",
+        "image2": "mooer-2.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Pedal De Efecto Mooer",
+        "price": "10.959",
+        "category": "main-bottom",
+        "clasificacion": "ACCESORIOS",
+        "tipo": "PEDALES",
+        "description": "El pedal Blue Faze Fuzz produce un suave sonido vintage fuzz a partir de una unidad pequeña y exquisita. La carcasa totalmente metálica cuenta con un verdadero interruptor de pedal de derivación, luz indicadora LED y entrada y salida monofónica de 1/4. Ajuste fácilmente el volumen y la ganancia del sonido del Fuzz con los dos diales separados, o baje el volumen de su guitarra para crear la limpieza perfecta.",
+        "image1": "mooer2-1.jpg",
+        "image2": "mooer2-2.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Microfono Condenser Samson",
+        "price": "25.861",
+        "category": "main-bottom",
+        "clasificacion": "MICROFONOS",
+        "tipo": "DE MANO",
+        "description": "El C03 es un micrófono condensador de mano que sobresale en el rendimiento en vivo y grabación. Equipado con una frecuencia lineal de respuesta para la reproducción de calidad, que también está diseñada para soportar altos niveles de presión de sonido.",
+        "image1": "samson-1.jpg",
+        "image2": "samson-2.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Microfono Corbatero",
+        "price": "18.602",
+        "category": "main-bottom",
+        "clasificacion": "MICROFONOS",
+        "tipo": "DE SOPORTE",
+        "description": "Micrófono de patrón de captación omnidireccional el cual prioriza el sonido mas cercano por su sensibilidad, captando también el sonido ambiente en segundo plano.",
+        "image1": "corbatero-1.jpg",
+        "image2": "corbatero-2.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Guitarra Samay",
+        "price": "12500",
+        "category": "main-top",
+        "clasificacion": "guitars",
+        "tipo": "Acusticas",
+        "description": "Buena",
+        "image1": "1635706591749_img_.jpg"
+    }
+]

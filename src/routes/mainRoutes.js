@@ -9,10 +9,6 @@ const mainController = require('../controllers/mainController');
 
 router.get('/', mainController.index);
 
-router.get('/register', mainController.register);
-
-router.get('/login', mainController.login);
-
 // CARRITO DE COMPRAS
 
 router.get('/cart', mainController.cart);

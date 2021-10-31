@@ -9,14 +9,6 @@ const mainController = {
         res.render('index', {products: products});
     },
 
-    register: (req,res) => {
-        res.render('register');
-    },
-
-    login: (req,res) => {
-        res.render('login');
-    },
-
     cart: (req,res) => {
         res.render('productCart')
     }

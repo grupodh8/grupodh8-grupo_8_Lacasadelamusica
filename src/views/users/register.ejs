@@ -6,43 +6,39 @@
     <main>
         <h3 class="titulo-login">CREAR TU CUENTA</h3>
 
-        <form class="formulario-login" action="">
+        <form class="formulario-login" action="/users/register/" method="POST">
             <div class="primera-parte">
                 <div class="casillero">
                     <label for="nombre" class="label-1">Nombre:</label>
-                    <input type="text" name="nombre" class="input-1" required>
+                    <input type="text" name="first_name" class="input-1">
                 </div>
                 <div class="casillero">
                     <label for="apellid" class="label-1">Apellido:</label>
-                    <input type="text" name="apellido" class="input-1" required>
+                    <input type="text" name="last_name" class="input-1">
                 </div>
             </div>
             <div class="casillero">
                 <label for="direccion" class="label-1">Direccion:</label>
-                <input type="text" name="direccion" class="input-1" required>
+                <input type="text" name="address" class="input-1">
             </div>
             <div class="linea-ciudad">
                 <div class="casillero">
                     <label for="ciudad" class="label-1">Ciudad:</label>
-                    <input type="text" name="ciudad" class="input-ciudad" required>
+                    <input type="text" name="city" class="input-ciudad">
                 </div>
                 <div class="casillero">
                     <label for="codigo-postal" class="label-1">Codigo Postal:</label>
-                    <input type="text" name="codigo-postal" class="input-cp" required>
+                    <input type="text" name="zip" class="input-cp">
                 </div>
             </div>
             <div class="casillero">
                 <label for="email" class="label-1">Correo electronico:</label>
-                <input type="email" name="email" class="input-1" required>
+                <input type="email" name="email" class="input-1">
             </div>
             <div class="linea-pass">
                 <div class="casillero">
                     <label for="password" class="label-1">Contraseña:</label>
-                    <input type="password" name="password" class="input-pass" required>
-                </div>
-                <div class="casillero">
-                    <label for="password" class="label-1">Confirmar contraseña:</label>
-                    <input type="password" name="password" class="input-pass" required>
+                    <input type="password" name="password" class="input-pass">
                 </div>
             </div>
             <div class="casillero">

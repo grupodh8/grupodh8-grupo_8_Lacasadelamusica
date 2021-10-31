@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 
 let productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -19,6 +20,7 @@ const productsController = {
 	},
 
     store: (req, res) => {
+		let file = req.file
 		let newProduct = {
 			id: products.length + 1,
 			name: req.body.name,
@@ -27,7 +29,7 @@ const productsController = {
 			clasificacion: req.body.classification,
 			tipo: req.body.type,
 			description: req.body.description,
-            image1: '-',
+            image1: file.filename,
             image2: '-'
 		}
 

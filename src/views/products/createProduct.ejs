@@ -5,7 +5,7 @@
             <main>
                 <h3 class="titulo-login">CREAR UN PRODUCTO</h3>
 
-                <form action="/products" method="POST" class="formulario-login">
+                <form action="/products" method="POST" class="formulario-login" enctype="multipart/form-data">
                     <div class="primera-parte">
                         <div class="casillero">
                             <label for="name" class="label-1">Nombre del producto:</label>
@@ -47,12 +47,9 @@
                     <div class="linea-ciudad">
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen para home page:</label>
-                            <input type="file" name="imagen1" class="input-file">
+                            <input type="file" name="image1" class="input-file">
                         </div>
-                        <div class="casillero">
-                            <label for="imagen1" class="label-1">Imagen para detalle:</label>
-                            <input type="file" name="imagen1" class="input-file">
-                        </div>
+     
                     </div>
                     <div class="casillero">
                         <button type="submit" class="boton-login">CREAR PRODUCTO</button>
