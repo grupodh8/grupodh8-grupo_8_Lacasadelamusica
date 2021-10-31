@@ -1,0 +1,71 @@
+<%- include('./partials/head', {title: 'Detalle de producto - La Casa de la Musica' }) %>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <h3 class="titulo-login">CREAR UN PRODUCTO</h3>
+
+                <form action="/products/edit/<%= productToEdit.id %>?_method=PUT" method="POST" class="formulario-login">
+                    <div class="primera-parte">
+                        <div class="casillero">
+                            <label for="name" class="label-1">Nombre del producto:</label>
+                            <input type="text" name="name" class="input-1" value="<%= productToEdit.name %>">
+                        </div>
+                        <div class="casillero">
+                            <label for="price" class="label-1">Precio del producto:</label>
+                            <input type="text" name="price" class="input-1" value="<%= productToEdit.price %>">
+                        </div>
+                    </div>
+                    <div class="casillero">
+                        <label for="category" class="form-label">Categoría:</label>
+                        <select name="category" id="category" class="input-1">
+                            <option value="">Elegí</option>
+                            <option value="main-top" <%= productToEdit.category == 'main-top' ? 'selected' : '' %>>Nuevos Productos</option>
+                            <option value="main-bottom" <%= productToEdit.category == 'main-bottom' ? 'selected' : '' %>>Ofertas Destacadas</option>
+                        </select>
+                    </div>
+                    <div class="casillero">
+                        <label for="classification" class="form-label">Clasificacion:</label>
+                        <select name="classification" id="classification" class="input-1">
+                            <option value="">Elegí</option>
+                            <option value="guitars" <%= productToEdit.clasificacion == 'GUITARRAS' ? 'selected' : '' %>>Guitarras</option>
+                            <option value="bass" <%= productToEdit.clasificacion == 'Bass' ? 'selected' : '' %>>Bajos</option>
+                            <option value="accesories" <%= productToEdit.clasificacion == 'Accesorios' ? 'selected' : '' %>>Accesorios</option>
+                            <option value="audio" <%= productToEdit.clasificacion == 'Audio' ? 'selected' : '' %>>Audio</option>
+                            <option value="services" <%= productToEdit.clasificacion == 'Servicios' ? 'selected' : '' %>>Servicios</option>
+                        </select>
+                    </div>
+                    <div class="casillero">
+                        <label for="type" class="label-1">Tipo de producto:</label>
+                        <input type="text" name="type" class="input-1" value="<%= productToEdit.tipo %>">
+                    </div>
+                    <div class="casillero">
+						<label for="description" class="label-1">Descipción:</label>
+						<textarea name="description" id="description" class="input-1"><%= productToEdit.description %></textarea>
+					</div>
+
+                    <div class="linea-ciudad">
+                        <div class="casillero">
+                            <label for="imagen1" class="label-1">Ciudad:</label>
+                            <input type="file" name="imagen1" class="input-1">
+                        </div>
+                        <div class="casillero">
+                            <label for="imagen1" class="label-1">Ciudad:</label>
+                            <input type="file" name="imagen1" class="input-ciudad">
+                        </div>
+                    </div>
+                    <div class="casillero">
+                        <button type="submit" class="boton-login">CREAR PRODUCTO</button>
+                    </div>
+                </form>
+            </main>
+
+
+
+
+
+
+            <%- include('./partials/footer') %>
+    </body>
+
+    </html>
