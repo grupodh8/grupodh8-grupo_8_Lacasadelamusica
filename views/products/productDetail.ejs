@@ -21,8 +21,8 @@
                 <div class="footer-producto">
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle">
-                        <button class="boton-compra-detalle"><a href="/productDetail">Comprar</a></button>
-                        <button class="boton-carro-detalle"><a href="/productCart"><i id="iconos-barra"
+                        <button class="boton-compra-detalle"><a href="/<%= product.id %>">Comprar</a></button>
+                        <button class="boton-carro-detalle"><a href="/products/cart"><i id="iconos-barra"
                                     class="fas fa-shopping-cart"></i></a></button>
                     </div>
                 </div>
@@ -35,10 +35,10 @@
                 <div class="footer-producto-2">
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle-2">
-                        <button class="boton-compra"><a href="/products/detail/<%= product.id %>">Comprar</a></button>
+                        <button class="boton-compra"><a href="/products/<%= product.id %>">Comprar</a></button>
                         <button class="boton-carro"><a href="/products/cart"><i id="iconos-barra"
                                     class="fas fa-shopping-cart"></i></a></button>
-                        <button class="boton-compra"><a href="/products/edit/<%= product.id %>">Editar</a></button>
+                        <button class="boton-compra"><a href="/products/<%= product.id %>/edit">Editar</a></button>
                     </div>
                 </div>
             </div>
