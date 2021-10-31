@@ -4,13 +4,13 @@
         <%- include('./partials/header') %>
 
             <main>
-                <h3>Nuevos Productos</h3>
-                <section class="contenedor-articulos-ofertas">
+                <h3 class="title-allproducts">Todos nuestros productos</h3>
+                <section class="contenedor-articulos">
                     <!-- TODOS LOS PRODUCTOS-->
 
                     <% products.forEach((producto)=> { %>
                         <% if (producto.category) { %>
-                            <%- include('./partials/productBottom', {producto : producto}) %>
+                            <%- include('./partials/productCard', {producto : producto}) %>
                                 <% }}) %>
 
             </main>

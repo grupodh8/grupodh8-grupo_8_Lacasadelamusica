@@ -14,10 +14,6 @@ const productsController = {
         res.render('productDetail', {product: productSelected })
     },
 
-    cart: (req,res) => {
-        res.render('productCart')
-    },
-
     create: (req, res) => {
 		res.render('createProduct')
 	},

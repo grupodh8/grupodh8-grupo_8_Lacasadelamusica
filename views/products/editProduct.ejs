@@ -3,7 +3,7 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h3 class="titulo-login">CREAR UN PRODUCTO</h3>
+                <h3 class="titulo-login">EDITAR PRODUCTO</h3>
                 <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" class="formulario-login">
                     <div class="primera-parte">
                         <div class="casillero">
@@ -17,7 +17,7 @@
                     </div>
                     <div class="casillero">
                         <label for="category" class="label-1">Categoría:</label>
-                        <select name="category" id="category" class="input-1">
+                        <select name="category" id="category" class="input-select">
                             <option value="">Elegí</option>
                             <option value="main-top" <%= productToEdit.category == 'main-top' ? 'selected' : '' %>>Nuevos Productos</option>
                             <option value="main-bottom" <%= productToEdit.category == 'main-bottom' ? 'selected' : '' %>>Ofertas Destacadas</option>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="casillero">
                         <label for="classification" class="label-1">Clasificacion:</label>
-                        <select name="classification" id="classification" class="input-1">
+                        <select name="classification" id="classification" class="input-select">
                             <option value="">Elegí</option>
                             <option value="guitars" <%= productToEdit.clasificacion == 'guitars' ? 'selected' : '' %>>Guitarras</option>
                             <option value="bass" <%= productToEdit.clasificacion == 'bass' ? 'selected' : '' %>>Bajos</option>
@@ -40,17 +40,17 @@
                     </div>
                     <div class="casillero">
 						<label for="description" class="label-1">Descipción:</label>
-						<textarea name="description" id="description" class="input-1" rows="4" cols="50"><%= productToEdit.description %></textarea>
+						<textarea name="description" id="description" class="input-textarea"><%= productToEdit.description %></textarea>
 					</div>
 
                     <div class="linea-ciudad">
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen para home page:</label>
-                            <input type="file" name="imagen1" class="input-1">
+                            <input type="file" name="imagen1" class="input-file">
                         </div>
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen para detalle:</label>
-                            <input type="file" name="imagen1" class="input-1">
+                            <input type="file" name="imagen1" class="input-file">
                         </div>
                     </div>
                     <div class="casillero">
@@ -59,7 +59,7 @@
                 </form>
                 <form action="/products/<%= productToEdit.id %>?_method=DELETE"
                     method="POST" class="formulario-login">
-                    <button type="submit" class="boton-delete">ELIMINAR</button>
+                    <button type="submit" class="boton-delete">ELIMINAR PRODUCTO</button>
                 </form>
             </main>
 

@@ -110,50 +110,24 @@ header {
 /* ---------- ARTICULOS PAGINA PRINCIPAL ---------- */
 
 .contenedor-articulos {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    margin: 20px 0 20px 0;
-    padding: 0 0 0 10px;
-}
-
-/* ---------- ARTICULOS DE PAGINA PRINCIPAL - SECCION OFERTAS ---------- */
-
-.contenedor-articulos-ofertas {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0 0px 0;
-    padding: 0 0 30px 10px;
-}
-
-.articulo-3, .articulo-4, .articulo-5, .articulo-6 {
-    margin: 20px 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
-    border: 3px solid #adb5bd;
-    border-radius: 5px;
-    width: 80%;
-    text-align: center;
-    background-color: white;
-    box-shadow: 0px 0px 3px rgb(100, 100, 100);
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
 /* ---------- ARTICULOS PRINCIPALES PAGINA PRINCIPAL (2) ---------- */
 
-.articulo-1, .articulo-2 {
-    margin-top: 20px;
+.articulo-1 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;    
-    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20px;
     border: 3px solid #adb5bd;
     border-radius: 5px;
-    width: 80%;
     text-align: center;
     background-color: white;
     box-shadow: 0px 0px 3px rgb(100, 100, 100);
@@ -218,6 +192,23 @@ header {
     background-color: red;
     padding: 10px 5px;
     color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+
+.form-boton-allproducts {
+    display: flex;
+    justify-content: center;
+}
+
+.boton-allproducts {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: white;
+    padding: 10px 5px;
     border-radius: 5px;
     margin-bottom: 20px;
     margin-right: 5px;
@@ -542,6 +533,31 @@ footer a {
     display: none;
 }
 
+/* ---------- VARIOS ---------- */
+
+.title-allproducts {
+    padding-top: 25px;
+}
+
+.input-file {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: white;
+}
+
+.input-select {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.input-textarea {
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 200px;
+}
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {
@@ -554,35 +570,9 @@ footer a {
 
     /* ---------- CAMBIO DE ARTICULOS PAGINA PRINCIPAL ---------- */
 
-    .contenedor-articulos {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-    }
-
     .articulo-1 {
         width: 40%;
-        margin-top: 10px;
-        margin-right: 15px;
-    }
-    
-    .articulo-2 {
-        width: 40%;
-        margin-top: 10px;
-        margin-left: 15px;
-    }
-
-    .contenedor-articulos-ofertas {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        flex-wrap: wrap;
-    }
-
-    .articulo-3, .articulo-4, .articulo-5, .articulo-6 {
-        width: 40%;
+        margin-bottom: 20px;
     }
 
     #shipping {
@@ -668,16 +658,9 @@ footer a {
 
     /* ---------- CAMBIOS ARTICULOS DE PAGINA PRINCIPAL ---------- */
 
-    .contenedor-articulos-ofertas {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        flex-wrap: nowrap;
-    }
-
-    .articulo-3, .articulo-4, .articulo-5, .articulo-6 {
-        width: 25%;
+    .articulo-1 {
+        width: 22%;
+        
     }
 
     .nombre-producto {

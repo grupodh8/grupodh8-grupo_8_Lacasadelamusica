@@ -15,18 +15,22 @@
 			
             <% products.forEach((producto) => { %>
 				<% if (producto.category == "main-top") { %>
-                    <%- include('./partials/productTop', {producto : producto}) %>
+                    <%- include('./partials/productCard', {producto : producto}) %>
 			<% }}) %>            
 
             <!-- PRODUCTOS SECCION INFERIOR-->
         </section>
         <h3>OFERTAS DESTACADAS</h3>
-        <section class="contenedor-articulos-ofertas">
+        <section class="contenedor-articulos">
             <% products.forEach((producto) => { %>
 				<% if (producto.category == "main-bottom") { %>
-                    <%- include('./partials/productTop', {producto : producto}) %>
+                    <%- include('./partials/productCard', {producto : producto}) %>
 			<% }}) %>  
         </section>
+
+        <form action="/products" method="GET" class="form-boton-allproducts">
+            <button type="submit" class="boton-allproducts">VER TODOS LOS PRODUCTOS</button>
+        </form>
     </main>
     <%- include('./partials/footer') %>
 
