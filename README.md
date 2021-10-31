@@ -1,5 +1,9 @@
 # grupodh8-grupo_8_LaCasaDeLaMusica
 
+TABLERO DE TRABAJO
+
+https://trello.com/b/VfyLKG6U/proyecto-integrador-la-casa-de-la-musica
+
 NUESTRO SITIO
 
 El nombre de nuestro proyecto es "La Casa de la Musica". La temática del proyecto es venta de instrumentos musicales, equipos de sonido y accesorios. Los productos serán instrumentos musicales, equipos de música y accesorios, también ofertaremos servicios de reparación de equipos e instrumentos. Los productos ofrecidos en nuestro sitio serán instrumentos musicales de calidad media alta! Apuntando a un mercado de músicos exigentes y a los cuales podamos responder con garantías firmes en caso de tener algún problema. También ofreceremos reparación de equipos e instrumentos, como valor agregado a nuestros servicios
