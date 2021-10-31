@@ -12,6 +12,10 @@
                         <% if (producto.category) { %>
                             <%- include('./partials/productCard', {producto : producto}) %>
                                 <% }}) %>
+                </section>
+                <form action="/products/create" method="GET" class="form-boton-allproducts">
+                    <button type="submit" class="boton-allproducts">CREAR PRODUCTO</button>
+                </form>
 
             </main>
             <%- include('./partials/footer') %>

@@ -6,7 +6,7 @@
     <main>
         <div class="detalle-producto">
             <p class="clasificacion-productos"> <a href="">CATEGORIAS</a> > <a href=""><%= product.clasificacion %></a> > <a
-                    href=""><%= product.tipo %></a> > <a href=""><%= product.name.toUpperCase() %></a></p>
+                    href=""><%= product.tipo.toUpperCase() %></a> > <a href=""><%= product.name.toUpperCase() %></a></p>
             <div class="titulo-2">
                 <h2 class="titulo-pagina-articulo"><%= product.name %></h2>
                 <div class="iconos-titulo">
@@ -21,9 +21,11 @@
                 <div class="footer-producto">
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle">
-                        <button class="boton-compra-detalle"><a href="/<%= product.id %>">Comprar</a></button>
-                        <button class="boton-carro-detalle"><a href="/products/cart"><i id="iconos-barra"
+                        <button class="boton-compra-detalle"><a href="/products/<%= product.id %>">Comprar</a></button>
+                        <button class="boton-compra-detalle"><a href="/products/<%= product.id %>/edit">Editar</a></button>
+                        <button class="boton-carro-detalle"><a href="/cart"><i id="iconos-barra"
                                     class="fas fa-shopping-cart"></i></a></button>
+                                   
                     </div>
                 </div>
             </div>
@@ -36,7 +38,7 @@
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle-2">
                         <button class="boton-compra"><a href="/products/<%= product.id %>">Comprar</a></button>
-                        <button class="boton-carro"><a href="/products/cart"><i id="iconos-barra"
+                        <button class="boton-carro"><a href="/cart"><i id="iconos-barra"
                                     class="fas fa-shopping-cart"></i></a></button>
                         <button class="boton-compra"><a href="/products/<%= product.id %>/edit">Editar</a></button>
                     </div>

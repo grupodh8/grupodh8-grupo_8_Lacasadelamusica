@@ -11,10 +11,10 @@ app.use(express.static(path.join(__dirname, './public')));
 
 app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname, '/views'));
-app.set('views', ['views', __dirname + '/views/products', __dirname + '/views/users']);
+app.set('views', [__dirname + '/src/views', __dirname + '/src/views/products', __dirname + '/src/views/users']);
 
-const mainRoutes = require('./routes/mainRoutes'); // Rutas main
-const productsRoutes = require('./routes/productsRoutes'); // Rutas /products
+const mainRoutes = require('./src/routes/mainRoutes'); // Rutas main
+const productsRoutes = require('./src/routes/productsRoutes'); // Rutas /products
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
