@@ -5,12 +5,12 @@
 
             <main>
                 <h3>Nuevos Productos</h3>
-                <section class="contenedor-articulos">
+                <section class="contenedor-articulos-ofertas">
                     <!-- TODOS LOS PRODUCTOS-->
 
                     <% products.forEach((producto)=> { %>
                         <% if (producto.category) { %>
-                            <%- include('./partials/productTop', {producto : producto}) %>
+                            <%- include('./partials/productBottom', {producto : producto}) %>
                                 <% }}) %>
 
             </main>
