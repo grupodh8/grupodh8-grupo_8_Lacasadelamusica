@@ -1,56 +1,53 @@
 const fs = require('fs');
+const path = require('path');
 
-const UserModel = {
-    databaseJson: './data/user.json',
+let usersFilePath = path.join(__dirname, '../data/users.json');
 
-    parseDatabase: () => {
-        return JSON.parse(fs.readFileSync(this.databaseJson, 'utf-8'));
+let User = {    
+    allUsers: function () {
+        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        return users
     },
 
-    createId: () => {
-        let allUsersArray = this.AllUsersArray();
-        let lastUser = allUsersArray.pop();
+    create: function (userData, file) {
+        let all = this.allUsers();
+        let allUsers = this.allUsers();
+        let lastUser = allUsers.pop();
+        let newUser = {
+            id: lastUser.id + 1,
+            ... userData,
+            profileimage: file
+        }
+        all.push(newUser);
+        fs.writeFileSync(usersFilePath, JSON.stringify(all, null, ' '));
+        return newUser;
+    },
+
+    createId: function () {
+        let allUsersSet = this.allUsers();
+        let lastUser = allUsersSet.pop();
         if (lastUser) {
             return lastUser.id + 1;
         } else {
             return 1;
         }
     },
-    
-    allUsersArray: () => {
-        return this.parseDatabase();
-    },
 
     findUserById: (id) => {
-        let allUsersArray = this.allUsersArray();
-        let selectedUser = allUsersArray.find(user => user.id === id);
+        let allUsers = this.allUsers();
+        let selectedUser = allUsers.find(user => user.id === id);
         return selectedUser;
     },
 
     findUserByField: (property, text) => {
-        let allUsersArray = this.allUsersArray();
-        let selectedUser = allUsersArray.find(user => user[property] === text);
+        let allUsers = this.allUsers();
+        let selectedUser = allUsers.find(user => user[property] === text);
         return selectedUser;
-    },
-
-    create: (userData) => {
-        let allUsersArray = this.allUsersArray();
-        let newUser = {
-            id: this.createId(),
-            ... userData
-        }
-        allUsersArray.push(newUser);
-        fs.writeFileSync(this.databaseJson, JSON.stringify(allUsersArray, null, ' '));
-        return newUser;
-    },
-
-    edit: (id) => {
-
-    },
+    },   
 
     delete: (id) => {
-        let allUsersArray = this.allUsersArray();
-        let newDatabase = allUsersArray.filter(user => user.id !== id);
+        let allUsers = this.allUsers();
+        let newDatabase = allUsers.filter(user => user.id !== id);
         fs.writeFileSync(this.databaseJson, JSON.stringify(newDatabase, null, ' '));
         return true;
     }
