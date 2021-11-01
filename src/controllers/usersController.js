@@ -5,6 +5,8 @@ const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
 
+const User = require('../models/User');
+
 // JSON to JS array of products database
 
 let productsFilePath = path.join(__dirname, '../data/users.json');
@@ -30,27 +32,25 @@ const usersController = {
                 oldData : req.body 
             });
         } else {
-            let file = req.file
-			let newUser = {
-			id: users.length + 1,
-			first_name: req.body.first_name,
-            last_name: req.body.last_name,
-			address: req.body.address,
-			city: req.body.city,
-			zip: req.body.zip,
-			email: req.body.email,
-            password: req.body.password,
-            profileimage: file.filename
-			}
+            // let file = req.file
+			// let newUser = {
+			// id: users.length + 1,
+			// first_name: req.body.first_name,
+            // last_name: req.body.last_name,
+			// address: req.body.address,
+			// city: req.body.city,
+			// zip: req.body.zip,
+			// email: req.body.email,
+            // password: req.body.password,
+            // profileimage: file.filename
+			// }
 
-			users.push(newUser);
-			usersJSON = JSON.stringify(users);
-			fs.writeFileSync(productsFilePath, usersJSON);
+			// users.push(newUser);
+			// usersJSON = JSON.stringify(users);
+			// fs.writeFileSync(productsFilePath, usersJSON);
 
-			res.send('Usuario registrado con exito');
-            
-
-
+            User.create(req.body);
+			return res.send('Usuario registrado con exito');
         }
     },
 
