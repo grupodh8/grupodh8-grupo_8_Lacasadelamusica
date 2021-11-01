@@ -5,11 +5,11 @@
             <main>
                 <h3 class="titulo-login">CREAR UN PRODUCTO</h3>
 
-                <form action="/products" method="POST" class="formulario-login" enctype="multipart/form-data">
+                <form action="/products/?_method=POST" method="POST" class="formulario-login" enctype="multipart/form-data">
                     <div class="primera-parte">
                         <div class="casillero">
                             <label for="name" class="label-1">Nombre del producto:</label>
-                            <input type="text" name="name" value="<%= locals.oldData ? oldData.name : ''%>"
+                            <input type="text" name="name" value="<%= locals.oldData ? oldData.name : '' %>"
                                 class="input-1 <%= (locals.errors && errors.name) ? 'input-danger' : null %>">
                             <% if (locals.errors && errors.name) { %>
                                 <div class="warning-text">
@@ -103,7 +103,7 @@
 
                     </div>
                     <div class="casillero">
-                        <button type="submit" class="boton-login">CREAR PRODUCTO</button>
+                        <button type="submit" class="boton-login">GUARDAR PRODUCTO</button>
                     </div>
                 </form>
             </main>

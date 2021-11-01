@@ -57,8 +57,17 @@ const productsController = {
 	},
 
 	update: (req, res) => {
-		
-		let editedItem = {
+		let productToEdit = products.find(product => product.id == req.params.id)
+		const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('editProduct', { 
+				errors : resultValidation.mapped(),
+				productToEdit : productToEdit,
+                oldData : req.body 
+            });
+        } else {
+			let file = req.file
+			let editedItem = {
             id: parseInt(req.params.id),
 			name: req.body.name,
             price: req.body.price,
@@ -66,9 +75,10 @@ const productsController = {
 			clasificacion: req.body.classification,
 			tipo: req.body.type,
 			description: req.body.description,
-            image1: '-',
+            image1: file.filename,
             image2: '-'
-		};
+		}
+		console.log(editedItem)
 
 		let indexToInsert = editedItem.id - 1;
 		products[indexToInsert] = editedItem;
@@ -78,6 +88,8 @@ const productsController = {
 
 		res.redirect('/products');
 
+        }
+		
 	},
 
     destroy: (req, res) => {

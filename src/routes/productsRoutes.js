@@ -70,7 +70,7 @@ router.get('/:id/edit', productsController.edit);
 
 // 6 - ACCION DE EDICION DE PRODUCTO 
 
-router.put('/:id', productsController.update);
+router.put('/:id', uploadFile.single('image1'), validationsProducts, productsController.update);
 
 // 7 - ACCION DE BORRADO DE PRODUCTO 
 

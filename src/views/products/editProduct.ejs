@@ -1,61 +1,111 @@
-<%- include('./partials/head', {title: 'Detalle de producto - La Casa de la Musica' }) %>
+<%- include('./partials/head', {title: 'Editar producto - La Casa de la Musica' }) %>
 
     <body>
         <%- include('./partials/header') %>
             <main>
                 <h3 class="titulo-login">EDITAR PRODUCTO</h3>
+
                 <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" class="formulario-login" enctype="multipart/form-data">
                     <div class="primera-parte">
                         <div class="casillero">
                             <label for="name" class="label-1">Nombre del producto:</label>
-                            <input type="text" name="name" class="input-1" value="<%= productToEdit.name %>">
+                            <input type="text" name="name" value="<%= locals.oldData ? oldData.name : productToEdit.name %>"
+                                class="input-1 <%= (locals.errors && errors.name) ? 'input-danger' : null %>">
+                            <% if (locals.errors && errors.name) { %>
+                                <div class="warning-text">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <%= errors.name.msg %>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="casillero">
                             <label for="price" class="label-1">Precio del producto:</label>
-                            <input type="text" name="price" class="input-1" value="<%= productToEdit.price %>">
+                            <input type="text" name="price" value="<%= locals.oldData ? oldData.price : productToEdit.price %>"
+                                class="input-1 <%= (locals.errors && errors.price) ? 'input-danger' : null %>">
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="warning-text">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <%= errors.price.msg %>
+                                </div>
+                                <% } %>
                         </div>
                     </div>
                     <div class="casillero">
                         <label for="category" class="label-1">Categoría:</label>
-                        <select name="category" id="category" class="input-select">
-                            <option value="">Elegí</option>
-                            <option value="main-top" <%= productToEdit.category == 'main-top' ? 'selected' : '' %>>Nuevos Productos</option>
-                            <option value="main-bottom" <%= productToEdit.category == 'main-bottom' ? 'selected' : '' %>>Ofertas Destacadas</option>
+                        <select name="category" id="category" class="input-select <%= (locals.errors && errors.category) ? 'input-danger' : null %>">
+                            <option value=""></option>
+                            <option value="main-top" <%= locals.oldData && (oldData.category === 'main-top') ? 'selected' : ' ' %>>Nuevos Productos</option>
+                            <option value="main-bottom" <%= locals.oldData && (oldData.category === 'main-bottom') ? 'selected' : ' ' %>>Ofertas Destacadas</option>
                         </select>
+                        <% if (locals.errors && errors.category) { %>
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.category.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="casillero">
-                        <label for="classification" class="label-1">Clasificacion:</label>
-                        <select name="classification" id="classification" class="input-select">
-                            <option value="">Elegí</option>
-                            <option value="guitars" <%= productToEdit.clasificacion == 'guitars' ? 'selected' : '' %>>Guitarras</option>
-                            <option value="bass" <%= productToEdit.clasificacion == 'bass' ? 'selected' : '' %>>Bajos</option>
-                            <option value="accesories" <%= productToEdit.clasificacion == 'accesories' ? 'selected' : '' %>>Accesorios</option>
-                            <option value="audio" <%= productToEdit.clasificacion == 'audio' ? 'selected' : '' %>>Audio</option>
-                            <option value="services" <%= productToEdit.clasificacion == 'services' ? 'selected' : '' %>>Servicios</option>
+                        <label for="clasificacion" class="label-1">Clasificacion:</label>
+                        <select name="clasificacion" id="clasificacion" class="input-select <%= (locals.errors && errors.clasificacion) ? 'input-danger' : null %>">
+                            <option value=""></option>
+                            <option value="guitars" <%= locals.oldData && oldData.clasificacion === "guitars" ? 'selected' : '' %>>Guitarras</option>
+                            <option value="bass" <%= locals.oldData && oldData.clasificacion === "bass" ? 'selected' : '' %>>Bajos</option>
+                            <option value="accesories" <%= locals.oldData && oldData.clasificacion === "accesories" ? 'selected' : '' %>>Accesorios</option>
+                            <option value="audio" <%= locals.oldData && oldData.clasificacion === "audio" ? 'selected' : '' %>>Audio</option>
+                            <option value="services" <%= locals.oldData && oldData.clasificacion === "services" ? 'selected' : '' %>>Servicios</option>
                         </select>
+                        <% if (locals.errors && errors.clasificacion) { %>
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.clasificacion.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="casillero">
                         <label for="type" class="label-1">Tipo de producto:</label>
-                        <input type="text" name="type" class="input-1" value="<%= productToEdit.tipo %>">
+                        <input type="text" name="type" value="<%= locals.oldData ? oldData.type : productToEdit.tipo %>"
+                            class="input-1 <%= (locals.errors && errors.type) ? 'input-danger' : null %>">
+                        <% if (locals.errors && errors.type) { %>
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.type.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="casillero">
-						<label for="description" class="label-1">Descipción:</label>
-						<textarea name="description" id="description" class="input-textarea"><%= productToEdit.description %></textarea>
-					</div>
+                        <label for="description" class="label-1">Descipción:</label>
+                        <textarea 
+                        name="description" 
+                        id="description" 
+                        class="input-textarea <%= (locals.errors && errors.description) ? 'input-danger' : null %>"><%= locals.oldData ? oldData.description : productToEdit.description%></textarea>
+                        <% if (locals.errors && errors.description) { %>                            
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.description.msg %>
+                            </div>
+                            <% } %>
+                    </div>
 
                     <div class="linea-ciudad">
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen para home page:</label>
-                            <input type="file" name="imagen1" class="input-file">
+                            <input 
+                            type="file" 
+                            name="image1" 
+                            class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>"
+                            value="231rafa.jpg">
+                            <% if (locals.errors && errors.image1) { %>                            
+                                <div class="warning-text">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <%= errors.image1.msg %>
+                                </div>
+                                <% } %>
                         </div>
+
                     </div>
                     <div class="casillero">
-                        <button type="submit" class="boton-login">GUARDAR PRODUCTO</button>
+                        <button type="submit" class="boton-login">EDITAR PRODUCTO</button>
                     </div>
-                </form>
-                <form action="/products/<%= productToEdit.id %>?_method=DELETE"
-                    method="POST" class="formulario-login">
-                    <button type="submit" class="boton-delete">ELIMINAR PRODUCTO</button>
                 </form>
             </main>
 
