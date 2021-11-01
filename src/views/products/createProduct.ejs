@@ -45,7 +45,7 @@
                             <% } %>
                     </div>
                     <div class="casillero">
-                        <label for="classification" class="label-1">classification:</label>
+                        <label for="classification" class="label-1">Clasificacion:</label>
                         <select name="classification" id="classification" class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %>">
                             <option value=""></option>
                             <option value="guitars" <%= locals.oldData && oldData.classification === "guitars" ? 'selected' : '' %>>Guitarras</option>
@@ -88,7 +88,7 @@
 
                     <div class="linea-ciudad">
                         <div class="casillero">
-                            <label for="imagen1" class="label-1">Imagen para home page:</label>
+                            <label for="imagen1" class="label-1">Imagen:</label>
                             <input 
                             type="file" 
                             name="image1" 
