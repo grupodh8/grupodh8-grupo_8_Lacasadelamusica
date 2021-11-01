@@ -4,7 +4,7 @@ const { body } = require('express-validator');
 
 const usersController = require('../controllers/usersController');
 
-const validations = [
+const validationsRegister = [
     body('first_name').notEmpty().withMessage('Debes ingresar tu nombre'),
     body('last_name').notEmpty().withMessage('Debes ingresar tu apellido'),
     body('address').notEmpty().withMessage('Debes ingresar tu direccion'),
@@ -20,7 +20,7 @@ router.get('/register', usersController.register);
 
 // Procesa el registro
 
-router.post('/register', validations, usersController.store);
+router.post('/register', validationsRegister, usersController.store);
 
 // Ruta de login
 
