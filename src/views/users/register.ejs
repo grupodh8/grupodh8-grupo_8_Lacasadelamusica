@@ -10,35 +10,98 @@
             <div class="primera-parte">
                 <div class="casillero">
                     <label for="nombre" class="label-1">Nombre:</label>
-                    <input type="text" name="first_name" class="input-1">
+                    <input 
+                    type="text" 
+                    name="first_name" 
+                    value="<%= locals.oldData ? oldData.first_name : ''%>"
+                    class="input-1 <%= (locals.errors && errors.first_name) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.first_name) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.first_name.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="casillero">
                     <label for="apellid" class="label-1">Apellido:</label>
-                    <input type="text" name="last_name" class="input-1">
+                    <input 
+                    type="text" 
+                    name="last_name"
+                    value="<%= locals.oldData ? oldData.last_name : ''%>"
+                    class="input-1  <%= (locals.errors && errors.last_name) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.last_name) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.last_name.msg %>
+                        </div>
+                        <% } %>
                 </div>
             </div>
             <div class="casillero">
                 <label for="direccion" class="label-1">Direccion:</label>
-                <input type="text" name="address" class="input-1">
+                <input 
+                type="text" 
+                name="address" 
+                value="<%= locals.oldData ? oldData.address : ''%>"
+                class="input-1 <%= (locals.errors && errors.address) ? 'input-danger' : null %>">
+                <% if (locals.errors && errors.address) { %>
+                <div class="warning-text">
+                    <i class="fas fa-exclamation-circle"></i> <%= errors.address.msg %>
+                </div>
+                <% } %>
             </div>
             <div class="linea-ciudad">
                 <div class="casillero">
                     <label for="ciudad" class="label-1">Ciudad:</label>
-                    <input type="text" name="city" class="input-ciudad">
+                    <input 
+                    type="text" 
+                    name="city" 
+                    value="<%= locals.oldData ? oldData.city : ''%>"
+                    class="input-ciudad  <%= (locals.errors && errors.city) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.city) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.city.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="casillero">
                     <label for="codigo-postal" class="label-1">Codigo Postal:</label>
-                    <input type="text" name="zip" class="input-cp">
+                    <input 
+                    type="text" 
+                    name="zip" 
+                    value="<%= locals.oldData ? oldData.zip : ''%>"
+                    class="input-cp <%= (locals.errors && errors.zip) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.zip) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.zip.msg %>
+                        </div>
+                        <% } %>
                 </div>
             </div>
             <div class="casillero">
                 <label for="email" class="label-1">Correo electronico:</label>
-                <input type="email" name="email" class="input-1">
+                <input 
+                type="text" 
+                name="email" 
+                value="<%= locals.oldData ? oldData.email : ''%>"
+                class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="warning-text">
+                        <i class="fas fa-exclamation-circle"></i> <%= errors.email.msg %>
+                    </div>
+                    <% } %>
             </div>
             <div class="linea-pass">
                 <div class="casillero">
                     <label for="password" class="label-1">Contraseña:</label>
-                    <input type="password" name="password" class="input-pass">
+                    <input 
+                    type="password" 
+                    name="password" 
+                    value="<%= locals.oldData ? oldData.password : ''%>"
+                    class="input-pass <%= (locals.errors && errors.password) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %>
+                        </div>
+                        <% } %>
                 </div>
             </div>
             <div class="casillero">

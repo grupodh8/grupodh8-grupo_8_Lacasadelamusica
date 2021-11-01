@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { body, check, validationResult } = require('express-validator');
+const { body } = require('express-validator');
 
 const usersController = require('../controllers/usersController');
 
 const validations = [
-    body('first_name').notEmpty(),
-    body('last_name').notEmpty(),
-    body('address').notEmpty(),
-    body('city').notEmpty(),
-    body('zip').notEmpty().isInt(),
-    body('email').isEmail(),
+    body('first_name').notEmpty().withMessage('Debes ingresar tu nombre'),
+    body('last_name').notEmpty().withMessage('Debes ingresar tu apellido'),
+    body('address').notEmpty().withMessage('Debes ingresar tu direccion'),
+    body('city').notEmpty().withMessage('Debes ingresar tu ciudad'),
+    body('zip').isNumeric().withMessage('Debes ingresar un codigo postal valido'),
+    body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
+    body('email').isEmail().withMessage('Debes ingresar tu correo electronico')
 ]
 
 // Ruta de registro

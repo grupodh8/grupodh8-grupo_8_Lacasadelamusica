@@ -524,8 +524,15 @@ footer a {
     padding: 10px 10px;
     border-radius: 5px;
     margin-left: 5px;
-
 }
+
+.warning-text {
+    margin-top: 5px;
+    font-size: 15px;
+    color: red;
+}
+
+
 
 /* ---------- DESCRIPCION DE PRODUCTO VERSION DESKTOP (OCULTO EN MOBILE) ---------- */
 
@@ -556,6 +563,10 @@ footer a {
     border: 2px solid black;
     border-radius: 5px;
     height: 200px;
+}
+
+.input-danger {
+    border: 2px solid red;
 }
 
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
