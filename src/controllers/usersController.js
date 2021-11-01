@@ -2,12 +2,13 @@
 
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 const { validationResult } = require('express-validator');
 
 // JSON to JS array of products database
 
-let productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let productsFilePath = path.join(__dirname, '../data/users.json');
+let users = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 // Users controllers
 
@@ -29,7 +30,27 @@ const usersController = {
                 oldData : req.body 
             });
         } else {
-            res.send('usuario registrado con exito');
+            let file = req.file
+			let newUser = {
+			id: users.length + 1,
+			first_name: req.body.first_name,
+            last_name: req.body.last_name,
+			address: req.body.address,
+			city: req.body.city,
+			zip: req.body.zip,
+			email: req.body.email,
+            password: req.body.password,
+            profileimage: file.filename
+			}
+
+			users.push(newUser);
+			usersJSON = JSON.stringify(users);
+			fs.writeFileSync(productsFilePath, usersJSON);
+
+			res.send('Usuario registrado con exito');
+            
+
+
         }
     },
 

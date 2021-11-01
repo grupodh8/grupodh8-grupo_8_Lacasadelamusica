@@ -6,10 +6,10 @@
     <main>
         <h3 class="titulo-login">CREAR TU CUENTA</h3>
 
-        <form class="formulario-login" action="/users/register/" method="POST">
+        <form class="formulario-login" action="/users/register/" method="POST" enctype="multipart/form-data">
             <div class="primera-parte">
                 <div class="casillero">
-                    <label for="nombre" class="label-1">Nombre:</label>
+                    <label for="first_name" class="label-1">Nombre:</label>
                     <input 
                     type="text" 
                     name="first_name" 
@@ -22,7 +22,7 @@
                         <% } %>
                 </div>
                 <div class="casillero">
-                    <label for="apellid" class="label-1">Apellido:</label>
+                    <label for="last_name" class="label-1">Apellido:</label>
                     <input 
                     type="text" 
                     name="last_name"
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="casillero">
-                <label for="direccion" class="label-1">Direccion:</label>
+                <label for="address" class="label-1">Direccion:</label>
                 <input 
                 type="text" 
                 name="address" 
@@ -50,7 +50,7 @@
             </div>
             <div class="linea-ciudad">
                 <div class="casillero">
-                    <label for="ciudad" class="label-1">Ciudad:</label>
+                    <label for="city" class="label-1">Ciudad:</label>
                     <input 
                     type="text" 
                     name="city" 
@@ -63,7 +63,7 @@
                         <% } %>
                 </div>
                 <div class="casillero">
-                    <label for="codigo-postal" class="label-1">Codigo Postal:</label>
+                    <label for="zip" class="label-1">Codigo Postal:</label>
                     <input 
                     type="text" 
                     name="zip" 
@@ -102,6 +102,20 @@
                         </div>
                         <% } %>
                 </div>
+                <div class="linea-ciudad">
+                    <div class="casillero">
+                        <label for="profileimage" class="label-1">Imagen para home page:</label>
+                        <input 
+                        type="file" 
+                        name="profileimage" 
+                        class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>">
+                        <% if (locals.errors && errors.image1) { %>                            
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.image1.msg %>
+                            </div>
+                            <% } %>
+                    </div>
             </div>
             <div class="casillero">
                 <button type="submit" class="boton-login">CREAR CUENTA</button>
