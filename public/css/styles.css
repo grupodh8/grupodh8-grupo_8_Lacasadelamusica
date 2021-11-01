@@ -55,6 +55,7 @@ header {
 /* ---------- LOGO BARRA SUPERIOR ---------- */
 
 .imagen-logo {
+    margin-left: -5px;
     border-radius: 20px;
     width: 150px;
 }
@@ -62,7 +63,7 @@ header {
 /* ---------- ITEMS DE BARRA DE NAVEGACION OCULTOS EN VERSION MOBILE ---------- */
 
 .items-noshow-mobile {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
     display: none;
@@ -77,7 +78,7 @@ header {
 /* ---------- ULTIMO DE ITEMS OCULTOS EN VERSION MOBILE (PARA EVITAR BORDE DERECHO) ---------- */
 
 .items-noshow-mobile-last {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
     display: none;
@@ -92,7 +93,7 @@ header {
 /* ---------- ITEMS DE BARRA DE NAVEGACION A MOSTRAR VERSION MOBILE Y DESKTOP ---------- */
 
 .items-show-mobile, .boton-sandwich {
-    font-size: 18px;
+    font-size: 15px;
     color: white;
     text-decoration: none;
     margin: 3px;
@@ -634,11 +635,11 @@ footer a {
     }
 
     .items-show-mobile {
-        font-size: 20px;
+        font-size: 17px;
         color: white;
         text-decoration: none;
         margin: 3px;
-        padding: 11px;
+        padding: 9px;
     }
 
     /* ---------- CAMBIOS EN SUBTITULOS DE PIE DE PAGINA ---------- */
@@ -662,7 +663,7 @@ footer a {
 
     .imagen-logo-footer {
         margin-top: 25px;
-        width: 250px;
+        width: 180px;
         margin-left: 100px;
         border-radius: 20px;
     }
@@ -748,7 +749,7 @@ footer a {
 
     .imagen-logo {
         border-radius: 20px;
-        width: 200px;
+        width: 180px;
     }
 
 
