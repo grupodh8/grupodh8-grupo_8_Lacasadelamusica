@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 const User = require('../models/User');
 
@@ -32,8 +33,29 @@ const usersController = {
                 oldData : req.body 
             });
         }
-        User.create(req.body, req.file.filename);
-		return res.send('Usuario registrado con exito');
+
+        let userInDatabase = User.findUserByField('email', req.body.email);
+
+        if (userInDatabase) {
+            return res.render('register', { 
+                errors : {
+                    email: {
+                        msg: 'Este email ya fue registrado'
+                    }
+                },
+                oldData : req.body 
+            });
+        }
+
+        let userToCreate = {
+            ... req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.file.filename
+        }
+
+
+        let userCreated = User.create(userToCreate);
+		return res.redirect('/users/login');
     },
 
     // Login form controller

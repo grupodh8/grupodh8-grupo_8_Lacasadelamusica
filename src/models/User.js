@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 let usersFilePath = path.join(__dirname, '../data/users.json');
+let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 let User = {    
     allUsers: function () {
@@ -16,7 +17,6 @@ let User = {
         let newUser = {
             id: lastUser.id + 1,
             ... userData,
-            profileimage: file
         }
         all.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify(all, null, ' '));
@@ -40,8 +40,7 @@ let User = {
     },
 
     findUserByField: (property, text) => {
-        let allUsers = this.allUsers();
-        let selectedUser = allUsers.find(user => user[property] === text);
+        let selectedUser = users.find(user => user[property] === text);
         return selectedUser;
     },   
 
