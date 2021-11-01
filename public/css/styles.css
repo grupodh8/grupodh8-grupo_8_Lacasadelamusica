@@ -185,6 +185,18 @@ header {
     margin-right: 5px;
 }
 
+.boton-redirect-login {
+    border: 2px solid black;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    background-color: white;
+    padding: 10px 5px;
+    border-radius: 5px;
+    margin: 20px 5px 20px 15px;
+}
+
 .boton-delete {
     font-family: 'Open Sans';
     font-weight: 700;
