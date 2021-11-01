@@ -26,6 +26,17 @@ const usersController = {
         res.render('login');
     },
 
+    loginAction: (req,res) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('login', { 
+                errors : resultValidation.mapped() 
+            });
+        } else {
+            res.send('usuario logueado con exito');
+        }
+    },
+
     profile: (req,res) => {
         res.send('perfil de usuario')
     }

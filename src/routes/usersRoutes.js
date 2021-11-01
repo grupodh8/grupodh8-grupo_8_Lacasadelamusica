@@ -14,6 +14,12 @@ const validationsRegister = [
     body('email').isEmail().withMessage('Debes ingresar tu correo electronico')
 ]
 
+const validationsLogin = [
+    body('email').notEmpty().withMessage('Debes ingresar tu correo electronico').bail()
+    .isEmail().withMessage('Debes ingresar un correo electronico valido'),
+    body('password').notEmpty().withMessage('Ingresa tu contraseña')
+]
+
 // Ruta de registro
 
 router.get('/register', usersController.register);
@@ -25,6 +31,10 @@ router.post('/register', validationsRegister, usersController.store);
 // Ruta de login
 
 router.get('/login', usersController.login);
+
+// Procesa el login
+
+router.post('/login', validationsLogin, usersController.loginAction);
 
 // Ruta de perfil
 
