@@ -1,24 +1,39 @@
+// Requires
+
 const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
 
+// JSON to JS array of products database
+
 let productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+// Products controllers
+
 const productsController = {
+
+	// Get all products controller
+
     all: (req,res) => {
         res.render('products', {products: products})
     },
+
+	// Product detail controller
 
     detail: (req,res) => {
         let productSelected = products.find(item => item.id == req.params.id);
         res.render('productDetail', {product: productSelected })
     },
 
+	// Create product controller
+
     create: (req, res) => {
 		res.render('createProduct')
 	},
+
+	// Store new product controller
 
     store: (req, res) => {
 		const resultValidation = validationResult(req);
@@ -41,20 +56,22 @@ const productsController = {
             image2: '-'
 			}
 
-		products.push(newProduct);
+			products.push(newProduct);
+			productsJSON = JSON.stringify(products);
+			fs.writeFileSync(productsFilePath, productsJSON);
 
-		productsJSON = JSON.stringify(products);
-
-		fs.writeFileSync(productsFilePath, productsJSON);
-
-		res.redirect('/products');
+			res.redirect('/products');
         }
 	},
+
+	// Edit product controller
 
     edit: (req, res) => {
 		let productToEdit = products.find(product => product.id == req.params.id)
 		res.render('editProduct', { productToEdit: productToEdit })
 	},
+
+	// Save product edit controller
 
 	update: (req, res) => {
 		let productToEdit = products.find(product => product.id == req.params.id)
@@ -78,31 +95,28 @@ const productsController = {
             image1: file.filename,
             image2: '-'
 		}
-		console.log(editedItem)
 
-		let indexToInsert = editedItem.id - 1;
-		products[indexToInsert] = editedItem;
-		
-		let productsFinal = JSON.stringify(products);
-		fs.writeFileSync(productsFilePath, productsFinal);
+			let indexToInsert = editedItem.id - 1;
+			products[indexToInsert] = editedItem;
+			let productsFinal = JSON.stringify(products);
+			fs.writeFileSync(productsFilePath, productsFinal);
 
-		res.redirect('/products');
-
+			res.redirect('/products');
         }
-		
 	},
+
+	// Delete product controller
 
     destroy: (req, res) => {
 		let idToDelete = req.params.id
-		let productsNew = products.filter(item => item.id != idToDelete)
-	
+		let productsNew = products.filter(item => item.id != idToDelete)	
 		let productsJSON = JSON.stringify(productsNew);
-
 		fs.writeFileSync(productsFilePath, productsJSON);
 
 		res.redirect('/products');
 	}
-    
 };
+
+// Exports
 
 module.exports = productsController;

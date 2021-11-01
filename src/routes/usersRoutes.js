@@ -1,8 +1,10 @@
+// Requires
 const express = require('express');
 const router = express.Router();
 const { body } = require('express-validator');
-
 const usersController = require('../controllers/usersController');
+
+// Express-validator validations for register and login form
 
 const validationsRegister = [
     body('first_name').notEmpty().withMessage('Debes ingresar tu nombre'),
@@ -20,24 +22,21 @@ const validationsLogin = [
     body('password').notEmpty().withMessage('Ingresa tu contraseña')
 ]
 
-// Ruta de registro
-
+// Register form route
 router.get('/register', usersController.register);
 
-// Procesa el registro
-
+// Register process route
 router.post('/register', validationsRegister, usersController.store);
 
-// Ruta de login
-
+// Login form route
 router.get('/login', usersController.login);
 
-// Procesa el login
-
+// Login process route
 router.post('/login', validationsLogin, usersController.loginAction);
 
-// Ruta de perfil
-
+// User profile route
 router.get('/profile/:id', usersController.profile);
 
+
+// Exports
 module.exports = router;

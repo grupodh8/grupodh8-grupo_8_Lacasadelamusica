@@ -2,18 +2,15 @@
 const express = require('express');
 const router = express.Router();
 
-// Require de controllers
+// Controller require
 const mainController = require('../controllers/mainController');
 
-// Rutas
-
+// Index route
 router.get('/', mainController.index);
 
-// CARRITO DE COMPRAS
-
+// Shopping cart route
 router.get('/cart', mainController.cart);
 
 
-// Exportacion de modulo
-
+// Exports
 module.exports = router;

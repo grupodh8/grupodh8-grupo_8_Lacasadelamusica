@@ -6,8 +6,7 @@ const path = require('path');
 const { body } = require('express-validator');
 
 
-// Configuracion multer
-
+// Multer configuration
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './public/images/')
@@ -19,7 +18,7 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({storage});
 
-// Validaciones de express validator
+// Express-validator validations for products forms
 
 const validationsProducts = [
     body('name').notEmpty().withMessage('Debes ingresar el nombre del producto'),
@@ -42,39 +41,32 @@ const validationsProducts = [
             return true
         }
     })
+];
 
-]
-
-// Require de controllers
+// Controller require
 const productsController = require('../controllers/productsController');
 
-// 1 - TODOS LOS PRODUCTOS
-
+// All products route
 router.get('/', productsController.all);
 
-// 2 - FORMULARIO DE CREACION DE PRODUCTO 
-
+// Product create form route
 router.get('/create', productsController.create);
 
-// 3 - DETALLE DE UN PRODUCTO 
-
+// Product detail route
 router.get('/:id', productsController.detail);
 
-// 4 - ACCION DE CREACION DE UN PRODUCTO 
-
+// Store new product process route
 router.post('/', uploadFile.single('image1'), validationsProducts, productsController.store);
 
-// 5 - FORMULARIO DE EDICION DE PRODUCTO 
-
+// Product edit form route
 router.get('/:id/edit', productsController.edit);
 
-// 6 - ACCION DE EDICION DE PRODUCTO 
-
+// Edit product process route 
 router.put('/:id', uploadFile.single('image1'), validationsProducts, productsController.update);
 
-// 7 - ACCION DE BORRADO DE PRODUCTO 
-
+// Delete product route
 router.delete('/:id', productsController.destroy);
 
 
+// Exports
 module.exports = router;
