@@ -95,7 +95,6 @@
                     <input 
                     type="password" 
                     name="password" 
-                    value="<%= locals.oldData ? oldData.password : ''%>"
                     class="input-pass <%= (locals.errors && errors.password) ? 'input-danger' : null %>">
                     <% if (locals.errors && errors.password) { %>
                         <div class="warning-text">
