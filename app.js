@@ -13,12 +13,11 @@ app.set('views', [__dirname + '/src/views', __dirname + '/src/views/products', _
 
 const mainRoutes = require('./src/routes/mainRoutes'); // Rutas main
 const productsRoutes = require('./src/routes/productsRoutes'); // Rutas /products
-const usersRoutes = require('./src/routes/usersRoutes');
+const usersRoutes = require('./src/routes/usersRoutes'); // Rutas /users
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes)
 
 let puerto = 3000;
-
-app.listen(3000, () => { console.log(`Servidor corriendo en http://localhost:${puerto}`) });
+app.listen(process.env.PORT || puerto, () => { console.log(`Servidor corriendo en http://localhost:${puerto}`) });
