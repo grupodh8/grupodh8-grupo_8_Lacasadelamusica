@@ -69,14 +69,14 @@ const usersController = {
                 errors : resultValidation.mapped() 
             });
         } else {
-            res.send('usuario logueado con exito');
+            res.redirect('/profile');
         }
     },
 
     // Profile controller
 
     profile: (req,res) => {
-        res.send('perfil de usuario')
+        res.render('profile')
     }
 };
 

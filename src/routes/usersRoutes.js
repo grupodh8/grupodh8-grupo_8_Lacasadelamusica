@@ -23,7 +23,8 @@ router.get('/login', usersController.login);
 router.post('/login', validationsLogin, usersController.loginAction);
 
 // User profile route
-router.get('/profile/:id', usersController.profile);
+// router.get('/profile/:id', usersController.profile);
+router.get('/profile/', usersController.profile);
 
 
 // Exports
