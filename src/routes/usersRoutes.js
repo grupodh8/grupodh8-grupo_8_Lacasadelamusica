@@ -5,7 +5,12 @@ const { body, check, validationResult } = require('express-validator');
 const usersController = require('../controllers/usersController');
 
 const validations = [
-    body('first_name').notEmpty().bail()
+    body('first_name').notEmpty(),
+    body('last_name').notEmpty(),
+    body('address').notEmpty(),
+    body('city').notEmpty(),
+    body('zip').notEmpty().isInt(),
+    body('email').isEmail(),
 ]
 
 // Ruta de registro
