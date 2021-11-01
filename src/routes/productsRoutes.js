@@ -26,7 +26,7 @@ const validationsProducts = [
     body('price').notEmpty().withMessage('Debes ingresar un precio').bail()
     .isNumeric().withMessage('Debes ingresar un precio valido'),
     body('category').notEmpty().withMessage('Debes seleccionar una categoria'),
-    body('clasificacion').notEmpty().withMessage('Debes seleccionar una clasificacion'),
+    body('classification').notEmpty().withMessage('Debes seleccionar una clasificacion'),
     body('type').notEmpty().withMessage('Debes especificar el tipo de producto'),
     body('description').notEmpty().withMessage('Debes ingresar una descripcion'),
     body('image1').custom((value, { req }) => {

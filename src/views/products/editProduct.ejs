@@ -34,8 +34,8 @@
                         <label for="category" class="label-1">Categoría:</label>
                         <select name="category" id="category" class="input-select <%= (locals.errors && errors.category) ? 'input-danger' : null %>">
                             <option value=""></option>
-                            <option value="main-top" <%= locals.oldData && (oldData.category === 'main-top') ? 'selected' : ' ' %>>Nuevos Productos</option>
-                            <option value="main-bottom" <%= locals.oldData && (oldData.category === 'main-bottom') ? 'selected' : ' ' %>>Ofertas Destacadas</option>
+                            <option value="main-top" <%= (locals.oldData && oldData.category === "main-top") || (productToEdit.category === "main-top") ? 'selected' : ' ' %>>Nuevos Productos</option>
+                            <option value="main-bottom" <%= (locals.oldData && oldData.category === "main-bottom") || (productToEdit.category === "main-bottom") ? 'selected' : ' ' %>>Ofertas Destacadas</option>
                         </select>
                         <% if (locals.errors && errors.category) { %>
                             <div class="warning-text">
@@ -45,25 +45,25 @@
                             <% } %>
                     </div>
                     <div class="casillero">
-                        <label for="clasificacion" class="label-1">Clasificacion:</label>
-                        <select name="clasificacion" id="clasificacion" class="input-select <%= (locals.errors && errors.clasificacion) ? 'input-danger' : null %>">
+                        <label for="classification" class="label-1">classification:</label>
+                        <select name="classification" id="classification" class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %>">
                             <option value=""></option>
-                            <option value="guitars" <%= locals.oldData && oldData.clasificacion === "guitars" ? 'selected' : '' %>>Guitarras</option>
-                            <option value="bass" <%= locals.oldData && oldData.clasificacion === "bass" ? 'selected' : '' %>>Bajos</option>
-                            <option value="accesories" <%= locals.oldData && oldData.clasificacion === "accesories" ? 'selected' : '' %>>Accesorios</option>
-                            <option value="audio" <%= locals.oldData && oldData.clasificacion === "audio" ? 'selected' : '' %>>Audio</option>
-                            <option value="services" <%= locals.oldData && oldData.clasificacion === "services" ? 'selected' : '' %>>Servicios</option>
+                            <option value="guitars" <%= (locals.oldData && oldData.classification === "guitars") || (productToEdit.classification === "guitars") ? 'selected' : '' %>>Guitarras</option>
+                            <option value="bass" <%= (locals.oldData && oldData.classification === "bass") || (productToEdit.classification === "bass") ? 'selected' : '' %>>Bajos</option>
+                            <option value="accesories" <%= (locals.oldData && oldData.classification === "accesories") || (productToEdit.classification === "accesories") ? 'selected' : '' %>>Accesorios</option>
+                            <option value="audio" <%= (locals.oldData && oldData.classification === "audio") || (productToEdit.classification === "audio") ? 'selected' : '' %>>Audio</option>
+                            <option value="services" <%= (locals.oldData && oldData.classification === "services") || (productToEdit.classification === "services") ? 'selected' : '' %>>Servicios</option>
                         </select>
-                        <% if (locals.errors && errors.clasificacion) { %>
+                        <% if (locals.errors && errors.classification) { %>
                             <div class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
-                                <%= errors.clasificacion.msg %>
+                                <%= errors.classification.msg %>
                             </div>
                             <% } %>
                     </div>
                     <div class="casillero">
                         <label for="type" class="label-1">Tipo de producto:</label>
-                        <input type="text" name="type" value="<%= locals.oldData ? oldData.type : productToEdit.tipo %>"
+                        <input type="text" name="type" value="<%= locals.oldData ? oldData.type : productToEdit.type %>"
                             class="input-1 <%= (locals.errors && errors.type) ? 'input-danger' : null %>">
                         <% if (locals.errors && errors.type) { %>
                             <div class="warning-text">
@@ -92,8 +92,7 @@
                             <input 
                             type="file" 
                             name="image1" 
-                            class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>"
-                            value="231rafa.jpg">
+                            class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>">
                             <% if (locals.errors && errors.image1) { %>                            
                                 <div class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>

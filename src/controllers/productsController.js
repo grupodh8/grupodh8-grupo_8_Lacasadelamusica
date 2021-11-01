@@ -34,8 +34,8 @@ const productsController = {
 			name: req.body.name,
             price: req.body.price,
 			category: req.body.category,
-			clasificacion: req.body.classification,
-			tipo: req.body.type,
+			classification: req.body.classification,
+			type: req.body.type,
 			description: req.body.description,
             image1: file.filename,
             image2: '-'
@@ -72,8 +72,8 @@ const productsController = {
 			name: req.body.name,
             price: req.body.price,
 			category: req.body.category,
-			clasificacion: req.body.classification,
-			tipo: req.body.type,
+			classification: req.body.classification,
+			type: req.body.type,
 			description: req.body.description,
             image1: file.filename,
             image2: '-'

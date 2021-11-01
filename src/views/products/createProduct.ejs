@@ -45,19 +45,19 @@
                             <% } %>
                     </div>
                     <div class="casillero">
-                        <label for="clasificacion" class="label-1">Clasificacion:</label>
-                        <select name="clasificacion" id="clasificacion" class="input-select <%= (locals.errors && errors.clasificacion) ? 'input-danger' : null %>">
+                        <label for="classification" class="label-1">classification:</label>
+                        <select name="classification" id="classification" class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %>">
                             <option value=""></option>
-                            <option value="guitars" <%= locals.oldData && oldData.clasificacion === "guitars" ? 'selected' : '' %>>Guitarras</option>
-                            <option value="bass" <%= locals.oldData && oldData.clasificacion === "bass" ? 'selected' : '' %>>Bajos</option>
-                            <option value="accesories" <%= locals.oldData && oldData.clasificacion === "accesories" ? 'selected' : '' %>>Accesorios</option>
-                            <option value="audio" <%= locals.oldData && oldData.clasificacion === "audio" ? 'selected' : '' %>>Audio</option>
-                            <option value="services" <%= locals.oldData && oldData.clasificacion === "services" ? 'selected' : '' %>>Servicios</option>
+                            <option value="guitars" <%= locals.oldData && oldData.classification === "guitars" ? 'selected' : '' %>>Guitarras</option>
+                            <option value="bass" <%= locals.oldData && oldData.classification === "bass" ? 'selected' : '' %>>Bajos</option>
+                            <option value="accesories" <%= locals.oldData && oldData.classification === "accesories" ? 'selected' : '' %>>Accesorios</option>
+                            <option value="audio" <%= locals.oldData && oldData.classification === "audio" ? 'selected' : '' %>>Audio</option>
+                            <option value="services" <%= locals.oldData && oldData.classification === "services" ? 'selected' : '' %>>Servicios</option>
                         </select>
-                        <% if (locals.errors && errors.clasificacion) { %>
+                        <% if (locals.errors && errors.classification) { %>
                             <div class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
-                                <%= errors.clasificacion.msg %>
+                                <%= errors.classification.msg %>
                             </div>
                             <% } %>
                     </div>
