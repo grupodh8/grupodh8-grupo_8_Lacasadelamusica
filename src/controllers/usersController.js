@@ -101,6 +101,11 @@ const usersController = {
 
     profile: (req, res) => {
         res.render('profile', { user: req.session.loggedUser })
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     }
 };
 

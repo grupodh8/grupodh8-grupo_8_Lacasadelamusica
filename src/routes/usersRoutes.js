@@ -28,6 +28,8 @@ router.post('/login', validationsLogin, usersController.loginAction);
 // router.get('/profile/:id', usersController.profile);
 router.get('/profile/', authMiddleware, usersController.profile);
 
+// logout controller
+router.get('/logout/', usersController.logout);
 
 // Exports
 module.exports = router;
