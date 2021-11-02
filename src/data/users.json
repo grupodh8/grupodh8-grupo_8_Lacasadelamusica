@@ -7,7 +7,7 @@
   "city": "Curug",
   "zip": null,
   "email": "sglover0@usda.gov",
-  "password": "6N5kJWI",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/uteaquia.png?size=50x50&set=set1"
  },
  {
@@ -18,7 +18,7 @@
   "city": "Ketitang Wetan",
   "zip": null,
   "email": "gmcgarvie1@yelp.com",
-  "password": "5aHSC0XnICTu",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/idquisquia.png?size=50x50&set=set1"
  },
  {
@@ -29,7 +29,7 @@
   "city": "Vale das Mós",
   "zip": "2205-806",
   "email": "eranner2@webmd.com",
-  "password": "XfuyWA",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/ututnostrum.png?size=50x50&set=set1"
  },
  {
@@ -40,7 +40,7 @@
   "city": "Roissy Charles-de-Gaulle",
   "zip": "95719 CEDEX 1",
   "email": "glorans3@vk.com",
-  "password": "vq1ZgFutzW",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/omnisatqueautem.png?size=50x50&set=set1"
  },
  {
@@ -51,7 +51,7 @@
   "city": "Igurubi",
   "zip": null,
   "email": "sewbanck4@macromedia.com",
-  "password": "zSWnVnkaObZa",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/laudantiumvoluptatemnatus.png?size=50x50&set=set1"
  },
  {
@@ -62,7 +62,7 @@
   "city": "Hartford",
   "zip": "06105",
   "email": "vchorley5@soundcloud.com",
-  "password": "Vvb98O",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/omnisrepellatillum.png?size=50x50&set=set1"
  },
  {
@@ -73,7 +73,7 @@
   "city": "Toyooka",
   "zip": "999-8316",
   "email": "ayuryshev6@gizmodo.com",
-  "password": "ULDVVuX9D4",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/voluptasdolorestempore.png?size=50x50&set=set1"
  },
  {
@@ -84,7 +84,18 @@
   "city": "General Conesa",
   "zip": "8503",
   "email": "mbucklan7@aol.com",
-  "password": "cP2b2f",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
   "profileimage": "https://robohash.org/sitquiaperferendis.png?size=50x50&set=set1"
+ },
+ {
+  "id": 9,
+  "first_name": "Gonzalo",
+  "last_name": "Villagra",
+  "address": "Costa Rica 485",
+  "city": "Alberdi",
+  "zip": "4152",
+  "email": "gvillagraa@hotmail.com",
+  "password": "$2a$10$SbjAA51jr53NpRbrnyYTeuGdRpAljCvxVrVHbxD3MayztpPI9j3F.",
+  "avatar": "1635812017229_img_.jpg"
  }
 ]

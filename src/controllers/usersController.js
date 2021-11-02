@@ -19,67 +19,85 @@ const usersController = {
 
     // Register form controller
 
-    register: (req,res) => {
+    register: (req, res) => {
         res.render('register');
     },
 
     // Store new user controller
-    
+
     store: (req, res) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            return res.render('register', { 
-                errors : resultValidation.mapped(),
-                oldData : req.body 
+            return res.render('register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
             });
         }
 
         let userInDatabase = User.findUserByField('email', req.body.email);
 
         if (userInDatabase) {
-            return res.render('register', { 
-                errors : {
+            return res.render('register', {
+                errors: {
                     email: {
                         msg: 'Este email ya fue registrado'
                     }
                 },
-                oldData : req.body 
+                oldData: req.body
             });
         }
 
         let userToCreate = {
-            ... req.body,
+            ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),
             avatar: req.file.filename
         }
 
 
         let userCreated = User.create(userToCreate);
-		return res.redirect('/users/login');
+        return res.redirect('/users/login');
     },
 
     // Login form controller
 
-    login: (req,res) => {
+    login: (req, res) => {
         res.render('login');
     },
 
     // Process login controller
 
-    loginAction: (req,res) => {
+    loginAction: (req, res) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            return res.render('login', { 
-                errors : resultValidation.mapped() 
+            return res.render('login', {
+                errors: resultValidation.mapped()
             });
-        } else {
-            res.redirect('/profile');
         }
+
+        let userToLogin = User.findUserByField('email', req.body.email);
+        if (userToLogin) {
+            let passwordCompare = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if (passwordCompare) {
+                return res.redirect('/users/profile')
+            }
+        }
+
+        return res.render('login', {
+            errors: {
+                email: {
+                    msg: 'Credenciales invalidas'
+                },
+                password: {
+                    msg: 'Credenciales invalidas'
+                }
+            }
+        });
+
     },
 
     // Profile controller
 
-    profile: (req,res) => {
+    profile: (req, res) => {
         res.render('profile')
     }
 };
