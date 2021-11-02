@@ -6,4 +6,4 @@ const validationsLogin = [
     body('password').notEmpty().withMessage('Ingresa tu contraseña')
 ];
 
-module.exports= validationsLogin;
+module.exports = validationsLogin;

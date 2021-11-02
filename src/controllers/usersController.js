@@ -67,6 +67,7 @@ const usersController = {
     // Process login controller
 
     loginAction: (req, res) => {
+
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render('login', {
@@ -75,11 +76,29 @@ const usersController = {
         }
 
         let userToLogin = User.findUserByField('email', req.body.email);
+
         if (userToLogin) {
             let passwordCompare = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if (passwordCompare) {
-                delete userToLogin.password;
-                req.session.loggedUser = userToLogin;
+                
+
+                let userNeeded = {
+                    id: userToLogin.id,
+                    first_name: userToLogin.first_name,
+                    last_name: userToLogin.last_name,
+                    address: userToLogin.address,
+                    city: userToLogin.city,
+                    zip: userToLogin.zip,
+                    email: userToLogin.email,
+                    avatar: userToLogin.avatar
+                }
+                req.session.loggedUser = userNeeded;
+
+                if(req.body.remember_me) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
+                }                
+
+
                 return res.redirect('/users/profile')
             }
         }
@@ -104,8 +123,9 @@ const usersController = {
     },
 
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
-        return res.redirect('/');
+        res.redirect('/');
     }
 };
 

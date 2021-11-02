@@ -9,8 +9,6 @@ const uploadFile = require('../middlewares/usersMulterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-// Multer configuration
-
 
 // Register form route
 router.get('/register', guestMiddleware, usersController.register);
