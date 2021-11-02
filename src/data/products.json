@@ -11,7 +11,7 @@
         "image2": "cory-2.jpg"
     },
     {
-        "id": 4,
+        "id": 2,
         "name": "Les Paul Junior®",
         "price": "233.139",
         "category": "main-top",
@@ -22,7 +22,7 @@
         "image2": "les-paul-junior-2.jpg"
     },
     {
-        "id": 5,
+        "id": 3,
         "name": "Micro Pedal Mooer Drive Mki",
         "price": "9.819",
         "category": "main-bottom",
@@ -33,14 +33,45 @@
         "image2": "mooer-2.jpg"
     },
     {
+        "id": 5,
+        "name": "Guitarra 2",
+        "price": "13000",
+        "category": "main-top",
+        "classification": "guitars",
+        "type": "Guitarra 2",
+        "description": "Guitarra 2",
+        "image1": "1635866947177_img_.png",
+        "image2": "-"
+    },
+    {
+        "id": 6,
+        "name": "Guitarra",
+        "price": "12222",
+        "category": "main-top",
+        "classification": "guitars",
+        "type": "Guitarra",
+        "description": "Guitarra",
+        "image1": "1635867863344_img_.png",
+        "image2": "-"
+    },
+    {
         "id": 7,
-        "name": "Microfono Condenser Samson",
-        "price": "25.861",
-        "category": "main-bottom",
-        "classification": "audio",
-        "type": "DE MANO",
-        "description": "El C03 es un micrófono condensador de mano que sobresale en el rendimiento en vivo y grabación. Equipado con una frecuencia lineal de respuesta para la reproducción de calidad, que también está diseñada para soportar altos niveles de presión de sonido.",
-        "image1": "samson-1.jpg",
-        "image2": "samson-2.jpg"
+        "name": "test",
+        "price": "12503",
+        "category": "main-top",
+        "classification": "guitars",
+        "type": "test",
+        "description": "test",
+        "image1": "1635867909505_img_.png",
+        "image2": "-"
+    },
+    {
+        "id": 8,
+        "name": "test test",
+        "price": "12333",
+        "category": "main-top",
+        "classification": "guitars",
+        "type": "test test",
+        "description": "test test"
     }
 ]

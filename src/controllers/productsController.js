@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
+const { fields } = require('../middlewares/productMulterMiddleware');
 
 // JSON to JS array of products database
 
@@ -18,6 +19,21 @@ const productsController = {
 
     all: (req,res) => {
         res.render('products', {products: products})
+    },
+
+	getAllProducts: function () {
+        let products2 = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        return products2
+    },
+
+	createId: function () {
+        let allProductsSet = this.getAllProducts();
+        let lastProduct = allProductsSet.pop();
+        if (lastProduct) {
+            return lastProduct.id + 1;
+        } else {
+            return 1;
+        }
     },
 
 	// Product detail controller
@@ -43,21 +59,18 @@ const productsController = {
                 oldData : req.body 
             });
         } else {
-			let file = req.file
+			let productsOriginal = productsController.getAllProducts();
+			let id = productsController.createId();
+			let file = req.file;
 			let newProduct = {
-			id: products.length + 1,
-			name: req.body.name,
-            price: req.body.price,
-			category: req.body.category,
-			classification: req.body.classification,
-			type: req.body.type,
-			description: req.body.description,
-            image1: file.filename,
-            image2: '-'
+			id: id,
+			... req.body,
+			image1: file.filename,
+			image2: '-'
 			}
 
-			products.push(newProduct);
-			productsJSON = JSON.stringify(products);
+			productsOriginal.push(newProduct);
+			productsJSON = JSON.stringify(productsOriginal);
 			fs.writeFileSync(productsFilePath, productsJSON);
 
 			res.redirect('/products');
