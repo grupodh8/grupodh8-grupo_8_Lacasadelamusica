@@ -1,14 +1,22 @@
-<%- include('./partials/head', {title: 'Iniciar sesion - La Casa de la Musica'}) %>
+<%- include('./partials/head', {title: 'Tu perfil - La Casa de la Musica' }) %>
 
-<body>
-    <%- include('./partials/header') %>
+    <body>
+        <%- include('./partials/header') %>
 
-    <main>
+            <main>
+                <div class="contenedor-perfil">
+                    <img class="avatar-perfil" src="/images/users/<%= user.avatar %>">
 
-        <h1>Bienvenido usuario <%= user.first_name %></h1>
+                    <h1 class="h1-profile">Bienvenido, <%= user.first_name %>!</h1>
+                    <h2 class="h2-profile"><i class="fas fa-user-circle"></i> Tu informacion:</h2>
 
-    </main>
-    <%- include('./partials/footer') %>
-</body>
+                    <p><i class="fas fa-id-card"></i> Nombre: <%= user.first_name %> <%= user.last_name %></p>
+                    <p><i class="fas fa-map-marked-alt"></i> Direccion: <%= user.address %>, <%= user.city %> - <%= user.zip %></p>
+                    <p><i class="far fa-envelope"></i> Correo electronico: <%= user.email %></p>
 
-</html>
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+    </html>

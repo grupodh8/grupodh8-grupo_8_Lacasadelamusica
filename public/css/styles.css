@@ -606,6 +606,34 @@ footer a {
     width: 100%;
 }
 
+.avatar-navbar {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px 0 30px 50px;
+    margin: 30px 30px 30px 50px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.h1-profile {
+    display: flex;
+}       
+
+.avatar-perfil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid black
+}
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {

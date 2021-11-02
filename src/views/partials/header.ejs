@@ -16,11 +16,11 @@
 
                 <% if (locals.isLogged) { %>
                 
-                <li><a class="items-show-mobile  hide-in-small" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i>HOLA <%= locals.loggedUser.first_name %>!</a>
+                <li><a class="items-show-mobile  hide-in-small" href="/users/profile"> <img class="avatar-navbar" src="/images/users/<%= locals.loggedUser.avatar %>" alt=""> Hola, <%= locals.loggedUser.first_name %>!</a>
                 </li>
                 <li><a class="items-show-mobile  hide-in-desktop" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i></a>
                 </li>
-                <li><a class="items-show-mobile" href="/users/logout"></i>LOGOUT</a>
+                <li><a class="items-show-mobile" href="/users/logout"></i>Logout</a>
                 </li>
                 <% } else { %>
                 <li><a class="items-show-mobile" href="/users/login"><i id="iconos-barra" class="fas fa-user-circle"></i>LOGIN</a>
