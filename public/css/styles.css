@@ -38,10 +38,10 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 0px;
     list-style-type: none;
     margin: 0;
     padding: 0;    
+    margin-right: -5px;
 }
 
 .header-principal {
@@ -55,10 +55,18 @@ header {
 /* ---------- LOGO BARRA SUPERIOR ---------- */
 
 .imagen-logo {
+    display: none;
     margin-left: -5px;
     border-radius: 20px;
     width: 150px;
 }
+
+.imagen-logo-mobile {
+    display: flex;
+    width: 60px;
+    margin-left: -15px;
+}
+
 
 /* ---------- ITEMS DE BARRA DE NAVEGACION OCULTOS EN VERSION MOBILE ---------- */
 
@@ -94,7 +102,7 @@ header {
 /* ---------- ITEMS DE BARRA DE NAVEGACION A MOSTRAR VERSION MOBILE Y DESKTOP ---------- */
 
 .items-show-mobile, .boton-sandwich {
-    font-size: 15px;
+    font-size: 14px;
     color: white;
     text-decoration: none;
     margin: 3px;
@@ -583,15 +591,13 @@ footer a {
     border: 2px solid red;
 }
 
+.hide-in-small {
+    display: none;
+}
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {
-
-    /* ---------- CAMBIO MARGENES BARRA DE NAVEGACION ---------- */
-
-    .barra-items {
-        margin-right: 15px;
-    }
 
     /* ---------- CAMBIO DE ARTICULOS PAGINA PRINCIPAL ---------- */
 
@@ -615,11 +621,27 @@ footer a {
         width: 180px;
     }
 
+    
 }
 
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 768PX ---------- */
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
+
+    .barra-items {
+        margin-right: 15px;
+    }
+
+    .imagen-logo {
+        display: flex;
+        margin-left: -5px;
+        border-radius: 20px;
+        width: 150px;
+    }
+
+    .imagen-logo-mobile {
+        display: none;
+    }
 
     /* ---------- CAMBIOS EN LOGO DE PAGINA TITULO ---------- */
 
@@ -765,5 +787,9 @@ footer a {
         width: 180px;
     }
 
+
+    .hide-in-desktop {
+        display: none;
+    }
 
 }

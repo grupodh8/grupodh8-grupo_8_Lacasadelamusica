@@ -2,21 +2,23 @@
     <header class="header-principal">
         <div class="logo">
             <a href="/"><img class="imagen-logo" src="/images/logo.png" alt="logo de Casa de La Musica"></a>
+            <a href="/"><img class="imagen-logo-mobile" src="/images/logo-icon.png" alt="logo de Casa de La Musica"></a>
         </div>
         <nav class="barra-navegacion">
             <ul class="barra-items">
                 <li><a class="items-noshow-mobile" href="#">Guitarras</a></li>
                 <li><a class="items-noshow-mobile" href="#">Bajos</a></li>
                 <li><a class="items-noshow-mobile" href="#">Accesorios</a></li>
-                <li><a class="items-noshow-mobile" href="#">Audio</a></li>
-                <li><a class="items-noshow-mobile-last" href="#">Servicios</a></li>
+                <li><a class="items-noshow-mobile-last" href="#">Audio</a></li>
                 <li><a class="items-show-mobile" href="/cart"><i id="iconos-barra"
                             class="fas fa-shopping-cart"></i></a></li>
                 <li><a class="items-show-mobile" href="#"><i id="iconos-barra" class="fas fa-search"></i></a></li>
 
                 <% if (locals.isLogged) { %>
                 
-                <li><a class="items-show-mobile" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i>HOLA!</a>
+                <li><a class="items-show-mobile  hide-in-small" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i>HOLA!</a>
+                </li>
+                <li><a class="items-show-mobile  hide-in-desktop" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i></a>
                 </li>
                 <li><a class="items-show-mobile" href="/users/logout"></i>LOGOUT</a>
                 </li>
@@ -24,7 +26,7 @@
                 <li><a class="items-show-mobile" href="/users/login"><i id="iconos-barra" class="fas fa-user-circle"></i>LOGIN</a>
                 </li>
                 <% } %>
-                <li><a class="boton-sandwich" href="#"><i id="iconos-barra" class="fas fa-bars"></i></a></i></a></li>
+                <!-- <li><a class="boton-sandwich" href="#"><i id="iconos-barra" class="fas fa-bars"></i></a></i></a></li> -->
             </ul>
         </nav>
     </header>
