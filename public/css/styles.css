@@ -75,6 +75,7 @@ header {
     border-right: 3px solid white;
 }
 
+
 /* ---------- ULTIMO DE ITEMS OCULTOS EN VERSION MOBILE (PARA EVITAR BORDE DERECHO) ---------- */
 
 .items-noshow-mobile-last {
@@ -647,7 +648,7 @@ footer a {
     }
 
     .items-show-mobile {
-        font-size: 17px;
+        font-size: 13px;
         color: white;
         text-decoration: none;
         margin: 3px;
