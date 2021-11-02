@@ -6,18 +6,19 @@ const usersController = require('../controllers/usersController');
 const validationsRegister = require('../middlewares/validateRegisterMiddleware');
 const validationsLogin = require('../middlewares/validateLoginMiddleware');
 const uploadFile = require('../middlewares/usersMulterMiddleware');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 // Multer configuration
 
 
 // Register form route
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 
 // Register process route
 router.post('/register', uploadFile.single('profileimage'), validationsRegister, usersController.store);
 
 // Login form route
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 
 // Login process route
 router.post('/login', validationsLogin, usersController.loginAction);
