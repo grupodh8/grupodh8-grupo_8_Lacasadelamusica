@@ -7,6 +7,7 @@ const validationsRegister = require('../middlewares/validateRegisterMiddleware')
 const validationsLogin = require('../middlewares/validateLoginMiddleware');
 const uploadFile = require('../middlewares/usersMulterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Multer configuration
 
@@ -25,7 +26,7 @@ router.post('/login', validationsLogin, usersController.loginAction);
 
 // User profile route
 // router.get('/profile/:id', usersController.profile);
-router.get('/profile/', usersController.profile);
+router.get('/profile/', authMiddleware, usersController.profile);
 
 
 // Exports
