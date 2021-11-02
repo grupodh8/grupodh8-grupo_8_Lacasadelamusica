@@ -1,14 +1,14 @@
-<%- include('./partials/head', {title: 'Iniciar sesion - La Casa de la Musica'}) %>
+<%- include('./partials/head', {title: 'Error - La Casa de la Musica' }) %>
 
-<body>
-    <%- include('./partials/header') %>
+    <body>
+        <%- include('./partials/header') %>
 
-    <main>
+            <main>
+                <div class="contenedor-imagen-error">
+                    <img class="imagen-error" src="/images/error-404.png" alt="logo de Casa de La Musica">
+                </div>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
-        <h1>Recurso no encontrado</h1>
-
-    </main>
-    <%- include('./partials/footer') %>
-</body>
-
-</html>
+    </html>

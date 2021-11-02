@@ -595,6 +595,17 @@ footer a {
     display: none;
 }
 
+.contenedor-imagen-error {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-error {
+    width: 100%;
+}
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {
@@ -624,9 +635,15 @@ footer a {
     
 }
 
+
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 768PX ---------- */
 
 @media (min-width: 769px) {
+
+    .imagen-error {
+        width: 50%;
+    }
 
     .barra-items {
         margin-right: 15px;
