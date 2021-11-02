@@ -23,6 +23,28 @@
     },
     {
         "id": 3,
+        "name": "Cory Wong Stratocaster®",
+        "price": "229.819",
+        "category": "main-top",
+        "classification": "guitars",
+        "type": "ELECTRICAS",
+        "description": "El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.",
+        "image1": "noventa-1.jpg",
+        "image2": "noventa-2.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Les Paul '50s®",
+        "price": "399.234",
+        "category": "main-top",
+        "classification": "guitars",
+        "type": "ELECTRICAS",
+        "description": "El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.",
+        "image1": "les-paul-50-1.jpg",
+        "image2": "les-paul-50-2.jpg"
+    },
+    {
+        "id": 5,
         "name": "Micro Pedal Mooer Drive Mki",
         "price": "9.819",
         "category": "main-bottom",
@@ -33,45 +55,36 @@
         "image2": "mooer-2.jpg"
     },
     {
-        "id": 5,
-        "name": "Guitarra 2",
-        "price": "13000",
-        "category": "main-top",
-        "classification": "guitars",
-        "type": "Guitarra 2",
-        "description": "Guitarra 2",
-        "image1": "1635866947177_img_.png",
-        "image2": "-"
-    },
-    {
         "id": 6,
-        "name": "Guitarra",
-        "price": "12222",
-        "category": "main-top",
-        "classification": "guitars",
-        "type": "Guitarra",
-        "description": "Guitarra",
-        "image1": "1635867863344_img_.png",
-        "image2": "-"
+        "name": "Micro Pedal Mooer",
+        "price": "19.819",
+        "category": "main-bottom",
+        "classification": "accesories",
+        "type": "PEDALES",
+        "description": "El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.",
+        "image1": "mooer2-1.jpg",
+        "image2": "mooer2-2.jpg"
     },
     {
         "id": 7,
-        "name": "test",
-        "price": "12503",
-        "category": "main-top",
-        "classification": "guitars",
-        "type": "test",
-        "description": "test",
-        "image1": "1635867909505_img_.png",
+        "name": "Microfono Cobratero",
+        "price": "7.450",
+        "category": "main-bottom",
+        "classification": "accesories",
+        "type": "MICROFONOS",
+        "description": "El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.",
+        "image1": "1635873822523_img_.jpg",
         "image2": "-"
     },
     {
         "id": 8,
-        "name": "test test",
-        "price": "12333",
-        "category": "main-top",
-        "classification": "guitars",
-        "type": "test test",
-        "description": "test test"
+        "name": "Microfono Samson",
+        "price": "32.129",
+        "category": "main-bottom",
+        "classification": "accesories",
+        "type": "MICROFONOS",
+        "description": "El pedal de efectos de distorsión UltraDrive MKII de Mooer MEP-UD incluye un sonido increíblemente GRANDE en un paquete muy pequeño. Cree tonos de amplificador de rock clásicos con nuestro pedal de distorsión UltraDrive. Perfecto para sonidos de guitarra de rock clásico.",
+        "image1": "samson-1.jpg",
+        "image2": "samson-2.jpg"
     }
 ]
