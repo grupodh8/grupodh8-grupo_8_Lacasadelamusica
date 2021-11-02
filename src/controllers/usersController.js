@@ -92,10 +92,11 @@ const usersController = {
                     email: userToLogin.email,
                     avatar: userToLogin.avatar
                 }
+
                 req.session.loggedUser = userNeeded;
 
                 if(req.body.remember_me) {
-                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 });
+                    res.cookie('userEmail', req.session.loggedUser.email, { maxAge: (1000 * 60) * 2 });
                 }                
 
 

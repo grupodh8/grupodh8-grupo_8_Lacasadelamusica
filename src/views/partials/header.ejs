@@ -16,7 +16,7 @@
 
                 <% if (locals.isLogged) { %>
                 
-                <li><a class="items-show-mobile  hide-in-small" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i>HOLA!</a>
+                <li><a class="items-show-mobile  hide-in-small" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i>HOLA <%= locals.loggedUser.first_name %>!</a>
                 </li>
                 <li><a class="items-show-mobile  hide-in-desktop" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i></a>
                 </li>

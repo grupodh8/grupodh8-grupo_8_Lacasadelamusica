@@ -5,7 +5,7 @@ function navBarSessionMiddleware (req, res, next) {
 
     let emailInCookie = req.cookies.userEmail;
     let userFromCookie = User.findUserByField('email', emailInCookie);
-
+    
     if (userFromCookie) {
         req.session.loggedUser = userFromCookie;
     }
