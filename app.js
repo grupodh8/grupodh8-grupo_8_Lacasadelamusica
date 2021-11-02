@@ -26,5 +26,15 @@ app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes)
 
+
+app.use((req, res, next) => next(createError(404)));
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.render('not-found');
+});
+
+
 let puerto = 3000;
 app.listen(process.env.PORT || puerto, () => { console.log(`Servidor corriendo en http://localhost:${puerto}`) });
+
+
