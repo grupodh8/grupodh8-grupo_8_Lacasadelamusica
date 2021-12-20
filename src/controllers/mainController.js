@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 // JSON to JS array of products database
 
@@ -15,7 +16,10 @@ const mainController = {
     // Index controller
 
     index: (req,res) => {
-        res.render('index', {products: products});
+        db.Product.findAll()
+            .then((products) => {
+                res.render('index', {products: products});
+            })
     },
 
     // Shopping cart controller

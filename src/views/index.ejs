@@ -13,18 +13,18 @@
         <section class="contenedor-articulos">
             <!-- PRODUCTOS PRINCIPALES INDEX-->
 			
-            <% products.forEach((producto) => { %>
-				<% if (producto.category == "main-top") { %>
-                    <%- include('./partials/productCard', {producto : producto}) %>
+            <% products.forEach((product) => { %>
+				<% if (product.classification == "main-top") { %>
+                    <%- include('./partials/productCard', {product : product}) %>
 			<% }}) %>            
 
             <!-- PRODUCTOS SECCION INFERIOR-->
         </section>
         <h3>OFERTAS DESTACADAS</h3>
         <section class="contenedor-articulos">
-            <% products.forEach((producto) => { %>
-				<% if (producto.category == "main-bottom") { %>
-                    <%- include('./partials/productCard', {producto : producto}) %>
+            <% products.forEach((product) => { %>
+				<% if (product.classification == "main-bottom") { %>
+                    <%- include('./partials/productCard', {product : product}) %>
 			<% }}) %>  
         </section>
 
