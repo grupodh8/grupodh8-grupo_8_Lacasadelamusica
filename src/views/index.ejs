@@ -12,20 +12,16 @@
         <h3>Nuevos Productos</h3>
         <section class="contenedor-articulos">
             <!-- PRODUCTOS PRINCIPALES INDEX-->
-			
-            <% products.forEach((product) => { %>
-				<% if (product.classification == "main-top") { %>
+            <% top.forEach((product) => { %>
                     <%- include('./partials/productCard', {product : product}) %>
-			<% }}) %>            
-
-            <!-- PRODUCTOS SECCION INFERIOR-->
+			<% }) %>            
         </section>
         <h3>OFERTAS DESTACADAS</h3>
         <section class="contenedor-articulos">
-            <% products.forEach((product) => { %>
-				<% if (product.classification == "main-bottom") { %>
+            <!-- PRODUCTOS SECCION INFERIOR-->
+            <% bottom.forEach((product) => { %>
                     <%- include('./partials/productCard', {product : product}) %>
-			<% }}) %>  
+			<% }) %>  
         </section>
 
         <form action="/products" method="GET" class="form-boton-allproducts">

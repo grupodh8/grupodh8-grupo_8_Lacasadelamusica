@@ -16,9 +16,25 @@ const mainController = {
     // Index controller
 
     index: (req,res) => {
-        db.Product.findAll()
-            .then((products) => {
-                res.render('index', {products: products});
+        let mainTopRequest = db.Product.findAll({
+            where: {
+                classification: 'main-top'
+            },
+            limit: 8
+        })
+        let mainBottomRequest = db.Product.findAll({
+            where: {
+                classification: 'main-bottom'
+            },
+            limit: 8
+        })
+
+        Promise.all([mainTopRequest, mainBottomRequest])
+			.then(function ([top, bottom]) {
+                res.render('index', {
+                    top: top,
+                    bottom: bottom
+                });
             })
     },
 
