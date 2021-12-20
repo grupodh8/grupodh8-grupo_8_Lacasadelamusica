@@ -5,16 +5,16 @@
 
     <main>
         <div class="detalle-producto">
-            <p class="clasificacion-productos"> <a href="">CATEGORIAS</a> > <a href=""><%= product.category.toUpperCase() %></a> > <a href=""><%= product.name.toUpperCase() %></a></p>
+            <p class="clasificacion-productos"> <a href="">CATEGORIAS</a> > <a href=""><%= product.categories.name.toUpperCase() %></a> > <a href=""><%= product.name.toUpperCase() %></a></p>
             <div class="titulo-2">
-                <h2 class="titulo-pagina-articulo"><%= product.name %></h2>
+                <h2 class="titulo-pagina-articulo"><%= product.name %> <%= product.brands.name %></h2>
                 <div class="iconos-titulo">
                     <p><i class="fas fa-cart-plus"></i></p>
                     <p class="icono-compartir"><i class="fas fa-share-alt"></i></p>
                 </div>
             </div>
             <div class="contenedor-imagen">
-            <img class="imagen-articulo-detalle" src="/images/products/<%= product.image1 %>" alt="imagen-de-producto">
+            <img class="imagen-articulo-detalle" src="/images/products/<%= product.image %>" alt="imagen-de-producto">
              </div>
             <div class="detalle-1">
                 <p class="acerca-de">SOBRE ESTE PRODUCTO:</p>

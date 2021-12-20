@@ -1,51 +1,51 @@
-module.exports = (sequelize, DataTypes) => {
-    let alias = "products";
+module.exports = (sequelize, dataTypes) => {
+    let alias = "Product";
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
         name: {
             allowNull: false,
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             unique: true
         },
         sku: {
             allowNull: false,
-            type: DataTypes.BIGINT,
+            type: dataTypes.BIGINT,
             unique: true
         },
         stock: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         description: {
-            type: DataTypes.TEXT
+            type: dataTypes.TEXT
         },
         category_id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         classification: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
         },
         type: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
         },
         price: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         image: {
-            type: DataTypes.STRING,
+            type: dataTypes.STRING,
             allowNull: false
         },
         brand_id: {
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -69,8 +69,6 @@ module.exports = (sequelize, DataTypes) => {
         });
     
       };
-
-
 
     return Product
 };

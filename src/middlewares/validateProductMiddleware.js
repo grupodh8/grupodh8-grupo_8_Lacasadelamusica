@@ -7,8 +7,11 @@ const validationsProducts = [
     body('name').notEmpty().withMessage('Debes ingresar el nombre del producto'),
     body('price').notEmpty().withMessage('Debes ingresar un precio').bail()
     .isNumeric().withMessage('Debes ingresar un precio valido'),
-    body('category').notEmpty().withMessage('Debes seleccionar una categoria'),
+    body('sku').notEmpty().withMessage('Debes ingresar un SKU'),
+    body('stock').notEmpty().withMessage('Debes ingresar un stock'),
     body('classification').notEmpty().withMessage('Debes seleccionar una clasificacion'),
+    body('category_id').notEmpty().withMessage('Debes seleccionar una categoria'),
+    body('brand_id').notEmpty().withMessage('Debes seleccionar una marca'),
     body('type').notEmpty().withMessage('Debes especificar el tipo de producto'),
     body('description').notEmpty().withMessage('Debes ingresar una descripcion'),
     body('image1').custom((value, { req }) => {

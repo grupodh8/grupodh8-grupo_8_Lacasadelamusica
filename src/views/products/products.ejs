@@ -8,9 +8,9 @@
                 <section class="contenedor-articulos">
                     <!-- TODOS LOS PRODUCTOS-->
 
-                    <% products.forEach((producto)=> { %>
-                        <% if (producto.category) { %>
-                            <%- include('./partials/productCard', {producto : producto}) %>
+                    <% products.forEach((product) => { %>
+                        <% if (product.category_id) { %>
+                            <%- include('./partials/productCard', {product : product}) %>
                                 <% }}) %>
                 </section>
                 <form action="/products/create" method="GET" class="form-boton-allproducts">

@@ -5,11 +5,7 @@ const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
 const { fields } = require('../middlewares/productMulterMiddleware');
-
-// JSON to JS array of products database
-
-let productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let db = require("../database/models");
 
 // Products controllers
 
@@ -17,115 +13,121 @@ const productsController = {
 
 	// Get all products controller
 
-    all: (req,res) => {
-        res.render('products', {products: products})
-    },
-
-	getAllProducts: function () {
-        let products2 = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        return products2
-    },
-
-	createId: function () {
-        let allProductsSet = this.getAllProducts();
-        let lastProduct = allProductsSet.pop();
-        if (lastProduct) {
-            return lastProduct.id + 1;
-        } else {
-            return 1;
-        }
-    },
+	all: (req, res) => {
+		db.Product.findAll()
+			.then((products) => {
+				res.render('products', { products: products })
+			})
+	},
 
 	// Product detail controller
 
-    detail: (req,res) => {
-        let productSelected = products.find(item => item.id == req.params.id);
-        res.render('productDetail', {product: productSelected })
-    },
+	detail: (req, res) => {
+		db.Product.findByPk(req.params.id, {
+			include: [{ association: "categories" }, { association: "brands" }]
+		})
+			.then((product) => {
+				res.render('productDetail', {
+					product: product,
+				});
+			});
+	},
 
 	// Create product controller
 
-    create: (req, res) => {
-		res.render('createProduct')
+	create: function (req, res) {
+		db.Category.findAll().then(function (categories) {
+			db.Brand.findAll().then(function (brands) {
+				res.render('createProduct', {
+					categories: categories,
+					brands: brands
+				});
+			});
+		});
+
 	},
 
 	// Store new product controller
 
-    store: (req, res) => {
+	store: (req, res) => {
 		const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render('createProduct', { 
-                errors : resultValidation.mapped(),
-                oldData : req.body 
-            });
-        } else {
-			let productsOriginal = productsController.getAllProducts();
-			let id = productsController.createId();
-			let file = req.file;
-			let newProduct = {
-			id: id,
-			... req.body,
-			image1: file.filename,
-			image2: '-'
-			}
-
-			productsOriginal.push(newProduct);
-			productsJSON = JSON.stringify(productsOriginal);
-			fs.writeFileSync(productsFilePath, productsJSON);
-
+		if (resultValidation.errors.length > 0) {
+			db.Category.findAll().then(function (categories) {
+				db.Brand.findAll().then(function (brands) {
+					res.render('createProduct', {
+						errors: resultValidation.mapped(),
+						oldData: req.body,
+						categories: categories,
+						brands: brands
+					});
+				});
+			});
+		} else {
+			db.Product.create({
+				...req.body,
+				image: req.file.filename,
+			});
 			res.redirect('/products');
-        }
+		}
 	},
 
 	// Edit product controller
 
-    edit: (req, res) => {
-		let productToEdit = products.find(product => product.id == req.params.id)
-		res.render('editProduct', { productToEdit: productToEdit })
+	edit: (req, res) => {
+		let productRequest = db.Product.findByPk(req.params.id);
+		let categoryRequest = db.Category.findAll();
+		let brandRequest = db.Brand.findAll();
+
+		Promise.all([productRequest, categoryRequest, brandRequest])
+			.then(function ([product, categories, brands]) {
+				res.render('editProduct', {
+					product: product,
+					categories: categories,
+					brands: brands
+				})
+			})
 	},
 
 	// Save product edit controller
 
 	update: (req, res) => {
-		let productToEdit = products.find(product => product.id == req.params.id)
-		const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render('editProduct', { 
-				errors : resultValidation.mapped(),
-				productToEdit : productToEdit,
-                oldData : req.body 
-            });
-        } else {
-			let file = req.file
-			let editedItem = {
-            id: parseInt(req.params.id),
-			name: req.body.name,
-            price: req.body.price,
-			category: req.body.category,
-			classification: req.body.classification,
-			type: req.body.type,
-			description: req.body.description,
-            image1: file.filename,
-            image2: '-'
-		}
+		let productRequest = db.Product.findByPk(req.params.id);
+		let categoryRequest = db.Category.findAll();
+		let brandRequest = db.Brand.findAll();
 
-			let indexToInsert = editedItem.id - 1;
-			products[indexToInsert] = editedItem;
-			let productsFinal = JSON.stringify(products);
-			fs.writeFileSync(productsFilePath, productsFinal);
-
-			res.redirect('/products');
-        }
+		Promise.all([productRequest, categoryRequest, brandRequest])
+			.then(function ([product, categories, brands]) {
+				const resultValidation = validationResult(req);
+				if (resultValidation.errors.length > 0) {
+					return res.render('editProduct', {
+						errors: resultValidation.mapped(),
+						oldData: req.body,
+						product: product,
+						categories: categories,
+						brands: brands
+					});
+				} else {
+					db.Product.update({
+						...req.body,
+						image: req.file.filename,
+					}, {
+						where: {
+							id: req.params.id
+						}
+					})
+				}
+				res.redirect('/products/' + req.params.id)
+			})
 	},
 
 	// Delete product controller
 
-    destroy: (req, res) => {
-		let idToDelete = req.params.id
-		let productsNew = products.filter(item => item.id != idToDelete)	
-		let productsJSON = JSON.stringify(productsNew);
-		fs.writeFileSync(productsFilePath, productsJSON);
-
+	destroy: (req, res) => {
+		db.Product.destroy({
+			where: {
+				id: req.params.id
+			}
+		})
 		res.redirect('/products');
 	}
 };

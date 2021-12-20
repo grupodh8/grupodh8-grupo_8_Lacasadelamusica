@@ -5,11 +5,12 @@
             <main>
                 <h3 class="titulo-login">EDITAR PRODUCTO</h3>
 
-                <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" class="formulario-login" enctype="multipart/form-data">
+                <form action="/products/<%= product.id %>?_method=PUT" method="POST" class="formulario-login"
+                    enctype="multipart/form-data">
                     <div class="primera-parte">
                         <div class="casillero">
                             <label for="name" class="label-1">Nombre del producto:</label>
-                            <input type="text" name="name" value="<%= locals.oldData ? oldData.name : productToEdit.name %>"
+                            <input type="text" name="name" value="<%= locals.oldData ? oldData.name : product.name %>"
                                 class="input-1 <%= (locals.errors && errors.name) ? 'input-danger' : null %>">
                             <% if (locals.errors && errors.name) { %>
                                 <div class="warning-text">
@@ -20,7 +21,8 @@
                         </div>
                         <div class="casillero">
                             <label for="price" class="label-1">Precio del producto:</label>
-                            <input type="text" name="price" value="<%= locals.oldData ? oldData.price : productToEdit.price %>"
+                            <input type="text" name="price"
+                                value="<%= locals.oldData ? oldData.price : product.price %>"
                                 class="input-1 <%= (locals.errors && errors.price) ? 'input-danger' : null %>">
                             <% if (locals.errors && errors.price) { %>
                                 <div class="warning-text">
@@ -29,30 +31,40 @@
                                 </div>
                                 <% } %>
                         </div>
-                    </div>
-                    <div class="casillero">
-                        <label for="category" class="label-1">Categoría:</label>
-                        <select name="category" id="category" class="input-select <%= (locals.errors && errors.category) ? 'input-danger' : null %>">
-                            <option value=""></option>
-                            <option value="main-top" <%= (locals.oldData && oldData.category === "main-top") || (productToEdit.category === "main-top") ? 'selected' : ' ' %>>Nuevos Productos</option>
-                            <option value="main-bottom" <%= (locals.oldData && oldData.category === "main-bottom") || (productToEdit.category === "main-bottom") ? 'selected' : ' ' %>>Ofertas Destacadas</option>
-                        </select>
-                        <% if (locals.errors && errors.category) { %>
-                            <div class="warning-text">
-                                <i class="fas fa-exclamation-circle"></i>
-                                <%= errors.category.msg %>
-                            </div>
-                            <% } %>
+                        <div class="casillero">
+                            <label for="sku" class="label-1">SKU:</label>
+                            <input type="number" name="sku" value="<%= locals.oldData ? oldData.sku : product.sku %>"
+                                class="input-1 <%= (locals.errors && errors.sku) ? 'input-danger' : null %>">
+                            <% if (locals.errors && errors.sku) { %>
+                                <div class="warning-text">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <%= errors.sku.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class="casillero">
+                            <label for="stock" class="label-1">Stock:</label>
+                            <input type="number" name="stock"
+                                value="<%= locals.oldData ? oldData.stock : product.stock %>"
+                                class="input-1 <%= (locals.errors && errors.stock) ? 'input-danger' : null %>">
+                            <% if (locals.errors && errors.stock) { %>
+                                <div class="warning-text">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <%= errors.stock.msg %>
+                                </div>
+                                <% } %>
+                        </div>
                     </div>
                     <div class="casillero">
                         <label for="classification" class="label-1">Clasificacion:</label>
-                        <select name="classification" id="classification" class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %>">
+                        <select name="classification" id="classification"
+                            class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %>">
                             <option value=""></option>
-                            <option value="guitars" <%= (locals.oldData && oldData.classification === "guitars") || (productToEdit.classification === "guitars") ? 'selected' : '' %>>Guitarras</option>
-                            <option value="bass" <%= (locals.oldData && oldData.classification === "bass") || (productToEdit.classification === "bass") ? 'selected' : '' %>>Bajos</option>
-                            <option value="accesories" <%= (locals.oldData && oldData.classification === "accesories") || (productToEdit.classification === "accesories") ? 'selected' : '' %>>Accesorios</option>
-                            <option value="audio" <%= (locals.oldData && oldData.classification === "audio") || (productToEdit.classification === "audio") ? 'selected' : '' %>>Audio</option>
-                            <option value="services" <%= (locals.oldData && oldData.classification === "services") || (productToEdit.classification === "services") ? 'selected' : '' %>>Servicios</option>
+                            <option value="main-top" <%=(locals.oldData && oldData.classification==='main-top' ) ||
+                                product.classification=='main-top' ? 'selected' : ' ' %>>Nuevos Productos</option>
+                            <option value="main-bottom" <%=(locals.oldData && oldData.classification==='main-bottom' )
+                                || product.classification=='main-bottom' ? 'selected' : ' ' %>>Ofertas Destacadas
+                            </option>
                         </select>
                         <% if (locals.errors && errors.classification) { %>
                             <div class="warning-text">
@@ -62,8 +74,59 @@
                             <% } %>
                     </div>
                     <div class="casillero">
+                        <label for="category_id" class="label-1">Categoria:</label>
+                        <select name="category_id" id="category_id"
+                            class="input-select <%= (locals.errors && errors.category_id) ? 'input-danger' : null %>">
+
+                            <% if (locals.categories) { %>
+                                <option></option>
+                                <% for (let i=0; i < categories.length; i++) { %>
+                                    <option value="<%=categories[i].category_id%>" <%= locals.oldData &&
+                                        oldData.category_id==categories[i].category_id ? 'selected' : '' %>>
+                                        <%= categories[i].name %>
+                                    </option>
+                                    <% } %>
+                                    <% } %>
+
+                        </select>
+                        <% if (locals.errors && errors.category_id) { %>
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.category_id.msg %>
+                            </div>
+                            <% } %>
+
+
+                    </div>
+                    <div class="casillero">
+                        <label for="brand_id" class="label-1">Marca:</label>
+                        <select name="brand_id" id="brand_id"
+                            class="input-select <%= (locals.errors && errors.brand_id) ? 'input-danger' : null %>">
+
+                            <% if (locals.brands) { %>
+                                <option></option>
+                                <% for (let i=0; i < brands.length; i++) { %>
+                                    <option value="<%=brands[i].brand_id%>" <%=(locals.oldData &&
+                                        oldData.brand_id==brands[i].brand_id)
+                                        ? 'selected' : '' %>>
+                                        <%= brands[i].name %>
+                                    </option>
+                                    <% } %>
+                                        <% } %>
+
+                        </select>
+                        <% if (locals.errors && errors.brand_id) { %>
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.brand_id.msg %>
+                            </div>
+                            <% } %>
+
+
+                    </div>
+                    <div class="casillero">
                         <label for="type" class="label-1">Tipo de producto:</label>
-                        <input type="text" name="type" value="<%= locals.oldData ? oldData.type : productToEdit.type %>"
+                        <input type="text" name="type" value="<%= locals.oldData ? oldData.type : product.type %>"
                             class="input-1 <%= (locals.errors && errors.type) ? 'input-danger' : null %>">
                         <% if (locals.errors && errors.type) { %>
                             <div class="warning-text">
@@ -74,11 +137,9 @@
                     </div>
                     <div class="casillero">
                         <label for="description" class="label-1">Descipción:</label>
-                        <textarea 
-                        name="description" 
-                        id="description" 
-                        class="input-textarea <%= (locals.errors && errors.description) ? 'input-danger' : null %>"><%= locals.oldData ? oldData.description : productToEdit.description%></textarea>
-                        <% if (locals.errors && errors.description) { %>                            
+                        <textarea name="description" id="description"
+                            class="input-textarea <%= (locals.errors && errors.description) ? 'input-danger' : null %>"><%= locals.oldData ? oldData.description : product.description%></textarea>
+                        <% if (locals.errors && errors.description) { %>
                             <div class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.description.msg %>
@@ -89,11 +150,9 @@
                     <div class="linea-ciudad">
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen:</label>
-                            <input 
-                            type="file" 
-                            name="image1" 
-                            class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>">
-                            <% if (locals.errors && errors.image1) { %>                            
+                            <input type="file" name="image1"
+                                class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>">
+                            <% if (locals.errors && errors.image1) { %>
                                 <div class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>
                                     <%= errors.image1.msg %>
@@ -107,8 +166,9 @@
                     </div>
                 </form>
                 <div class="casillero">
-                    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST" class="form-boton-allproducts">
-                    <button type="submit" class="boton-delete">ELIMINAR PRODUCTO</button>
+                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST"
+                        class="form-boton-allproducts">
+                        <button type="submit" class="boton-delete">ELIMINAR PRODUCTO</button>
                     </form>
                 </div>
             </main>

@@ -10,14 +10,14 @@ const productsController = require('../controllers/productsController');
 // All products route
 router.get('/', productsController.all);
 
+// Store new product process route
+router.post('/create', uploadFile.single('image1'), validationsProducts, productsController.store);
+
 // Product create form route
 router.get('/create', productsController.create);
 
 // Product detail route
 router.get('/:id', productsController.detail);
-
-// Store new product process route
-router.post('/', uploadFile.single('image1'), validationsProducts, productsController.store);
 
 // Product edit form route
 router.get('/:id/edit', productsController.edit);
