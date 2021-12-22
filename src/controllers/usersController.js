@@ -1,17 +1,9 @@
 // Requires
 
-const fs = require('fs');
-const path = require('path');
 const multer = require('multer');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-
-const User = require('../models/User');
-
-// JSON to JS array of products database
-
-let productsFilePath = path.join(__dirname, '../data/users.json');
-let users = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require('../database/models');
 
 // Users controllers
 
@@ -34,28 +26,29 @@ const usersController = {
             });
         }
 
-        let userInDatabase = User.findUserByField('email', req.body.email);
-
-        if (userInDatabase) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya fue registrado'
-                    }
-                },
-                oldData: req.body
-            });
-        }
-
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.file.filename
-        }
-
-
-        let userCreated = User.create(userToCreate);
-        return res.redirect('/users/login');
+        db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        }).then((user) => {
+            if (user) {
+                return res.render('register', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya fue registrado'
+                        }
+                    },
+                    oldData: req.body
+                });
+            } else {
+                db.User.create({
+                    ...req.body,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    avatar: req.file.filename,
+                });
+                res.redirect('/users/login')
+            }
+        })
     },
 
     // Login form controller
@@ -67,7 +60,6 @@ const usersController = {
     // Process login controller
 
     loginAction: (req, res) => {
-
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render('login', {
@@ -75,46 +67,48 @@ const usersController = {
             });
         }
 
-        let userToLogin = User.findUserByField('email', req.body.email);
-
-        if (userToLogin) {
-            let passwordCompare = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if (passwordCompare) {
-                
-
-                let userNeeded = {
-                    id: userToLogin.id,
-                    first_name: userToLogin.first_name,
-                    last_name: userToLogin.last_name,
-                    address: userToLogin.address,
-                    city: userToLogin.city,
-                    zip: userToLogin.zip,
-                    email: userToLogin.email,
-                    avatar: userToLogin.avatar
-                }
-
-                req.session.loggedUser = userNeeded;
-
-                if(req.body.remember_me) {
-                    res.cookie('userEmail', req.session.loggedUser.email, { maxAge: (1000 * 60) * 2 });
-                }                
-
-
-                return res.redirect('/users/profile')
+        db.User.findOne({
+            where: {
+                email: req.body.email
             }
-        }
+        }).then((user) => {
 
-        return res.render('login', {
-            errors: {
-                email: {
-                    msg: 'Credenciales invalidas'
-                },
-                password: {
-                    msg: 'Credenciales invalidas'
+            if (user) {
+                let passwordCompare = bcryptjs.compareSync(req.body.password, user.password);
+                if (passwordCompare) {
+                    let userLogged = {
+                        id: user.id,
+                        first_name: user.first_name,
+                        last_name: user.last_name,
+                        address: user.address,
+                        city: user.city,
+                        zip: user.zip,
+                        email: user.email,
+                        avatar: user.avatar
+                    }
+
+                    req.session.loggedUser = userLogged;
+
+                    if (req.body.remember_me) {
+                        res.cookie('userEmail', req.session.loggedUser.email, { maxAge: (1000 * 60) * 2 });
+                        return res.redirect('/users/profile')
+                    } else {
+                        return res.redirect('/users/profile')
+                    }
+                } else {
+                    return res.render('login', {
+                        errors: {
+                            email: {
+                                msg: 'Credenciales invalidas'
+                            },
+                            password: {
+                                msg: 'Credenciales invalidas'
+                            }
+                        }
+                    });
                 }
             }
-        });
-
+        })
     },
 
     // Profile controller
@@ -127,7 +121,79 @@ const usersController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
+    },
+
+    delete: (req, res) => {
+		db.User.destroy({
+			where: {
+				id: req.params.id
+			}
+		})
+		res.clearCookie('userEmail');
+        req.session.destroy();
+        res.redirect('/');
+	},
+
+    update: (req, res) => {
+		db.User.findOne({
+            where: {
+                email: req.session.loggedUser.email
+            }
+        })
+			.then(function (user) {
+				res.render('editProfile', {
+					user: user
+				})
+			})
+	},
+
+    save: (req, res) => {
+        db.User.findOne({
+            where: {
+                id: req.session.loggedUser.id
+            }
+        })
+        .then(function(user) {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('editProfile', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                user: user
+            });
+        } else {
+            let passwordCompare = bcryptjs.compareSync(req.body.password, user.password);
+            if (passwordCompare) {
+            db.User.update({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                address: req.body.address,
+                city: req.body.city,
+                zip: req.body.zip,
+                avatar: req.file.filename
+            }, {
+                where: {
+                    id: req.session.loggedUser.id
+                }
+            })
+        
+            } else {
+                return res.render('editProfile', {
+                    errors: {
+                        password: {
+                            msg: 'Constraseña incorrecta'
+                        }
+                    }
+                });
+            }
     }
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        res.render('login', {
+            mensaje: 'Por favor, vuelve a iniciar sesion para aplicar cambios'
+                }
+            )
+    })}
 };
 
 // Exports

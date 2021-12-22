@@ -97,5 +97,27 @@
   "email": "gvillagra39@gmail.com",
   "password": "$2a$10$AsRP2PPNAGTIv4JIZNsUOOHMKkyQ6IcknM5JokB1i7xi5v7khmE6G",
   "avatar": "1635873247427_img_.jpg"
+ },
+ {
+  "id": 11,
+  "first_name": "Gonzalo",
+  "last_name": "Villagra",
+  "address": "Costa Rica ",
+  "city": "Aguilares",
+  "zip": "4152",
+  "email": "gvillagraa@hotmail.com",
+  "password": "$2a$10$5EKCalI5sYvwWEjv4oDA4Ojca4ad0BK3klUUVbAuKNw8QaPpH5i5S",
+  "avatar": "1640043215330_img_.jpg"
+ },
+ {
+  "id": 12,
+  "first_name": "Gonzalo",
+  "last_name": "Villagra",
+  "address": "Costa Rica 485",
+  "city": "Alberdi",
+  "zip": "4152",
+  "email": "gvillagraa@hotmail.com",
+  "password": "$2a$10$yD/r35.RafUNJsIaA3a/0..eCKpw1TckmjuU0cQNJmDiZsFWL35wW",
+  "avatar": "1640043289896_img_.jpg"
  }
 ]

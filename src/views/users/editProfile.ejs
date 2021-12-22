@@ -1,0 +1,131 @@
+<%- include('./partials/head', {title: 'Crea tu cuenta - La Casa de la Musica'}) %>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <h3 class="titulo-login">EDITAR TU CUENTA</h3>
+
+        <form class="formulario-login" action="/users/edit/" method="POST" enctype="multipart/form-data">
+            <div class="primera-parte">
+                <div class="casillero">
+                    <label for="first_name" class="label-1">Nombre:</label>
+                    <input 
+                    type="text" 
+                    name="first_name" 
+                    value="<%= locals.oldData ? oldData.first_name : user.first_name %>"
+                    class="input-1 <%= (locals.errors && errors.first_name) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.first_name) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.first_name.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="casillero">
+                    <label for="last_name" class="label-1">Apellido:</label>
+                    <input 
+                    type="text" 
+                    name="last_name"
+                    value="<%= locals.oldData ? oldData.last_name : user.last_name %>"
+                    class="input-1  <%= (locals.errors && errors.last_name) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.last_name) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.last_name.msg %>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+            <div class="casillero">
+                <label for="address" class="label-1">Direccion:</label>
+                <input 
+                type="text" 
+                name="address" 
+                value="<%= locals.oldData ? oldData.address : user.address %>"
+                class="input-1 <%= (locals.errors && errors.address) ? 'input-danger' : null %>">
+                <% if (locals.errors && errors.address) { %>
+                <div class="warning-text">
+                    <i class="fas fa-exclamation-circle"></i> <%= errors.address.msg %>
+                </div>
+                <% } %>
+            </div>
+            <div class="linea-ciudad">
+                <div class="casillero">
+                    <label for="city" class="label-1">Ciudad:</label>
+                    <input 
+                    type="text" 
+                    name="city" 
+                    value="<%= locals.oldData ? oldData.city : user.city %>"
+                    class="input-ciudad  <%= (locals.errors && errors.city) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.city) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.city.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="casillero">
+                    <label for="zip" class="label-1">Codigo Postal:</label>
+                    <input 
+                    type="text" 
+                    name="zip" 
+                    value="<%= locals.oldData ? oldData.zip : user.zip %>"
+                    class="input-cp <%= (locals.errors && errors.zip) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.zip) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.zip.msg %>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+            <div class="casillero">
+                <label for="email" class="label-1">Correo electronico:</label>
+                <input 
+                type="text" 
+                name="email" 
+                value="<%= user.email %>"
+                class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %>"
+                disabled>
+                <% if (locals.errors && errors.email) { %>
+                    <div class="warning-text">
+                        <i class="fas fa-exclamation-circle"></i> <%= errors.email.msg %>
+                    </div>
+                    <% } %>
+            </div>
+            <div class="linea-pass">
+                <div class="casillero">
+                    <label for="password" class="label-1">Contraseña:</label>
+                    <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Ingresa tu contraseña para guardar cambios"
+                    class="input-pass <%= (locals.errors && errors.password) ? 'input-danger' : null %>">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="warning-text">
+                            <i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="linea-ciudad">
+                    <div class="casillero">
+                        <label for="profileimage" class="label-1">Foto de perfil:</label>
+                        <input 
+                        type="file" 
+                        name="profileimage" 
+                        class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>">
+                        <% if (locals.errors && errors.image1) { %>                            
+                            <div class="warning-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <%= errors.image1.msg %>
+                            </div>
+                            <% } %>
+                    </div>
+            </div>
+            <div class="casillero">
+                <button type="submit" class="boton-login">GUARDAR CAMBIOS</button>
+            </div>
+        </form>
+
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

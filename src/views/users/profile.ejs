@@ -14,6 +14,14 @@
                     <p><i class="fas fa-map-marked-alt"></i> Direccion: <%= user.address %>, <%= user.city %> - <%= user.zip %></p>
                     <p><i class="far fa-envelope"></i> Correo electronico: <%= user.email %></p>
 
+                    <div class="botones-detalle-2">
+                        <button class="boton-compra"><a href="/users/edit">EDITAR PERFIL</a></button>
+                        <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="boton-delete">ELIMINAR PERFIL</button>
+                        </form>
+                    </div>
+                    
+
                 </div>
             </main>
             <%- include('./partials/footer') %>

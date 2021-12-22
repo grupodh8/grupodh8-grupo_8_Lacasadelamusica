@@ -4,9 +4,15 @@
     <%- include('./partials/header') %>
 
     <main>
+        
+            
         <h3 class="titulo-login">INICIAR SESION</h3>
-
         <form class="formulario-login" action="/users/login" method="POST">
+            <% if (locals.mensaje) { %>
+                <div class="login-requerido">
+                    <i class="fas fa-exclamation-circle"></i> <%= locals.mensaje %>
+                    <% } %>
+                    </div>
             <div class="casillero">
                 <label for="email" class="label-1">Correo electronico:</label>
                 <input type="text" name="email" class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %>">
