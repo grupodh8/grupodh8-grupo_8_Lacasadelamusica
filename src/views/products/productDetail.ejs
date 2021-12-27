@@ -10,7 +10,6 @@
                 <h2 class="titulo-pagina-articulo"><%= product.name %> <%= product.brands.name %></h2>
                 <div class="iconos-titulo">
                     <p><i class="fas fa-cart-plus"></i></p>
-                    <p class="icono-compartir"><i class="fas fa-share-alt"></i></p>
                 </div>
             </div>
             <div class="contenedor-imagen">
@@ -39,8 +38,8 @@
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle-2">
                         <button class="boton-compra"><a href="/products/<%= product.id %>">Comprar</a></button>
-                        <button class="boton-carro"><a href="/cart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
+                        <!-- <button class="boton-carro"><a href="/cart"><i id="iconos-barra" -->
+                                    <!-- class="fas fa-shopping-cart"></i></a></button> -->
                         <button class="boton-compra"><a href="/products/<%= product.id %>/edit">Editar</a></button>
                     </div>
                 </div>

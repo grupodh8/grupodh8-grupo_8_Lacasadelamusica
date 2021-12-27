@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 let usersFilePath = path.join(__dirname, '../data/users.json');
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -39,9 +40,22 @@ let User = {
         return selectedUser;
     },
 
+    findUserByEmail: (email) => {
+        db.User.findOne({
+            where: {
+                email: email
+            }
+        }).then((user) => {
+            return user
+        })
+    },
+
     findUserByField: (property, text) => {
-        let selectedUser = users.find(user => user[property] === text);
+        db.User.findAll(property,text)
+        .then((users, property, text) => {
+        let selectedUser = users.find(user => user[property] == text);
         return selectedUser;
+        })
     },   
 
     delete: (id) => {

@@ -15,13 +15,13 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/register', guestMiddleware, usersController.register);
 
 // Register process route
-router.post('/register', uploadFile.single('profileimage'), validationsRegister, usersController.store);
+router.post('/register', guestMiddleware, uploadFile.single('profileimage'), validationsRegister, usersController.store);
 
 // Login form route
 router.get('/login', guestMiddleware, usersController.login);
 
 // Login process route
-router.post('/login', validationsLogin, usersController.loginAction);
+router.post('/login', guestMiddleware, validationsLogin, usersController.loginAction);
 
 // User profile route
 // router.get('/profile/:id', usersController.profile);
@@ -34,10 +34,10 @@ router.get('/logout/', usersController.logout);
 router.get('/edit/', authMiddleware, usersController.update)
 
 // Save user route
-router.post('/edit/', uploadFile.single('profileimage'), validateProfile, usersController.save)
+router.post('/edit/', authMiddleware, uploadFile.single('profileimage'), validateProfile, usersController.save)
 
 // Delete user
-router.delete('/:id', usersController.delete);
+router.delete('/:id', authMiddleware, usersController.delete);
 
 // Exports
 module.exports = router;
