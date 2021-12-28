@@ -1,7 +1,10 @@
 window.addEventListener("load", function () {
 
+    
+    let form = document.querySelector('form') 
+
     // VALIDACION CAMPO NOMBRE 
-    let errorsFirstName = []
+    let errorsFirstName = ''
     let firstName = document.querySelector('input.first-name')
     let divFirstName = document.querySelector('#errors-first-name')
     let backFirstName = document.querySelector('#validation1');
@@ -12,13 +15,13 @@ window.addEventListener("load", function () {
             }
         if (firstName.value == '') {
             firstName.classList.add('input-danger')
-            errorsFirstName.push('Debes ingresar un nombre')
+            errorsFirstName = 'Debes ingresar un nombre'
         } else if (firstName.value.length < 2) {
             firstName.classList.add('input-danger')
-            errorsFirstName.push('El nombre debe tener al menos dos caracteres')
+            errorsFirstName = 'El nombre debe tener al menos dos caracteres'
         } else {
             firstName.classList.remove('input-danger')
-            errorsFirstName = []
+            errorsFirstName = ''
         }
 
         if (errorsFirstName.length > 0) {
@@ -26,11 +29,10 @@ window.addEventListener("load", function () {
         } else {
             divFirstName.innerHTML = ""
         }
-        errorsFirstName.pop();
     })
 
     // VALIDACION CAMPO APELLIDO
-    let errorsLastName = []
+    let errorsLastName = ''
     let lastName = document.querySelector('input.last-name')
     let divLastName = document.querySelector('#errors-last-name')
     let backLastName = document.querySelector('#validation2');
@@ -41,13 +43,13 @@ window.addEventListener("load", function () {
         }
         if (lastName.value == '') {
             lastName.classList.add('input-danger')
-            errorsLastName.push('Debes ingresar un apellido')
+            errorsLastName = 'Debes ingresar un apellido'
         } else if (lastName.value.length < 2) {
             lastName.classList.add('input-danger')
-            errorsLastName.push('El apellido debe tener al menos dos caracteres')
+            errorsLastName = 'El apellido debe tener al menos dos caracteres'
         } else {
             lastName.classList.remove('input-danger')
-            errorsLastName = []
+            errorsLastName = ''
         }
 
         if (errorsLastName.length > 0) {
@@ -55,11 +57,11 @@ window.addEventListener("load", function () {
         } else {
             divLastName.innerHTML = ""
         }
-        errorsLastName.pop();
+        
     })
 
     // VALIDACION CAMPO DIRECCION 
-    let errorsAddress = []
+    let errorsAddress = ''
     let address = document.querySelector('input.address')
     let divAddress = document.querySelector('#errors-address')
     let backAddress = document.querySelector('#validation3');
@@ -70,13 +72,13 @@ window.addEventListener("load", function () {
             }
         if (address.value == '') {
             address.classList.add('input-danger')
-            errorsAddress.push('Debes ingresar una direccion')
+            errorsAddress = 'Debes ingresar una direccion'
         } else if (address.value.length < 2) {
             address.classList.add('input-danger')
-            errorsAddress.push('Debes ingresar una direccion valida')
+            errorsAddress = 'Debes ingresar una direccion valida'
         } else {
             address.classList.remove('input-danger')
-            errorsAddress = []
+            errorsAddress = ''
         }
 
         if (errorsAddress.length > 0) {
@@ -84,11 +86,10 @@ window.addEventListener("load", function () {
         } else {
             divAddress.innerHTML = ""
         }
-        errorsAddress.pop();
     })
 
     // VALIDACION CAMPO CIUDAD
-    let errorsCity = []
+    let errorsCity = ''
     let city = document.querySelector('input.city')
     let divCity = document.querySelector('#errors-city')
     let backCity = document.querySelector('#validation4');
@@ -99,13 +100,13 @@ window.addEventListener("load", function () {
             }
         if (city.value == '') {
             city.classList.add('input-danger')
-            errorsCity.push('Debes ingresar una ciudad')
+            errorsCity = 'Debes ingresar una ciudad'
         } else if (city.value.length < 2) {
             city.classList.add('input-danger')
-            errorsCity.push('Debes ingresar una ciudad valida')
+            errorsCity = 'Debes ingresar una ciudad valida'
         } else {
             city.classList.remove('input-danger')
-            errorsCity = []
+            errorsCity = ''
         }
 
         if (errorsCity.length > 0) {
@@ -113,11 +114,10 @@ window.addEventListener("load", function () {
         } else {
             divCity.innerHTML = ""
         }
-        errorsCity.pop();
     })
 
     // VALIDACION CAMPO CODIGO POSTAL
-    let errorsZip = []
+    let errorsZip = ''
     let zip = document.querySelector('input.zip')
     let divZip = document.querySelector('#errors-zip')
     let backZip = document.querySelector('#validation5');
@@ -128,13 +128,13 @@ window.addEventListener("load", function () {
             }
         if (zip.value == '') {
             zip.classList.add('input-danger')
-            errorsZip.push('Debes ingresar un codigo postal')
+            errorsZip = 'Debes ingresar un codigo postal'
         } else if (zip.value.length < 4 || zip.value.length > 5) {
             zip.classList.add('input-danger')
-            errorsZip.push('El codigo postal debe tener de 4 a 5 digitos')
+            errorsZip = 'El codigo postal debe tener de 4 a 5 digitos'
         } else {
             zip.classList.remove('input-danger')
-            errorsZip = []
+            errorsZip = ''
         }
 
         if (errorsZip.length > 0) {
@@ -142,11 +142,10 @@ window.addEventListener("load", function () {
         } else {
             divZip.innerHTML = ""
         }
-        errorsZip.pop();
     })
 
     // VALIDACION CAMPO EMAIL
-    let errorsEmail = []
+    let errorsEmail = ''
     let email = document.querySelector('input.email')
     let divEmail = document.querySelector('#errors-email')
     let backEmail = document.querySelector('#validation6');
@@ -162,14 +161,14 @@ window.addEventListener("load", function () {
             }
         if (email.value == '') {
             email.classList.add('input-danger')
-            errorsEmail.push('Debes ingresar un email')
+            errorsEmail = 'Debes ingresar un email'
         } else if (email.value.length > 0) {
             if (validateEmail(email.value) == false) {
                 email.classList.add('input-danger')
-                errorsEmail.push('Ingresa un email valido')
+                errorsEmail = 'Ingresa un email valido'
             } else {
                 email.classList.remove('input-danger')
-                errorsEmail = []
+                errorsEmail = ''
             }
         }
 
@@ -178,11 +177,10 @@ window.addEventListener("load", function () {
         } else {
             divEmail.innerHTML = ""
         }
-        errorsEmail.pop();
     })
 
     // VALIDACION CAMPO PASSWORD
-    let errorsPassword = []
+    let errorsPassword = ''
     let password = document.querySelector('input.password')
     let divPassword = document.querySelector('#errors-password')
     let passwordRequirements = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
@@ -194,13 +192,13 @@ window.addEventListener("load", function () {
             }
         if (password.value == '') {
             password.classList.add('input-danger')
-            errorsPassword.push('Debes ingresar una contraseña')
+            errorsPassword = 'Debes ingresar una contraseña'
         } else if (!password.value.match(passwordRequirements)) {
             password.classList.add('input-danger')
-            errorsPassword.push('Tu contraseña debe tener al menos 8 caracteres, incluir una letra mayuscula, una minuscula y un numero')
+            errorsPassword = 'Tu contraseña debe tener al menos 8 caracteres, incluir una letra mayuscula, una minuscula y un numero'
         } else {
             password.classList.remove('input-danger')
-            errorsPassword = []
+            errorsPassword = ''
         }
 
         if (errorsPassword.length > 0) {
@@ -208,11 +206,10 @@ window.addEventListener("load", function () {
         } else {
             divPassword.innerHTML = ""
         }
-        errorsPassword.pop();
     })
 
     // VALIDACION CAMPO IMAGEN
-    let errorsImage = [];
+    let errorsImage = '';
     let image = document.querySelector('input.image');
     let divImage = document.querySelector('#errors-image');
     let backImage = document.querySelector('#validation8');
@@ -223,13 +220,13 @@ window.addEventListener("load", function () {
             }
         if (image.value == "") {
             image.classList.add('input-danger')
-            errorsImage.push('Debes subir una imagen')
+            errorsImage = 'Debes subir una imagen'
         } else if (!image.value.endsWith('.jpg') && !image.value.endsWith('.png') && !image.value.endsWith('.gif')) {
             image.classList.add('input-danger')
-            errorsImage.push('Las extensiones aceptadas son .jpg, .png y .gif')
+            errorsImage = 'Las extensiones aceptadas son .jpg, .png y .gif'
         } else {
             image.classList.remove('input-danger')
-            errorsImage = []
+            errorsImage = ''
         }
 
 
@@ -238,7 +235,12 @@ window.addEventListener("load", function () {
         } else {
             divImage.innerHTML = ""
         }
-        errorsImage.pop();
+    })
+
+    form.addEventListener('submit', function(e) {
+        if (errorsFirstName != '' || errorsLastName != '' || errorsAddress != '' || errorsCity != '' || errorsZip != '' || errorsEmail != '' || errorsPassword != '' || errorsImage != '') {
+            e.preventDefault()
+        }
     })
 
 })
