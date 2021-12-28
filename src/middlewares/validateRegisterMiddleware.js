@@ -3,13 +3,13 @@ const path = require('path');
 
 // Express-validator validations for register and login form
 const validationsRegister = [
-    body('first_name').isLength({ min: 2 }).withMessage('Debes ingresar un nombre valido'),
-    body('last_name').isLength({ min: 2 }).withMessage('Debes ingresar tu apellido'),
-    body('address').isLength({ min: 2 }).withMessage('Debes ingresar tu direccion'),
-    body('city').isLength({ min: 2 }).withMessage('Debes ingresar tu ciudad'),
-    body('zip').isNumeric().withMessage('Debes ingresar un codigo postal valido').bail().isLength({min: 4, max: 5}).withMessage('El codigo postal debe tener 4 o 5 caracteres'),
+    body('first_name').isLength({ min: 2 }).withMessage('Debes ingresar un nombre'),
+    body('last_name').isLength({ min: 2 }).withMessage('Debes ingresar un apellido'),
+    body('address').isLength({ min: 2 }).withMessage('Debes ingresar una direccion'),
+    body('city').isLength({ min: 2 }).withMessage('Debes ingresar una ciudad'),
+    body('zip').isNumeric().withMessage('Debes ingresar un codigo postal').bail().isLength({min: 4, max: 5}).withMessage('El codigo postal debe tener 4 o 5 caracteres'),
     body('password').notEmpty().withMessage('Debes ingresar una contraseña').bail().isLength({ min: 8 }).withMessage('Tu contraseña debe tener al menos 8 caracteres'),
-    body('email').isEmail().withMessage('Debes ingresar tu correo electronico'),
+    body('email').isEmail().withMessage('Debes ingresar un email'),
     body('image1').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif']

@@ -556,6 +556,7 @@ footer a {
 
 .warning-text {
     margin-top: 5px;
+    margin-bottom: 10px;
     font-size: 15px;
     color: red;
 }
@@ -673,6 +674,7 @@ footer a {
         border-radius: 20px;
         width: 180px;
     }
+
 
     
 }
