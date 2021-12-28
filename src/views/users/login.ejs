@@ -15,9 +15,10 @@
                     </div>
             <div class="casillero">
                 <label for="email" class="label-1">Correo electronico:</label>
-                <input type="text" name="email" class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %>">
+                <input type="text" name="email" class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %> email">
+                <div id="errors-email" class="warning-text"></div>
                 <% if (locals.errors && errors.email) { %>
-                    <div class="warning-text">
+                    <div id="validation1" class="warning-text">
                         <i class="fas fa-exclamation-circle"></i>
                         <%= errors.email.msg %>
                     </div>
@@ -25,9 +26,10 @@
             </div>
             <div class="casillero">
                 <label for="password" class="label-1">Contraseña:</label>
-                <input type="password" name="password" class="input-1 <%= (locals.errors && errors.password) ? 'input-danger' : null %>">
+                <input type="password" name="password" class="input-1 <%= (locals.errors && errors.password) ? 'input-danger' : null %> password">
+                <div id="errors-password" class="warning-text"></div>
                 <% if (locals.errors && errors.password) { %>
-                    <div class="warning-text">
+                    <div id="validation2" class="warning-text">
                         <i class="fas fa-exclamation-circle"></i>
                         <%= errors.password.msg %>
                     </div>
@@ -50,6 +52,7 @@
 
     </main>
     <%- include('./partials/footer') %>
+    <script type="text/javascript" src="/js/loginForm.js"></script>
 </body>
 
 </html>
