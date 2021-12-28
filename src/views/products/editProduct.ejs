@@ -11,9 +11,10 @@
                         <div class="casillero">
                             <label for="name" class="label-1">Nombre del producto:</label>
                             <input type="text" name="name" value="<%= locals.oldData ? oldData.name : product.name %>"
-                                class="input-1 <%= (locals.errors && errors.name) ? 'input-danger' : null %>">
+                                class="input-1 <%= (locals.errors && errors.name) ? 'input-danger' : null %> name">
+                                <div id="errors-name" class="warning-text"></div>
                             <% if (locals.errors && errors.name) { %>
-                                <div class="warning-text">
+                                <div id="validation1" class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>
                                     <%= errors.name.msg %>
                                 </div>
@@ -23,9 +24,10 @@
                             <label for="price" class="label-1">Precio del producto:</label>
                             <input type="text" name="price"
                                 value="<%= locals.oldData ? oldData.price : product.price %>"
-                                class="input-1 <%= (locals.errors && errors.price) ? 'input-danger' : null %>">
+                                class="input-1 <%= (locals.errors && errors.price) ? 'input-danger' : null %> price">
+                                <div id="errors-price" class="warning-text"></div>
                             <% if (locals.errors && errors.price) { %>
-                                <div class="warning-text">
+                                <div id="validation2" class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>
                                     <%= errors.price.msg %>
                                 </div>
@@ -34,9 +36,10 @@
                         <div class="casillero">
                             <label for="sku" class="label-1">SKU:</label>
                             <input type="number" name="sku" value="<%= locals.oldData ? oldData.sku : product.sku %>"
-                                class="input-1 <%= (locals.errors && errors.sku) ? 'input-danger' : null %>">
+                                class="input-1 <%= (locals.errors && errors.sku) ? 'input-danger' : null %> sku">
+                                <div id="errors-sku" class="warning-text"></div>
                             <% if (locals.errors && errors.sku) { %>
-                                <div class="warning-text">
+                                <div id="validation3" class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>
                                     <%= errors.sku.msg %>
                                 </div>
@@ -46,9 +49,10 @@
                             <label for="stock" class="label-1">Stock:</label>
                             <input type="number" name="stock"
                                 value="<%= locals.oldData ? oldData.stock : product.stock %>"
-                                class="input-1 <%= (locals.errors && errors.stock) ? 'input-danger' : null %>">
+                                class="input-1 <%= (locals.errors && errors.stock) ? 'input-danger' : null %> stock">
+                                <div id="errors-stock" class="warning-text"></div>
                             <% if (locals.errors && errors.stock) { %>
-                                <div class="warning-text">
+                                <div id="validation4" class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>
                                     <%= errors.stock.msg %>
                                 </div>
@@ -58,7 +62,7 @@
                     <div class="casillero">
                         <label for="classification" class="label-1">Clasificacion:</label>
                         <select name="classification" id="classification"
-                            class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %>">
+                            class="input-select <%= (locals.errors && errors.classification) ? 'input-danger' : null %> classification">
                             <option value=""></option>
                             <option value="main-top" <%=(locals.oldData && oldData.classification==='main-top' ) ||
                                 product.classification=='main-top' ? 'selected' : ' ' %>>Nuevos Productos</option>
@@ -66,8 +70,9 @@
                                 || product.classification=='main-bottom' ? 'selected' : ' ' %>>Ofertas Destacadas
                             </option>
                         </select>
+                        <div id="errors-classification" class="warning-text"></div>
                         <% if (locals.errors && errors.classification) { %>
-                            <div class="warning-text">
+                            <div id="validation5" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.classification.msg %>
                             </div>
@@ -76,7 +81,7 @@
                     <div class="casillero">
                         <label for="category_id" class="label-1">Categoria:</label>
                         <select name="category_id" id="category_id"
-                            class="input-select <%= (locals.errors && errors.category_id) ? 'input-danger' : null %>">
+                            class="input-select <%= (locals.errors && errors.category_id) ? 'input-danger' : null %> category">
 
                             <% if (locals.categories) { %>
                                 <option></option>
@@ -89,8 +94,9 @@
                                     <% } %>
 
                         </select>
+                        <div id="errors-category" class="warning-text"></div>
                         <% if (locals.errors && errors.category_id) { %>
-                            <div class="warning-text">
+                            <div id="validation6" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.category_id.msg %>
                             </div>
@@ -101,7 +107,7 @@
                     <div class="casillero">
                         <label for="brand_id" class="label-1">Marca:</label>
                         <select name="brand_id" id="brand_id"
-                            class="input-select <%= (locals.errors && errors.brand_id) ? 'input-danger' : null %>">
+                            class="input-select <%= (locals.errors && errors.brand_id) ? 'input-danger' : null %> brand">
 
                             <% if (locals.brands) { %>
                                 <option></option>
@@ -115,8 +121,9 @@
                                         <% } %>
 
                         </select>
+                        <div id="errors-brand" class="warning-text"></div>
                         <% if (locals.errors && errors.brand_id) { %>
-                            <div class="warning-text">
+                            <div id="validation7" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.brand_id.msg %>
                             </div>
@@ -127,9 +134,9 @@
                     <div class="casillero">
                         <label for="type" class="label-1">Tipo de producto:</label>
                         <input type="text" name="type" value="<%= locals.oldData ? oldData.type : product.type %>"
-                            class="input-1 <%= (locals.errors && errors.type) ? 'input-danger' : null %>">
+                            class="input-1 <%= (locals.errors && errors.type) ? 'input-danger' : null %> type">
                         <% if (locals.errors && errors.type) { %>
-                            <div class="warning-text">
+                            <div id="validation8" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.type.msg %>
                             </div>
@@ -138,8 +145,9 @@
                     <div class="casillero">
                         <label for="description" class="label-1">Descipción:</label>
                         <textarea name="description" id="description"
-                            class="input-textarea <%= (locals.errors && errors.description) ? 'input-danger' : null %>"><%= locals.oldData ? oldData.description : product.description%></textarea>
-                        <% if (locals.errors && errors.description) { %>
+                            class="input-textarea <%= (locals.errors && errors.description) ? 'input-danger' : null %> description"><%= locals.oldData ? oldData.description : product.description%></textarea>
+                            <div id="validation9" id="errors-type" class="warning-text"></div>
+                            <% if (locals.errors && errors.description) { %>
                             <div class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.description.msg %>
@@ -151,9 +159,10 @@
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen:</label>
                             <input type="file" name="image1"
-                                class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %>">
+                                class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
+                                <div id="errors-image" class="warning-text"></div>
                             <% if (locals.errors && errors.image1) { %>
-                                <div class="warning-text">
+                                <div id="validation10" class="warning-text">
                                     <i class="fas fa-exclamation-circle"></i>
                                     <%= errors.image1.msg %>
                                 </div>
@@ -179,6 +188,7 @@
 
 
             <%- include('./partials/footer') %>
+            <script type="text/javascript" src="/js/editProductForm.js"></script>
     </body>
 
     </html>

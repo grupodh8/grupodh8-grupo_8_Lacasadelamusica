@@ -24,7 +24,7 @@ router.get('/:id', productsController.detail);
 router.get('/:id/edit', productsController.edit);
 
 // Edit product process route 
-router.put('/:id', authMiddleware, uploadFile.single('image1'), validationsProducts, productsController.update);
+router.put('/:id', uploadFile.single('image1'), validationsProducts, productsController.update);
 
 // Delete product route
 router.delete('/:id', authMiddleware, productsController.destroy);
