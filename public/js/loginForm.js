@@ -6,7 +6,7 @@ let form = document.querySelector('form')
 let errorsEmail = ''
 let email = document.querySelector('input.email')
 let divEmail = document.querySelector('#errors-email')
-let backEmail = document.querySelector('#validation6');
+let backEmail = document.querySelector('#validation1');
 
 function validateEmail(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,7 +41,7 @@ email.addEventListener('blur', function () {
 let errorsPassword = ''
 let password = document.querySelector('input.password')
 let divPassword = document.querySelector('#errors-password')
-let backPassword = document.querySelector('#validation7');
+let backPassword = document.querySelector('#validation2');
 
 password.addEventListener('blur', function () {
     if (backPassword) {
