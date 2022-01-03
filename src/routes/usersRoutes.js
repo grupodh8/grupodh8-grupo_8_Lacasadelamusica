@@ -28,7 +28,7 @@ router.post('/login', guestMiddleware, validationsLogin, usersController.loginAc
 router.get('/profile/', authMiddleware, usersController.profile);
 
 // logout controller
-router.get('/logout/', usersController.logout);
+router.get('/logout/', authMiddleware, usersController.logout);
 
 // Update user form
 router.get('/edit/', authMiddleware, usersController.update)

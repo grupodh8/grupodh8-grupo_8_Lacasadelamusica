@@ -12,7 +12,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/', mainController.index);
 
 // Shopping cart route
-router.get('/cart', authMiddleware, mainController.cart);
+router.get('/cart', mainController.cart);
 
 
 // Exports

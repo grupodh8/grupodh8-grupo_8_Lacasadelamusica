@@ -235,7 +235,7 @@ window.addEventListener("load", function () {
             errorsDescription = 'Debes ingresar una descripcion'
         } else if (description.value.length < 20) {
             description.classList.add('input-danger')
-            errorsDescription = 'El nombre debe tener al menos veinte caracteres'
+            errorsDescription = 'La descripcion debe tener al menos veinte caracteres'
         } else {
             description.classList.remove('input-danger')
             errorsDescription = ''

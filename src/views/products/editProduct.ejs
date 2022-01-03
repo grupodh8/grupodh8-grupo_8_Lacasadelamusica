@@ -104,6 +104,8 @@
 
 
                     </div>
+
+
                     <div class="casillero">
                         <label for="brand_id" class="label-1">Marca:</label>
                         <select name="brand_id" id="brand_id"
@@ -112,15 +114,22 @@
                             <% if (locals.brands) { %>
                                 <option></option>
                                 <% for (let i=0; i < brands.length; i++) { %>
-                                    <option value="<%=brands[i].brand_id%>" <%=(locals.oldData &&
+                                    <option value="<%=brands[i].brand_id%>"
+                                         
+                                        <% if (locals.oldData) { %>
+                                        <%=(locals.oldData &&
                                         oldData.brand_id==brands[i].brand_id)
-                                        ? 'selected' : '' %>>
+                                        ? 'selected' : '' %>
+                                        
+                                    >
                                         <%= brands[i].name %>
                                     </option>
                                     <% } %>
                                         <% } %>
 
                         </select>
+                    
+                    
                         <div id="errors-brand" class="warning-text"></div>
                         <% if (locals.errors && errors.brand_id) { %>
                             <div id="validation7" class="warning-text">
@@ -131,10 +140,16 @@
 
 
                     </div>
+
+
+
+
+
                     <div class="casillero">
                         <label for="type" class="label-1">Tipo de producto:</label>
                         <input type="text" name="type" value="<%= locals.oldData ? oldData.type : product.type %>"
                             class="input-1 <%= (locals.errors && errors.type) ? 'input-danger' : null %> type">
+                            <div id="errors-type" class="warning-text"></div>
                         <% if (locals.errors && errors.type) { %>
                             <div id="validation8" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
@@ -146,9 +161,9 @@
                         <label for="description" class="label-1">Descipción:</label>
                         <textarea name="description" id="description"
                             class="input-textarea <%= (locals.errors && errors.description) ? 'input-danger' : null %> description"><%= locals.oldData ? oldData.description : product.description%></textarea>
-                            <div id="validation9" id="errors-type" class="warning-text"></div>
+                            <div id="errors-description" class="warning-text"></div>
                             <% if (locals.errors && errors.description) { %>
-                            <div class="warning-text">
+                            <div id="validation9" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.description.msg %>
                             </div>
@@ -158,6 +173,7 @@
                     <div class="linea-ciudad">
                         <div class="casillero">
                             <label for="imagen1" class="label-1">Imagen:</label>
+                        <div class="div-avatar-edit"><img class="avatar-edit" src="/images/products/<%= product.image %>" alt=""></div>
                             <input type="file" name="image1"
                                 class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
                                 <div id="errors-image" class="warning-text"></div>

@@ -88,9 +88,10 @@ const usersController = {
                     }
 
                     req.session.loggedUser = userLogged;
-
+                    console.log(req.session.loggedUser)
+                    
                     if (req.body.remember_me) {
-                        res.cookie('userEmail', req.session.loggedUser.email, { maxAge: (1000 * 60) * 2 });
+                        res.cookie('userId', req.session.loggedUser.id, { maxAge: (1000 * 60) * 2 });
                         return res.redirect('/users/profile')
                     } else {
                         return res.redirect('/users/profile')
@@ -107,6 +108,17 @@ const usersController = {
                         }
                     });
                 }
+            } else {
+                return res.render('login', {
+                    errors: {
+                        email: {
+                            msg: 'Credenciales invalidas'
+                        },
+                        password: {
+                            msg: 'Credenciales invalidas'
+                        }
+                    }
+                });
             }
         })
     },
@@ -118,7 +130,7 @@ const usersController = {
     },
 
     logout: (req, res) => {
-        res.clearCookie('userEmail');
+        res.clearCookie('userId');
         req.session.destroy();
         res.redirect('/');
     },

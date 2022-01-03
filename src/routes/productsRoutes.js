@@ -12,10 +12,10 @@ const authMiddleware = require('../middlewares/authMiddleware');
 router.get('/', productsController.all);
 
 // Store new product process route
-router.post('/create', uploadFile.single('image1'), validationsProducts, productsController.store);
+router.post('/create', authMiddleware, uploadFile.single('image1'), validationsProducts, productsController.store);
 
 // Product create form route
-router.get('/create', productsController.create);
+router.get('/create', authMiddleware, productsController.create);
 
 // Product detail route
 router.get('/:id', productsController.detail);
