@@ -6,6 +6,7 @@ const multer = require('multer');
 const { validationResult } = require('express-validator');
 const { fields } = require('../middlewares/productMulterMiddleware');
 let db = require("../database/models");
+const { nextTick } = require('process');
 
 // Products controllers
 
@@ -79,7 +80,7 @@ const productsController = {
 		let brandRequest = db.Brand.findAll();
 
 		Promise.all([productRequest, categoryRequest, brandRequest])
-			.then(function ([product, categories, brands]) {
+			.then(([product, categories, brands]) => {
 				res.render('editProduct', {
 					product: product,
 					categories: categories,

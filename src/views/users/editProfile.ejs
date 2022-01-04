@@ -15,13 +15,14 @@
                     name="first_name" 
                     value="<%= locals.oldData ? oldData.first_name : user.first_name %>"
                     class="input-1 <%= (locals.errors && errors.first_name) ? 'input-danger' : null %> first-name">
-                    <div id="errors-first-name" class="warning-text"></div>
+                    
+                </div>
+                <div id="errors-first-name" class="warning-text"></div>
                     <% if (locals.errors && errors.first_name) { %>
                         <div id="validation1" class="warning-text">
                             <i class="fas fa-exclamation-circle"></i> <%= errors.first_name.msg %>
                         </div>
                         <% } %>
-                </div>
                 <div class="casillero">
                     <label for="last_name" class="label-1">Apellido:</label>
                     <input 
@@ -29,13 +30,14 @@
                     name="last_name"
                     value="<%= locals.oldData ? oldData.last_name : user.last_name %>"
                     class="input-1  <%= (locals.errors && errors.last_name) ? 'input-danger' : null %> last-name">
-                    <div id="errors-last-name" class="warning-text"></div>
+                    
+                </div>
+                <div id="errors-last-name" class="warning-text"></div>
                     <% if (locals.errors && errors.last_name) { %>
                         <div id="validation2" class="warning-text">
                             <i class="fas fa-exclamation-circle"></i> <%= errors.last_name.msg %>
                         </div>
                         <% } %>
-                </div>
             </div>
             <div class="casillero">
                 <label for="address" class="label-1">Direccion:</label>
@@ -44,13 +46,14 @@
                 name="address" 
                 value="<%= locals.oldData ? oldData.address : user.address %>"
                 class="input-1 <%= (locals.errors && errors.address) ? 'input-danger' : null %> address">
-                <div id="errors-address" class="warning-text"></div>
+                
+            </div>
+            <div id="errors-address" class="warning-text"></div>
                 <% if (locals.errors && errors.address) { %>
                 <div id="validation3" class="warning-text">
                     <i class="fas fa-exclamation-circle"></i> <%= errors.address.msg %>
                 </div>
                 <% } %>
-            </div>
             <div class="linea-ciudad">
                 <div class="casillero">
                     <label for="city" class="label-1">Ciudad:</label>
@@ -59,13 +62,14 @@
                     name="city" 
                     value="<%= locals.oldData ? oldData.city : user.city %>"
                     class="input-ciudad  <%= (locals.errors && errors.city) ? 'input-danger' : null %> city">
-                    <div id="errors-city" class="warning-text"></div>
+                    
+                </div>
+                <div id="errors-city" class="warning-text"></div>
                     <% if (locals.errors && errors.city) { %>
                         <div id="validation4" class="warning-text">
                             <i class="fas fa-exclamation-circle"></i> <%= errors.city.msg %>
                         </div>
                         <% } %>
-                </div>
                 <div class="casillero">
                     <label for="zip" class="label-1">Codigo Postal:</label>
                     <input 
@@ -73,13 +77,14 @@
                     name="zip" 
                     value="<%= locals.oldData ? oldData.zip : user.zip %>"
                     class="input-cp <%= (locals.errors && errors.zip) ? 'input-danger' : null %> zip">
-                    <div id="errors-zip" class="warning-text"></div>
+                    
+                </div>
+                <div id="errors-zip" class="warning-text"></div>
                     <% if (locals.errors && errors.zip) { %>
                         <div id="validation5" class="warning-text">
                             <i class="fas fa-exclamation-circle"></i> <%= errors.zip.msg %>
                         </div>
                         <% } %>
-                </div>
             </div>
             <div class="casillero">
                 <label for="email" class="label-1">Correo electronico:</label>
@@ -89,13 +94,14 @@
                 value="<%= user.email %>"
                 class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %> email"
                 disabled>
-                <div id="errors-email" class="warning-text"></div>
+                
+            </div>
+            <div id="errors-email" class="warning-text"></div>
                 <% if (locals.errors && errors.email) { %>
                     <div id="validation6" class="warning-text">
                         <i class="fas fa-exclamation-circle"></i> <%= errors.email.msg %>
                     </div>
                     <% } %>
-            </div>
             <div class="linea-pass">
                 <div class="casillero">
                     <label for="password" class="label-1">Contraseña:</label>
@@ -104,13 +110,14 @@
                     name="password" 
                     placeholder="Ingresa tu contraseña para guardar cambios"
                     class="input-pass <%= (locals.errors && errors.password) ? 'input-danger' : null %> password">
-                    <div id="errors-password" class="warning-text"></div>
+                    
+                </div>
+                <div id="errors-password" class="warning-text"></div>
                     <% if (locals.errors && errors.password) { %>
                         <div id="validation7" class="warning-text">
                             <i class="fas fa-exclamation-circle"></i> <%= errors.password.msg %>
                         </div>
                         <% } %>
-                </div>
                 <div class="linea-ciudad">
                     <div class="casillero">
                         <label for="profileimage" class="label-1">Foto de perfil:</label>
@@ -119,14 +126,15 @@
                         type="file" 
                         name="profileimage" 
                         class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
-                        <div id="errors-image" class="warning-text"></div>
+                        
+                    </div>
+                    <div id="errors-image" class="warning-text"></div>
                         <% if (locals.errors && errors.image1) { %>                            
                             <div id="validation8" class="warning-text">
                                 <i class="fas fa-exclamation-circle"></i>
                                 <%= errors.image1.msg %>
                             </div>
                             <% } %>
-                    </div>
             </div>
             <div class="casillero">
                 <button type="submit" class="boton-login">GUARDAR CAMBIOS</button>

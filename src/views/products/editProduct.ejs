@@ -85,11 +85,17 @@
 
                             <% if (locals.categories) { %>
                                 <option></option>
+                                <% if (locals.oldData && oldData.category_id) { %>
                                 <% for (let i=0; i < categories.length; i++) { %>
-                                    <option value="<%=categories[i].category_id%>" <%= locals.oldData &&
-                                        oldData.category_id==categories[i].category_id ? 'selected' : '' %>>
-                                        <%= categories[i].name %>
-                                    </option>
+                                        <option value="<%=categories[i].category_id%>" <%=  oldData.category_id ==categories[i].category_id ? 'selected' : '' %>>
+                                        <%=categories[i].name %>
+                                        </option>
+                                <% }} else { %>
+                                    <% for (let i=0; i <categories.length; i++) { %>
+                                        <option value="<%=categories[i].category_id%>" <%=  product.category_id ==categories[i].category_id ? 'selected' : '' %>>
+                                        <%=categories[i].name %>
+                                        </option>
+                                    <% } %>
                                     <% } %>
                                     <% } %>
 
@@ -113,20 +119,21 @@
 
                             <% if (locals.brands) { %>
                                 <option></option>
+                                <% if (locals.oldData && oldData.brand_id) { %>
                                 <% for (let i=0; i < brands.length; i++) { %>
-                                    <option value="<%=brands[i].brand_id%>"
-                                         
-                                        <% if (locals.oldData) { %>
-                                        <%=(locals.oldData &&
-                                        oldData.brand_id==brands[i].brand_id)
-                                        ? 'selected' : '' %>
-                                        
-                                    >
+                                        <option value="<%=brands[i].brand_id%>" <%=  oldData.brand_id == brands[i].brand_id ? 'selected' : '' %>>
                                         <%= brands[i].name %>
-                                    </option>
+                                        </option>
+                                <% }} else { %>
+                                    <% for (let i=0; i < brands.length; i++) { %>
+                                        <option value="<%=brands[i].brand_id%>" <%=  product.brand_id == brands[i].brand_id ? 'selected' : '' %>>
+                                        <%= brands[i].name %>
+                                        </option>
                                     <% } %>
-                                        <% } %>
-
+                                    <% } %>
+                                    <% } %>
+                           
+                                       
                         </select>
                     
                     
