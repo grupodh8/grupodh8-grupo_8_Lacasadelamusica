@@ -21,10 +21,10 @@ router.get('/create', authMiddleware, productsController.create);
 router.get('/:id', productsController.detail);
 
 // Product edit form route
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', authMiddleware, productsController.edit);
 
 // Edit product process route 
-router.put('/:id', uploadFile.single('image1'), validationsProducts, productsController.update);
+router.put('/:id', authMiddleware, uploadFile.single('image1'), validationsProducts, productsController.update);
 
 // Delete product route
 router.delete('/:id', authMiddleware, productsController.destroy);
