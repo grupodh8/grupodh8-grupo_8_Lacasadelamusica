@@ -38,6 +38,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;    
@@ -102,6 +103,7 @@ header {
 /* ---------- ITEMS DE BARRA DE NAVEGACION A MOSTRAR VERSION MOBILE Y DESKTOP ---------- */
 
 .items-show-mobile, .boton-sandwich {
+    display: flex;
     font-size: 14px;
     color: white;
     text-decoration: none;
@@ -438,6 +440,7 @@ footer a {
 
 .pie-login {
     text-align: center;
+    padding-bottom: 30px;
 }
 
 .boton-crear {
@@ -629,7 +632,7 @@ footer a {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    margin-right: 3px;
+    margin: auto;
 }
 
 .contenedor-perfil {
@@ -659,6 +662,64 @@ footer a {
     border-radius: 5px;
     color: red;
     margin: 0 0 15px;
+}
+
+.login-button-text {
+    font-family: 'Open Sans';
+    display: inline;   
+}
+
+.login-icon {
+    font-size: 13px;
+}
+
+.ocultar-nombre {
+    display: none
+}
+
+.input-search-bar {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #343a40c0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    width: 150px;
+}
+
+.search-bar-container {
+    display: flex;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    margin: 3px;
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+.icono-search-bar {
+    font-size: 15px;
+}
+
+.search-title {
+    padding: 20px;
+}
+
+.mensaje-busqueda {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.input-pagina-busqueda {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-hide-mobile {
+    display: none;
 }
 
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
@@ -737,7 +798,7 @@ footer a {
     }
 
     .items-show-mobile {
-        display: flex;
+        
         padding-bottom: 10px;
         align-items: center;
     }
@@ -860,9 +921,25 @@ footer a {
         width: 180px;
     }
 
+    .search-hide-desktop {
+        display: none
+    }
+
+
+
+@media (min-width: 968px) {
 
     .hide-in-desktop {
         display: none;
     }
+
+    .ocultar-nombre {
+        display: inline
+    }
+
+        .search-hide-mobile {
+        display: flex;
+    }
+}
 
 }

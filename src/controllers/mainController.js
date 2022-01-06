@@ -1,13 +1,7 @@
 // Requires
 
-const fs = require('fs');
-const path = require('path');
 const db = require('../database/models');
-
-// JSON to JS array of products database
-
-let productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const OP = db.Sequelize.Op;
 
 // Main controllers
 
@@ -36,6 +30,20 @@ const mainController = {
                     bottom: bottom
                 });
             })
+    },
+
+    search: (req, res, next) => {
+        let search = req.query.search;
+    
+        db.Product.findAll({
+          where: {
+            name: { [OP.like]: `%${search}%` },
+          },
+        })
+          .then((results) => {
+            res.render("search", { results: results });
+          })
+          .catch((error) => res.send(error));
     },
 
     // Shopping cart controller

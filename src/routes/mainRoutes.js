@@ -11,6 +11,9 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // Index route
 router.get('/', mainController.index);
 
+// Search route
+router.get("/search", mainController.search);
+
 // Shopping cart route
 router.get('/cart', mainController.cart);
 

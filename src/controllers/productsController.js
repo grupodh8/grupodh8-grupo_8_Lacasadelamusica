@@ -7,6 +7,7 @@ const { validationResult } = require('express-validator');
 const { fields } = require('../middlewares/productMulterMiddleware');
 let db = require("../database/models");
 const { nextTick } = require('process');
+const OP = db.Sequelize.Op;
 
 // Products controllers
 
@@ -120,6 +121,20 @@ const productsController = {
 				res.redirect('/products/' + req.params.id)
 			})
 	},
+
+	section: (req, res) => {
+        let section = req.params.id;
+    
+        db.Product.findAll({
+          where: {
+            category_id: { [OP.like]: `%${section}%` },
+          }
+		})
+          .then((results) => {
+            res.render("section", { results: results });
+          })
+          .catch((error) => res.send(error));
+    },
 
 	// Delete product controller
 

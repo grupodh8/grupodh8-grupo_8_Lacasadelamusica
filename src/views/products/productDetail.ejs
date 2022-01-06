@@ -22,7 +22,9 @@
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle">
                         <button class="boton-compra-detalle"><a href="/products/<%= product.id %>">Comprar</a></button>
+                        <% if (locals.isLogged) { %>
                         <button class="boton-compra-detalle"><a href="/products/<%= product.id %>/edit">Editar</a></button>
+                        <% } %>
                         <button class="boton-carro-detalle"><a href="/cart"><i id="iconos-barra"
                                     class="fas fa-shopping-cart"></i></a></button>
                                    
@@ -38,9 +40,11 @@
                     <p class="precio-articulo-detalle">$<%= product.price %></p>
                     <div class="botones-detalle-2">
                         <button class="boton-compra"><a href="/products/<%= product.id %>">Comprar</a></button>
-                        <!-- <button class="boton-carro"><a href="/cart"><i id="iconos-barra" -->
-                                    <!-- class="fas fa-shopping-cart"></i></a></button> -->
+                        <button class="boton-compra"><a href="/cart"><i id="iconos-barra"
+                                    class="fas fa-shopping-cart"></i></a></button>
+                        <% if (locals.isLogged) { %>
                         <button class="boton-compra"><a href="/products/<%= product.id %>/edit">Editar</a></button>
+                        <% } %>
                     </div>
                 </div>
             </div>

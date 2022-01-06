@@ -6,27 +6,32 @@
         </div>
         <nav class="barra-navegacion">
             <ul class="barra-items">
-                <li><a class="items-noshow-mobile" href="#">Guitarras</a></li>
-                <li><a class="items-noshow-mobile" href="#">Bajos</a></li>
-                <li><a class="items-noshow-mobile" href="#">Accesorios</a></li>
-                <li><a class="items-noshow-mobile-last" href="#">Audio</a></li>
+                <li><a class="items-noshow-mobile" href="/products/section/1">Guitarras</a></li>
+                <li><a class="items-noshow-mobile" href="/products/section/8">Bajos</a></li>
+                <li><a class="items-noshow-mobile" href="/products/section/4">Baterias</a></li>
+                <li><a class="items-noshow-mobile-last" href="/products/section/3">Accesorios</a></li>
                 <li><a class="items-show-mobile" href="/cart"><i id="iconos-barra"
                             class="fas fa-shopping-cart"></i></a></li>
-                <li><a class="items-show-mobile" href="#"><i id="iconos-barra" class="fas fa-search"></i></a></li>
+                <% if (locals.isLogged) { %>
+                <li><a class="items-show-mobile" href="/products/create"><i class="fas fa-plus"></i></a></li>
+                <% } %>
+                <li><a class="items-show-mobile search-hide-desktop" href="/search"><i id="iconos-barra" class="fas fa-search"></i></a></li>
+                <li class="search-bar-container search-hide-mobile"><i id="iconos-barra" class="fas fa-search icono-search-bar"></i><form action="/search" method="GET">
+                    <input type="text" name="search" class="search input-search-bar">
+                  </form></li>
 
                 <% if (locals.isLogged) { %>
 
-                <li><a class="items-show-mobile  hide-in-small" href="/users/profile"> <img class="avatar-navbar" src="/images/users/<%= locals.loggedUser.avatar %>" alt=""> Hola, <%= locals.loggedUser.first_name %>!</a>
+                <li><a class="items-show-mobile ocultar-nombre" href="/users/profile"><img class="avatar-navbar" src="/images/users/<%= locals.loggedUser.avatar %>" alt=""> <p class="fas fa login-icon login-button-text">Hola, <%= locals.loggedUser.first_name %>!</p></a>
                 </li>
-                <li><a class="items-show-mobile  hide-in-desktop" href="/users/profile"><i id="iconos-barra" class="fas fa-user-circle"></i></a>
+                <li><a class="items-show-mobile  hide-in-desktop" href="/users/profile"><img class="avatar-navbar" src="/images/users/<%= locals.loggedUser.avatar %>" alt=""> </a>
                 </li>
-                <li><a class="items-show-mobile" href="/users/logout"></i>Logout</a>
+                <li><a class="items-show-mobile" href="/users/logout"></i><i class="fas fa-sign-out-alt"></i></a>
                 </li>
                 <% } else { %>
-                <li><a class="items-show-mobile" href="/users/login"><i id="iconos-barra" class="fas fa-user-circle"></i>LOGIN</a>
+                <li><a class="items-show-mobile" href="/users/login"><i class="fas fa-sign-in-alt login-icon"> <p class="login-button-text">LOGIN</p></i></a>
                 </li>
                 <% } %>
-                <!-- <li><a class="boton-sandwich" href="#"><i id="iconos-barra" class="fas fa-bars"></i></a></i></a></li> -->
             </ul>
         </nav>
     </header>

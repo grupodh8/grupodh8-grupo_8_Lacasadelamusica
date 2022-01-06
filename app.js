@@ -21,10 +21,14 @@ app.set('views', [__dirname + '/src/views', __dirname + '/src/views/products', _
 const mainRoutes = require('./src/routes/mainRoutes'); // Rutas main
 const productsRoutes = require('./src/routes/productsRoutes'); // Rutas /products
 const usersRoutes = require('./src/routes/usersRoutes'); // Rutas /users
+const apiUsers = require('./src/routes/api/users');
+const apiProducts = require('./src/routes/api/products')
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
-app.use('/users', usersRoutes)
+app.use('/users', usersRoutes);
+app.use('/api/users', apiUsers);
+app.use('/api/products', apiProducts);
 
 
 // app.use((req, res, next) => next(createError(404)));
