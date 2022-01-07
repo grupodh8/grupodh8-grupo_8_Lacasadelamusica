@@ -31,11 +31,11 @@ app.use('/api/users', apiUsers);
 app.use('/api/products', apiProducts);
 
 
-// app.use((req, res, next) => next(createError(404)));
-// app.use((err, req, res, next) => {
-//   res.status(err.status || 500);
-//   res.render('not-found');
-// });
+app.use((req, res, next) => next(createError(404)));
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.render('not-found');
+});
 
 
 let puerto = 3000;
