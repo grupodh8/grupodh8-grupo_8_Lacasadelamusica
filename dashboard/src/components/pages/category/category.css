@@ -1,0 +1,64 @@
+.listItemCategories {
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+   
+}
+
+.userShowIcon {
+    margin-right: 10px;
+}
+
+.keyListCategories {
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.featuredCat {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    object-fit: contain;
+}
+
+.featuredTitle {
+    font-size: 20px;
+    text-decoration: none;
+}     
+
+.featuredCategoryContainer {
+    margin: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.featuredCategory {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.featuredCategoryItem {
+    margin: 15px 15px;
+    width: 100px;
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgb(0, 0, 0, 0.75);
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 575px) {
+    .featuredCategoryItem {
+        width: 100%
+    }
+
+    
+    .UserTitle {
+        font-size: 20px;
+    }
+}

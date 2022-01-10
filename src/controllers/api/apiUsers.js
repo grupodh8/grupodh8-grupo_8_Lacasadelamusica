@@ -11,6 +11,7 @@ const apiUsers = {
               first_name: user.first_name,
               last_name: user.last_name,
               email: user.email,
+              avatar: `http://localhost:3001/images/users/${user.avatar}`,
               detail: `/api/users/${user.id}`
             };
             return usersList.push(list);
@@ -18,7 +19,7 @@ const apiUsers = {
     
           res.status(200).json({
             count: users.length,
-            users: usersList,
+            data: usersList,
             apiUrl: "/api/users",
           });
         } catch (error) {
@@ -26,7 +27,7 @@ const apiUsers = {
             .status(500)
             .json({
               count: null,
-              users: null,
+              data: null,
               apiUrl: "/api/users",
             });
         }
@@ -36,7 +37,7 @@ const apiUsers = {
           const user = await db.User.findByPk(req.params.id);
     
           res.status(200).json({
-            user: {
+            data: {
               id: user.id,
               first_name: user.first_name,
               last_name: user.last_name,
@@ -44,9 +45,7 @@ const apiUsers = {
               city: user.city,
               zip: user.zip,
               email: user.email,
-              avatar: {
-                url: `http://localhost:3000/images/users/${user.avatar}`
-              },
+              avatar: `http://localhost:3001/images/users/${user.avatar}`,
             },
             apiUrl: `/api/users/${user.id}`,
           });
@@ -54,7 +53,7 @@ const apiUsers = {
           res
             .status(500)
             .json({ 
-                user: null, 
+                data: null, 
                 apiUrl: null
             });
         }

@@ -18,7 +18,8 @@ const apiProducts = {
           name: product.name,
           description: product.description,
           category: product.categories.name,
-          detail: `/api/products/${product.id}`
+          detail: `/api/products/${product.id}`,
+          image: `http://localhost:3001/images/products/${product.image}`
         };
         return productsList.push(list);
       });
@@ -51,9 +52,9 @@ const apiProducts = {
   findOne: async (req, res) => {
     try {
       let idToFind = req.params.id
-      let product = await db.Product.findOne({
+      let product = await db.Product.findOne({ where: { id: idToFind } , 
         include: [{ association: 'categories' }, { association: 'brands' }]
-      },  { where: { id: idToFind } })
+      })
 
       let prodFinal = {}
       
@@ -113,9 +114,7 @@ const apiProducts = {
           configurable: true
         },
         image: {
-          value: {
-            url: `http://localhost:3000/images/products/${product.image}`
-          },
+          value: `http://localhost:3001/images/products/${product.image}`,
           writable: true,
           enumerable: true,
           configurable: true
@@ -129,12 +128,12 @@ const apiProducts = {
         })
 
   res.status(200).json({
-    product: prodFinal,
+    data: prodFinal,
     detail: `/api/products/${product.id}`,
   });
 } catch (error) {
   res.status(500).json({
-    product: null,
+    data: null,
     detail: null
   });
 }

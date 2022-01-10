@@ -30,15 +30,15 @@ app.use('/users', usersRoutes);
 app.use('/api/users', apiUsers);
 app.use('/api/products', apiProducts);
 
-
-app.use((req, res, next) => next(createError(404)));
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('not-found');
 });
 
 
-let puerto = 3000;
+
+
+let puerto = 3001;
 app.listen(process.env.PORT || puerto, () => { console.log(`Servidor corriendo en http://localhost:${puerto}`) });
 
 
