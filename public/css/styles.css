@@ -9,6 +9,7 @@ body {
 
 main {
     background-color: #E9ECEF;
+    padding-top: 0.1px;
 }
 
 h3 {
@@ -19,6 +20,81 @@ h3 {
 a {
     text-decoration: none;
     color: black;
+}
+
+/* ARTICULO CARD TESTEO */
+
+.articulo-nuevo {
+    width: 300px;
+    height: 500px;
+    background-color: #f6f9fc;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.articulo-nuevo:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: 500ms;
+}
+
+.articulo-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    background-color: white;
+}
+
+.articulo-descripcion {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.articulo-imagen-file {
+    width: 95%;
+}
+
+.articulo-nombre{ 
+    width: 90%; 
+    font-size: 20px;
+    font-weight: 500;
+    padding: 30px 20px 0 20px;
+}
+
+.articulo-precio {
+    width: 90%;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 0 20px 30px 20px;
+}
+
+.articulo-descripcion-inferior {
+    display: flex;
+    align-items: baseline;
+}
+
+.articulo-boton-carro {
+    border: none;
+    background-color: #d3d8dd;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.articulo-boton-carro > a {
+    font-size: 18px;
+}
+
+.articulo-boton-carro:hover {
+    background-color: black;
+    color: white;
+    transition: 500ms;
+}
+
+.articulo-boton-carro > a:hover {
+    color: white;
 }
 
 /* ---------- BARRA SUPERIOR DE NAVEGACION ---------- */
@@ -90,6 +166,17 @@ header {
     transition: 500ms;
 }
 
+.social-icons-a {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.social-icons-a:hover {
+    color: gray;
+    background-color: white;
+    transition: 500ms;
+}
+
 
 /* ---------- ITEMS DE BARRA DE NAVEGACION A MOSTRAR VERSION MOBILE Y DESKTOP ---------- */
 
@@ -132,32 +219,6 @@ header {
     box-shadow: 0px 0px 3px rgb(100, 100, 100);
 }
 
-/* ---------- DISEÑO DE CONTENEDORES DE ARTICULOS ---------- */
-
-.imagen-articulo {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.seccion-imagen {
-    padding: 15px;
-    margin: 5px;
-    margin-bottom: 15px;
-}
-
-.seccion-contenido {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-top: 3px solid #ADB5BD;
-    width: 100%;
-    background-color: #F8F9FA;
-}
-
-.precio-articulo {
-    font-size: 20px;
-    font-weight: 700;
-}
 
 #shipping {
     background-color: white;
@@ -211,18 +272,25 @@ header {
 .form-boton-allproducts {
     display: flex;
     justify-content: center;
+    padding: 20px;
 }
 
 .boton-allproducts {
-    font-family: 'Open Sans';
+    font-family: 'Source Sans Pro';
+    border: none;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 16px;
     background-color: white;
     padding: 10px 5px;
     border-radius: 5px;
     margin-bottom: 20px;
     margin-right: 5px;
+}
+
+.boton-allproducts:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
 }
 
 .boton-carro {
@@ -517,12 +585,6 @@ footer a {
     align-items: center;
 }
 
-.precio-articulo-detalle {
-    font-weight: 700;
-    font-size: 30px;
-    align-items: center;
-}
-
 .botones-detalle {
     display: flex;
 }
@@ -746,8 +808,9 @@ footer a {
 }
 
 .mensaje-busqueda {
+    font-size: 20px;
     margin-top: 200px;
-    margin-bottom: 200px;
+    margin-bottom: 300px;
 }
 
 .input-pagina-busqueda {
@@ -776,16 +839,48 @@ footer a {
     font-size: 25px;
 }
 
+.index-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 50px;
+    margin-top: 30px;
+}
+
+.index-title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.index-title-bar {
+    height: 5px;
+    background-color: darkgray;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.search-input {
+    width: 350px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.search-input:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.search-input:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {
 
     /* ---------- CAMBIO DE ARTICULOS PAGINA PRINCIPAL ---------- */
-
-    .articulo-1 {
-        width: 40%;
-        margin-bottom: 20px;
-    }
 
     #shipping {
         margin-left: 38px;
@@ -880,10 +975,6 @@ footer a {
 
     /* ---------- CAMBIOS ARTICULOS DE PAGINA PRINCIPAL ---------- */
 
-    .articulo-1 {
-        width: 22%;
-        
-    }
 
     .nombre-producto {
         font-size: 40px;

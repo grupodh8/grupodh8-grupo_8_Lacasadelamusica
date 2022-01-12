@@ -1,23 +1,14 @@
-<article class="articulo-1">
-    <section class="seccion-imagen">
-        <img class="imagen-articulo" src="/images/products/<%= product.image %>" alt="imagen de articulo">
-    </section>
-    <section class="seccion-contenido">
-        <div class="box-articulo">
-            <i class="fas fa-truck" id="shipping"></i>
-            <div class="precio-descuento-articulo">
-                <p class="precio-articulo">$<%= product.price %>
-                </p>
-                <p class="descuento-articulo"></p>
-            </div>
-            <div>
-                <h3 class="descripcion-articulo">
-                    <%= product.name %>
-                </h3>
-                <button class="boton-compra"><a href="/products/<%= product.id %>">Ver mas</a></button>
-                <button class="boton-carro"><a href="/cart"><i id="iconos-barra"
-                            class="fas fa-shopping-cart"></i></a></button>
-            </div>
+<a href="/products/<%= product.id %>">
+    <div class="articulo-nuevo">
+    <div class="articulo-imagen">
+        <img class="articulo-imagen-file" src="/images/products/<%= product.image %>" alt="">
+    </div>
+    <div class="articulo-descripcion">
+        <div class="articulo-nombre"><%= product.name %></div>
+        <div class="articulo-descripcion-inferior">
+        <div class="articulo-precio">$<%= product.price %></div>
+        <button class="articulo-boton-carro"><a href="/cart"><i id="iconos-barra" class="fas fa-shopping-cart"></i></a></button>
         </div>
-    </section>
-</article>
+    </div>
+</div>
+</a>

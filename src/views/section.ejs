@@ -1,10 +1,10 @@
-<%- include('./partials/head', {title: 'Resultados de busqueda - La Casa de la Musica'}) %>
+<%- include('./partials/head', {title: 'Seccion - La Casa de la Musica'}) %>
 
 <body>
     <%- include('./partials/header') %>
 
     <main>
-        <h3 class="search-title">Titulo de seccion:</h3>
+      <div class="index-title-container"><div class="index-title">SECCION DE PRODUCTOS</div><div class="index-title-bar"></div></div>
         <section class="contenedor-articulos">
             <% results.forEach((product) => { %>
                     <%- include('./partials/productCard', {product : product}) %>

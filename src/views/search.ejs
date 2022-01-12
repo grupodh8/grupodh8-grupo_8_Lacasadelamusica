@@ -4,13 +4,12 @@
     <%- include('./partials/header') %>
 
     <main>
-        <h3 class="search-title">RESULTADOS DE TU BUSQUEDA:</h3>
+        <div class="index-title-container"><div class="index-title">RESULTADOS DE TU BUSQUEDA</div><div class="index-title-bar"></div></div>
         <div class="input-pagina-busqueda">
         <div class="casillero">
         <form action="/search" method="GET">
-            <label for="search" class="label-1">Buscar:</label>
-            <input type="text" name="search" class="search input-1">
-          </form>
+            <input type="text" name="search" class="search-input" placeholder=" Busca lo que necesites...">
+        </form>
         </div>
         </div>
         <section class="contenedor-articulos">

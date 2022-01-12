@@ -9,14 +9,14 @@
             <div><img class="imagen-carousel" src="/images/instrumentos-2.jpg" alt=""></div>
             <div><img class="imagen-carousel" src="/images/instrumentos-3.jpg" alt=""></div>
         </div>
-        <h3>Nuevos Productos</h3>
+        <div class="index-title-container"><div class="index-title">NUEVOS PRODUCTOS</div><div class="index-title-bar"></div></div>
         <section class="contenedor-articulos">
             <!-- PRODUCTOS PRINCIPALES INDEX-->
             <% top.forEach((product) => { %>
                     <%- include('./partials/productCard', {product : product}) %>
 			<% }) %>            
         </section>
-        <h3>OFERTAS DESTACADAS</h3>
+        <div class="index-title-container"><div class="index-title">OFERTAS DESTACADAS</div><div class="index-title-bar"></div></div>
         <section class="contenedor-articulos">
             <!-- PRODUCTOS SECCION INFERIOR-->
             <% bottom.forEach((product) => { %>
