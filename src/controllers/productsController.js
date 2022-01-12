@@ -20,6 +20,7 @@ const productsController = {
 			.then((products) => {
 				res.render('products', { products: products })
 			})
+			.catch(err => { console.log(err); })
 	},
 
 	// Product detail controller
@@ -32,7 +33,8 @@ const productsController = {
 				res.render('productDetail', {
 					product: product,
 				});
-			});
+			})
+			.catch(err => { console.log(err); })
 	},
 
 	// Create product controller
@@ -43,9 +45,11 @@ const productsController = {
 				res.render('createProduct', {
 					categories: categories,
 					brands: brands
-				});
-			});
-		});
+				})
+			})
+			.catch(err => { console.log(err); })
+		})
+		.catch(err => { console.log(err); })
 
 	},
 
@@ -61,9 +65,9 @@ const productsController = {
 						oldData: req.body,
 						categories: categories,
 						brands: brands
-					});
-				});
-			});
+					})
+				}).catch(err => { console.log(err); })
+			}).catch(err => { console.log(err); })
 		} else {
 			db.Product.create({
 				...req.body,
@@ -88,6 +92,7 @@ const productsController = {
 					brands: brands
 				})
 			})
+			.catch(err => { console.log(err); })
 	},
 
 	// Save product edit controller
@@ -120,6 +125,7 @@ const productsController = {
 				}
 				res.redirect('/products/' + req.params.id)
 			})
+			.catch(err => { console.log(err); })
 	},
 
 	section: (req, res) => {

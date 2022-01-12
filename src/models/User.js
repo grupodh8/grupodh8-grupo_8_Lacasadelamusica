@@ -47,7 +47,7 @@ let User = {
             }
         }).then((user) => {
             return user
-        })
+        }).catch(err => { console.log(err); })
     },
 
     findUserByField: (property, text) => {
@@ -56,6 +56,7 @@ let User = {
         let selectedUser = users.find(user => user[property] == text);
         return selectedUser;
         })
+        .catch(err => { console.log(err); })
     },   
 
     delete: (id) => {

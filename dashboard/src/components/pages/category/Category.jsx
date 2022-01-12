@@ -1,5 +1,4 @@
 import './category.css'
-import { LabelImportant } from '@material-ui/icons';
 import React, { useState, useEffect } from 'react';
 
 export default function Category() {
@@ -12,8 +11,6 @@ export default function Category() {
             .then((data) => setCategories(data.countByCategory));
     }, []);
 
-    let categoryKeys = Object.keys(categories)
-    let categoryValues = Object.values(categories)
     let categoryEntries = Object.entries(categories)
     console.log(categoryEntries)
 

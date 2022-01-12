@@ -48,7 +48,7 @@ const usersController = {
                 });
                 res.redirect('/users/login')
             }
-        })
+        }).catch(err => { console.log(err); })
     },
 
     // Login form controller
@@ -120,7 +120,7 @@ const usersController = {
                     }
                 });
             }
-        })
+        }).catch(err => { console.log(err); })
     },
 
     // Profile controller
@@ -157,6 +157,7 @@ const usersController = {
 					user: user
 				})
 			})
+            .catch(err => { console.log(err); })
 	},
 
     save: (req, res) => {
@@ -205,7 +206,7 @@ const usersController = {
             mensaje: 'Por favor, vuelve a iniciar sesion para aplicar cambios'
                 }
             )
-    })}
+    }).catch(err => { console.log(err); })}
 };
 
 // Exports

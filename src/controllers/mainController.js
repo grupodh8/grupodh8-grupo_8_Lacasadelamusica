@@ -15,13 +15,14 @@ const mainController = {
                 classification: 'main-top'
             },
             limit: 8
-        })
+        }).catch(err => { console.log(err); })
+        
         let mainBottomRequest = db.Product.findAll({
             where: {
                 classification: 'main-bottom'
             },
             limit: 8
-        })
+        }).catch(err => { console.log(err); })
 
         Promise.all([mainTopRequest, mainBottomRequest])
 			.then(function ([top, bottom]) {
@@ -30,6 +31,7 @@ const mainController = {
                     bottom: bottom
                 });
             })
+            .catch(err => { console.log(err); })
     },
 
     search: (req, res, next) => {

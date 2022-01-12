@@ -7,7 +7,7 @@ let products = {
                 .then(function(categories) {
                 return res.render('createProduct', {categories: categories})
                 })
-
+                .catch(err => { console.log(err); })
     
     },
 

@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: 'Open Sans';
+    font-family: 'Source Sans Pro';
     background-color: #ADB5BD;
 }
 
@@ -27,10 +27,11 @@ header {
     background-color : #343a40;
 }
 
+
+
 .top-bar {
-    display: none;
     width: 100%;
-    height: 35px;
+    height: 12px;
     background-color: #212529;
 }
 
@@ -42,7 +43,6 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;    
-    margin-right: -5px;
 }
 
 .header-principal {
@@ -50,67 +50,54 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 10px 10px 20px;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 /* ---------- LOGO BARRA SUPERIOR ---------- */
 
 .imagen-logo {
     display: none;
-    margin-left: -5px;
-    border-radius: 20px;
-    width: 150px;
 }
 
 .imagen-logo-mobile {
     display: flex;
-    width: 60px;
-    margin-left: -15px;
+    width: 50px;
+    margin-left: 8px;
 }
 
 
 /* ---------- ITEMS DE BARRA DE NAVEGACION OCULTOS EN VERSION MOBILE ---------- */
 
 .items-noshow-mobile {
+    display: none;
     font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
     display: none;
     color: white;
     text-decoration: none;
-    margin: 3px;
-    margin-right: 0px;
-    padding: 9px;
-    border-right: 3px solid white;
+    margin-right: 25px;
 }
 
-
-/* ---------- ULTIMO DE ITEMS OCULTOS EN VERSION MOBILE (PARA EVITAR BORDE DERECHO) ---------- */
-
-.items-noshow-mobile-last {
-    font-size: 17px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: none;
-    color: white;
-    text-decoration: none;
-    margin: 3px;
-    margin-right: 0px;
-    padding: 9px;
+.items-noshow-mobile:hover {
+    color: gray;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: white;
+    transition: 500ms;
 }
 
 
 /* ---------- ITEMS DE BARRA DE NAVEGACION A MOSTRAR VERSION MOBILE Y DESKTOP ---------- */
 
-.items-show-mobile, .boton-sandwich {
+.items-show-mobile {
     display: flex;
-    font-size: 14px;
     color: white;
     text-decoration: none;
-    margin: 3px;
-    padding: 9px;
-    border: 2px solid white;
-    border-radius: 4px;
+    margin-right: 20px;
 }
 
 /* ---------- IMAGENES DE CAROUSEL DE FOTOS (SCRIPT DE JAVASCRIPT EN EL PIE DE PAGINA) ---------- */
@@ -255,21 +242,43 @@ header {
     display: flex;
     justify-content: center;
     align-items:center;
-    background-color: #212529;
-    padding-bottom: 30px;
+    background-color: #343a40;
+}
+
+.linea-inferior {
+    height: 0.5px;
+    background-color: gray;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .imagen-logo-footer {
-    margin-top: 25px;
+    margin-top: 20px;
     width: 200px;
     border-radius: 20px;
+}
+
+.imagen-logo-footer-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-title {
+    color: white;
+    font-family: 'Source Sans Pro';
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.social-containers {
+    display: none;
+    margin-left: 80px;
+    margin-top: 40px;
 }
 
 .barra-navegacion-footer {
     display: none;
     flex-direction: row;
-    margin: 0px 30px 0 0; 
-    padding-right: 100px;
+    margin-right: 60px;
     margin-bottom: 30px;
 }
 
@@ -628,11 +637,19 @@ footer a {
     width: 100%;
 }
 
-.avatar-navbar {
-    width: 15px;
-    height: 15px;
+.avatar-navbar-desktop {
+    margin-bottom: -5px;
+    margin-right: 5px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    margin: auto;
+    border: 1px solid black;
+}
+
+.avatar-navbar-mobile {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }
 
 .contenedor-perfil {
@@ -667,40 +684,61 @@ footer a {
 .login-button-text {
     font-family: 'Open Sans';
     display: inline;   
+    font-size: 15px;
+    margin-left: 3px;
 }
 
 .login-icon {
-    font-size: 13px;
-}
-
-.ocultar-nombre {
-    display: none
+    font-size: 18px;
 }
 
 .input-search-bar {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    width: 10px;
+    color: gray;
+    background-color: transparent;
+    position: relative;
     border: none;
-    background-color: #343a40c0;
     border-radius: 5px;
-    font-size: 14px;
-    color: white;
-    width: 150px;
+    font-size: 15px;
 }
 
 .search-bar-container {
+    width: 30px;
     display: flex;
-    font-size: 14px;
+    align-items: center;
+    font-size: 15px;
     color: white;
     text-decoration: none;
-    margin: 3px;
-    padding: 8px;
-    border: 2px solid white;
-    border-radius: 4px;
+    margin-right: 10px;
 }
 
-.icono-search-bar {
-    font-size: 15px;
+.search-bar-container:focus-within {
+        width: 150px;
+        color: gray;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: white;
+        transition: 500ms;
+}
+
+.search-bar-container:hover {
+    width: 150px;
+    color: gray;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: white;
+    transition: 500ms;
+}
+
+.input-search-bar:hover {
+    width: 120px;
+    background-color: white;
+}
+
+.input-search-bar:focus-within {
+    width: 120px;
+    background-color: white;
 }
 
 .search-title {
@@ -718,8 +756,24 @@ footer a {
     margin-bottom: 30px;
 }
 
-.search-hide-mobile {
+.nombre-usuario {
     display: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+    font-weight: 700;
+}
+
+.nombre-usuario-mobile {
+    display: flex;
+}
+
+.social-icons {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
 }
 
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
@@ -743,12 +797,6 @@ footer a {
     font-size: 20px;
     }
 
-    .imagen-logo {
-        border-radius: 20px;
-        width: 180px;
-    }
-
-
     
 }
 
@@ -758,57 +806,51 @@ footer a {
 
 @media (min-width: 769px) {
 
+    .nombre-usuario-mobile {
+        display: none;
+    }
+
+    .nombre-usuario {
+        display: flex;
+    }
+
     .imagen-error {
         width: 50%;
     }
 
-    .barra-items {
-        margin-right: 15px;
-    }
-
     .imagen-logo {
         display: flex;
-        margin-left: -5px;
+        margin-left: 25px;
         border-radius: 20px;
-        width: 150px;
+        width: 150px;    
     }
 
     .imagen-logo-mobile {
         display: none;
     }
 
-    /* ---------- CAMBIOS EN LOGO DE PAGINA TITULO ---------- */
-
-    .logo {
-        margin-left: 20px;
-    }
 
     /* ---------- CAMBIOS EN BARRA DE NAVEGACION TOP EN VERSION DESKTOP ---------- */
 
     .top-bar {
-        display: block;
+        height: 20px;
     }
 
     .boton-sandwich {
         display: none;
     }
 
-    .items-noshow-mobile, .items-noshow-mobile-last {
-        display: flex;
+    .items-show-mobile {
+        font-size: 16px;
+        margin-right: 25px;
     }
 
-    .items-show-mobile {
-        
-        padding-bottom: 10px;
-        align-items: center;
-    }
-
-    .items-show-mobile {
-        font-size: 13px;
-        color: white;
-        text-decoration: none;
-        margin: 3px;
-        padding: 9px;
+    .items-show-mobile:hover {
+        color: gray;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: white;
+        transition: 500ms;
     }
 
     /* ---------- CAMBIOS EN SUBTITULOS DE PIE DE PAGINA ---------- */
@@ -819,7 +861,7 @@ footer a {
     }
 
     .h3-footer {
-        text-align: center;
+        text-align: left !important;
         margin: 30px 0 10px 0;
         color: white;
     }
@@ -827,13 +869,12 @@ footer a {
     .barra-navegacion-footer {
         display: flex;
         flex-direction: row;
-        margin: 0px 30px 0 0; 
     }
 
     .imagen-logo-footer {
         margin-top: 25px;
         width: 180px;
-        margin-left: 100px;
+        margin-left: 50px;
         border-radius: 20px;
     }
 
@@ -853,12 +894,6 @@ footer a {
     .carousel-fotos {
         background-image: url("/images/logo-chico.png");
         background-repeat: repeat;
-        border-bottom: 5px #212529 solid;
-    }
-
-    .imagen-carousel {
-        align-items: center;
-        max-width: 60%;
     }
 
     /* ---------- CAMBIOS PAGINA DETALLE DE PRODUCTO ---------- */
@@ -916,30 +951,18 @@ footer a {
         align-items: center;
     }
 
-    .imagen-logo {
-        border-radius: 20px;
-        width: 180px;
-    }
+@media (min-width: 928px) {
+    .social-containers {
+        display: flex;
+        flex-direction: column;
+    }   
+}
 
-    .search-hide-desktop {
-        display: none
-    }
-
-
-
-@media (min-width: 968px) {
-
-    .hide-in-desktop {
-        display: none;
-    }
-
-    .ocultar-nombre {
-        display: inline
-    }
-
-        .search-hide-mobile {
+@media (min-width: 1042px) {
+    .items-noshow-mobile {
         display: flex;
     }
+
 }
 
 }
