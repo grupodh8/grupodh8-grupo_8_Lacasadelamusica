@@ -1039,6 +1039,26 @@ footer a {
     margin-right: 10px;
 }
 
+.icono-not-found {
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.div-not-found {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.texto-not-found {
+    font-family: "Source Sans Pro";
+    font-weight: 500;
+    font-size: 20px;
+}
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {
@@ -1053,6 +1073,10 @@ footer a {
 
     .datos-arriba {
     font-size: 20px;
+    }
+
+    .texto-not-found {
+        font-size: 30px;
     }
 
     
@@ -1220,7 +1244,6 @@ footer a {
     .avatar-perfil-nuevo {
         width: 100%;
     }
-
 
 @media (min-width: 928px) {
     .social-containers {
