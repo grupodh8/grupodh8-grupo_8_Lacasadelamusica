@@ -717,8 +717,8 @@ footer a {
 
 .input-textarea {
     border: none;
-    height: 35px;
     border-radius: 5px;
+    width: 100% !important;
     height: 200px;
 }
 
@@ -1179,6 +1179,7 @@ footer a {
     border: none;
     font-family: 'Source Sans Pro';
     font-weight: 700;
+    border-radius: 5px;
     margin-right: 10px;
 }
 

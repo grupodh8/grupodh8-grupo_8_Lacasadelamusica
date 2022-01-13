@@ -64,8 +64,12 @@
                         <div class="der-bottom">
                         <div class="articulo-precio-nuevo">$<%= product.price %></div>
                         <div class="botones-der">
-                            <button class="boton-allproducts-nuevo"><a href="/cart">COMPRAR AHORA</a></button>
+                            <button class="boton-allproducts-nuevo"><a href="/cart">COMPRAR</a></button>
+                            <% if (locals.isLogged) { %>
+                                <button class="boton-allproducts-nuevo"><a href="/products/<%= product.id %>/edit">EDITAR</a></button>
+                            <% } %>
                             <button class="articulo-boton-carro-nuevo"><a href="/cart"><i id="iconos-barra" class="fas fa-shopping-cart"></i></a></button>
+                            
                         </div>
                         </div>
                     </div>
