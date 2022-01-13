@@ -873,6 +873,7 @@ footer a {
     font-size: 20px;
     margin-top: 200px;
     margin-bottom: 300px;
+    padding: 20px;
 }
 
 .input-pagina-busqueda {
@@ -963,7 +964,7 @@ footer a {
 
 .label-profile-image {
     height: 35px;
-    width: 350px;
+    width: 100%;
     background-color: white;
     margin-bottom: 30px;
     border-radius: 5px;
@@ -979,6 +980,63 @@ footer a {
 .label-profile-image:focus-within {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 500ms;
+}
+
+.contenedor-perfil-nuevo {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f6f9fc;
+}
+
+.perfil-izquierda {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar-perfil-nuevo {
+    border: 1px solid gray;
+    border-radius: 50%;
+    max-width: 250px;
+    align-self: center;
+}
+
+.perfil-nombre {
+    font-family: 'Source Sans Pro';
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.perfil-email {
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+.perfil-derecha {
+    flex: 4;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-bar {
+    width: 200px;
+    height: 3px;
+    background-color: gray;
+}
+
+.text-profile {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.fa-id-card,.fa-map-marked-alt,.fa-envelope {
+    margin-right: 10px;
 }
 
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
@@ -1146,6 +1204,23 @@ footer a {
         box-shadow: 0px 0px 5px rgb(100, 100, 100);
         align-items: center;
     }
+
+    .contenedor-perfil-nuevo {
+        flex-direction: row;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .perfil-derecha {
+        margin-left: 40px;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .avatar-perfil-nuevo {
+        width: 100%;
+    }
+
 
 @media (min-width: 928px) {
     .social-containers {

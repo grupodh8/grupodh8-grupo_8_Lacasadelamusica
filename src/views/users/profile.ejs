@@ -4,25 +4,31 @@
         <%- include('./partials/header') %>
 
             <main>
-                <div class="contenedor-perfil">
-                    <img class="avatar-perfil" src="/images/users/<%= user.avatar %>">
-
-                    <h1 class="h1-profile">Bienvenido, <%= user.first_name %>!</h1>
-                    <h2 class="h2-profile"><i class="fas fa-user-circle"></i> Tu informacion:</h2>
-
-                    <p><i class="fas fa-id-card"></i> Nombre: <%= user.first_name %> <%= user.last_name %></p>
-                    <p><i class="fas fa-map-marked-alt"></i> Direccion: <%= user.address %>, <%= user.city %> - <%= user.zip %></p>
-                    <p><i class="far fa-envelope"></i> Correo electronico: <%= user.email %></p>
-
-                    <div class="botones-detalle-2">
-                        <button class="boton-compra"><a href="http://localhost:3000/">PANEL DE ADMINSTRADOR</a></button>
-                        <button class="boton-compra"><a href="/users/edit">EDITAR PERFIL</a></button>
-                        <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="boton-delete">ELIMINAR PERFIL</button>
-                        </form>
+                <div class="contenedor-perfil-nuevo">
+                    <div class="perfil-izquierda">
+                        <img class="avatar-perfil-nuevo" src="/images/users/<%= user.avatar %>">
+                        <p class="perfil-nombre"><%= user.first_name %> <%= user.last_name %></p>
+                        <p class="perfil-email"><%= user.email %></p>
+                        <button class="boton-allproducts" style="margin-left: 10px; width: 80%; align-self: center"><a href="/users/edit">EDITAR PERFIL</a></button>
+                        <button class="boton-allproducts" style="margin-left: 10px; width: 80%; align-self: center"><a href="http://localhost:3000/">PANEL DE ADMINSTRADOR</a></button>
                     </div>
-                    
+                    <div class="perfil-derecha">
 
+                        <div class="forms-title" style="text-transform: uppercase;";">Bienvenido, <%= user.first_name %>!</div><div class="forms-title-bar" style="width: 200px;"></div>
+                        <h2 class="h2-profile"><i class="fas fa-user-circle"></i> Tu perfil:</h2>
+                        
+                        <p class="text-profile"><i class="fas fa-id-card"></i> Nombre: <%= user.first_name %></p>
+                        <p class="text-profile"><i class="fas fa-id-card"></i> Apellido: <%= user.last_name %></p>
+                        <p class="text-profile"><i class="fas fa-map-marked-alt"></i> Direccion: <%= user.address %></p>
+                        <p class="text-profile"><i class="fas fa-map-marked-alt"></i> Ciudad: <%= user.city %></p>
+                        <p class="text-profile"><i class="fas fa-map-marked-alt"></i> Codigo Postal: <%= user.zip %></p>
+                        <p class="text-profile"><i class="far fa-envelope"></i> Correo electronico: <%= user.email %></p>
+
+                        <div class="botones-detalle-2">
+                            
+                        </div>
+
+                    </div>
                 </div>
             </main>
             <%- include('./partials/footer') %>
