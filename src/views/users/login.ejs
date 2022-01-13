@@ -4,9 +4,7 @@
         <%- include('./partials/header') %>
 
             <main>
-
-
-                <h3 class="titulo-login">INICIAR SESION</h3>
+                <div class="forms-title-container"><div class="forms-title">INCIAR SESION</div><div class="forms-title-bar"></div></div>
                 <form class="formulario-login" action="/users/login" method="POST">
                     <div class="primera-parte">
                         <% if (locals.mensaje) { %>
@@ -40,19 +38,18 @@
                                         <% } %>
                                         <div id="errors-password" class="warning-text"></div>
                                             <div class="casillero">
-                                                <label for="remember">
+                                                <label for="remember_me" class="label-1">
                                                     <input type="checkbox" name="remember_me"> Mantener sesion iniciada
                                                 </label>
                                             </div>
                                             <div class="casillero">
-                                                <button type="submit" class="boton-login">Iniciar sesion</button>
+                                                <button type="submit" class="boton-allproducts">Iniciar sesion</button>
                                             </div>
                                         </div>
                 </form>
                 <div class="pie-login">
-                    <p class="pie-crear"><a href="/users/register">Recuperar contraseña</a></p>
                     <p class="pie-crear">No tienes cuenta?<a href="/users/register"><button type="submit"
-                                class="boton-crear">CREAR</button></a></p>
+                                class="boton-allproducts" style="width: 100px;">CREAR</button></a></p>
                 </div>
 
             </main>

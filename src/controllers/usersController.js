@@ -88,7 +88,6 @@ const usersController = {
                     }
 
                     req.session.loggedUser = userLogged;
-                    console.log(req.session.loggedUser)
                     
                     if (req.body.remember_me) {
                         res.cookie('userId', req.session.loggedUser.id, { maxAge: (1000 * 60) * 2 });

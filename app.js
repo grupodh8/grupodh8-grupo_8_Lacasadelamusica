@@ -30,10 +30,10 @@ app.use('/users', usersRoutes);
 app.use('/api/users', apiUsers);
 app.use('/api/products', apiProducts);
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.render('not-found');
-});
+// app.use((err, req, res, next) => {
+//   res.status(err.status || 500);
+//   res.render('not-found');
+// });
 
 
 

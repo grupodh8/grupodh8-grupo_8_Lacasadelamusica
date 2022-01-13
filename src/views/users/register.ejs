@@ -4,8 +4,7 @@
         <%- include('./partials/header') %>
 
             <main>
-                <h3 class="titulo-login">CREAR TU CUENTA</h3>
-
+                <div class="forms-title-container"><div class="forms-title">CREA TU CUENTA</div><div class="forms-title-bar"></div></div>
                 <form class="formulario-login" action="/users/register/" method="POST" enctype="multipart/form-data">
                     <div class="primera-parte">
                         <div class="casillero">
@@ -101,7 +100,8 @@
                                                         </div>
                                                         <% } %>
                                                 <div class="casillero">
-                                                    <label for="profileimage" class="label-1">Foto de perfil:</label>
+                                                    <label class="label-1">Foto de perfil:</label>
+                                                    <label for="profileimage" class="label-profile-image"><i class="fas fa-upload"></i><p class="toShow"></p></label>
                                                     <input type="file" name="profileimage" id="profileimage"
                                                         class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
                                                 </div>
@@ -113,7 +113,7 @@
                                                         </div>
                                                         <% } %>
                                                         <div class="casillero">
-                                                            <button type="submit" class="boton-login">CREAR CUENTA</button>
+                                                            <button type="submit" class="boton-allproducts">CREAR CUENTA</button>
                                                         </div>
                     </div>
                     
@@ -121,7 +121,7 @@
                         
                 </form>
                 <div class="pie-login">
-                    <p class="pie-crear">Ya tienes cuenta?<a href="/users/login" class="boton-redirect-login">INCIAR
+                    <p class="pie-crear">Ya tienes cuenta? <a href="/users/login" class="boton-allproducts">INCIAR
                             SESION</a></p>
                 </div>
 
@@ -131,8 +131,20 @@
 
             </main>
             <%- include('./partials/footer') %>
-
+          
                 <script type="text/javascript" src="/js/registerForm.js"></script>
+                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('input[type="file"]').change(function(e){
+                    var fileName = e.target.files[0].name;
+                    let inputToShow = document.querySelector('input.image')
+                    let toShow = document.querySelector('.toShow')
+                    toShow.innerHTML = fileName
+                });
+            });
+        </script>
+                
     </body>
 
     </html>

@@ -1,9 +1,9 @@
-<%- include('./partials/head', {title: 'Detalle de producto - La Casa de la Musica' }) %>
+<%- include('./partials/head', {title: 'Crear producto - La Casa de la Musica' }) %>
 
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h3 class="titulo-login">CREAR UN PRODUCTO</h3>
+                <div class="forms-title-container"><div class="forms-title">CREAR PRODUCTO</div><div class="forms-title-bar"></div></div>
 
                 <form action="/products/create" method="POST" class="formulario-login" enctype="multipart/form-data">
 <div class="primera-parte">
@@ -193,15 +193,14 @@
                                                                                         </div>
                                                                                         <% } %>
 
-
                                                                                             <div class="casillero">
-                                                                                                <label for="imagen1"
-                                                                                                    class="label-1">Imagen:</label>
-                                                                                                <input type="file"
-                                                                                                    name="image1"
+                                                                                                <label class="label-1">Imagen:</label>
+                                                                                                <label for="profileimage" class="label-profile-image"><i class="fas fa-upload"></i><p class="toShow"></p></label>
+                                                                                                <input type="file" name="profileimage" id="profileimage"
                                                                                                     class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
-
                                                                                             </div>
+
+
                                                                                             <div 
                                                                                                 id="errors-image"
                                                                                                 class="warning-text">
@@ -224,7 +223,7 @@
                                                                                                         <button
                                                                                                             type="submit"
                                                                                                             id="send-form"
-                                                                                                            class="boton-login">GUARDAR
+                                                                                                            class="boton-allproducts" style="width: 200px; align-self: center;">GUARDAR
                                                                                                             PRODUCTO</button>
                                                                                                     </div>
                 </form>
@@ -237,6 +236,17 @@
 
             <%- include('./partials/footer') %>
                 <script type="text/javascript" src="/js/createProductForm.js"></script>
+                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('input[type="file"]').change(function(e){
+                    var fileName = e.target.files[0].name;
+                    let inputToShow = document.querySelector('input.image')
+                    let toShow = document.querySelector('.toShow')
+                    toShow.innerHTML = fileName
+                });
+            });
+        </script>
     </body>
 
     </html>

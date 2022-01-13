@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Source Sans Pro';
-    background-color: #ADB5BD;
+    background-color: #E9ECEF;
 }
 
 main {
@@ -264,9 +264,21 @@ header {
     background-color: red;
     padding: 10px 5px;
     color: white;
+    border: none;
+    padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
     margin-right: 5px;
+}
+
+.boton-delete:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.boton-delete:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
 }
 
 .form-boton-allproducts {
@@ -500,13 +512,28 @@ footer a {
 }
 
 .label-1 {
-    align-self: center;
+    align-self: flex-start;
     margin-bottom: 10px;
+    font-family: "Source Sans Pro";
+    font-size: 18px;
+    margin-left: 5px;
 }
 
-.input-1, .input-nombre, .input-apellido, .input-ciudad, .input-cp, .input-pass {
-    height: 30px;
+.input-1 {
+    height: 35px;
+    border: none;
     border-radius: 5px;
+    font-size: 18px;
+}
+
+.input-1:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.input-1:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
 }
 
 .boton-login {
@@ -643,7 +670,7 @@ footer a {
 
 .avatar-edit {
     width: 40%;
-    border: 2px solid black;
+    border: 1px solid gray;
     border-radius: 5px;
 }
 
@@ -662,22 +689,57 @@ footer a {
 }
 
 .input-file {
-    border: 2px solid black;
+    height: 35px;
+    border: none;
     border-radius: 5px;
     padding: 2px;
     background-color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.input-file:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.input-file:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
 }
 
 .input-select {
-    border: 2px solid black;
+    border: none;
+    height: 35px;
     border-radius: 5px;
     padding: 2px;
 }
 
 .input-textarea {
-    border: 2px solid black;
+    border: none;
+    height: 35px;
     border-radius: 5px;
     height: 200px;
+}
+
+.input-select:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.input-select:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.input-textarea:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.input-textarea:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
 }
 
 .input-danger {
@@ -876,6 +938,49 @@ footer a {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 500ms;
 }
+
+.forms-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.forms-title {
+    font-size: 23px;
+    font-weight: 500;
+}
+.forms-title-bar {
+    height: 2px;
+    background-color: darkgray;
+    width: 300px;
+    margin-top: 10px;
+}
+
+#profileimage {
+    display: none;
+}
+
+.label-profile-image {
+    height: 35px;
+    width: 350px;
+    background-color: white;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.label-profile-image:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
+.label-profile-image:focus-within {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 500ms;
+}
+
 /* ---------- MEDIA QUERY CAMBIOS PARA DISPOSITIVOS DE WIDTH MINIMO DE 480PX ---------- */
 
 @media (min-width: 480px) {

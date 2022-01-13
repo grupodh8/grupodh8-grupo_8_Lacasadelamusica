@@ -14,7 +14,7 @@ const validationsProducts = [
     body('brand_id').notEmpty().withMessage('Debes seleccionar una marca'),
     body('type').notEmpty().withMessage('Debes especificar el tipo de producto'),
     body('description').isLength({ min: 20 }).withMessage('Debes ingresar una descripcion de al menos 20 caracteres'),
-    body('image1').custom((value, { req }) => {
+    body('profileimage').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif']
         if (!file) {

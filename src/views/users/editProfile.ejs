@@ -4,7 +4,7 @@
     <%- include('./partials/header') %>
 
     <main>
-        <h3 class="titulo-login">EDITAR TU CUENTA</h3>
+        <div class="forms-title-container"><div class="forms-title">EDITAR CUENTA</div><div class="forms-title-bar"></div></div>
 
         <form class="formulario-login" action="/users/edit/" method="POST" enctype="multipart/form-data">
             <div class="primera-parte">
@@ -61,7 +61,7 @@
                     type="text" 
                     name="city" 
                     value="<%= locals.oldData ? oldData.city : user.city %>"
-                    class="input-ciudad  <%= (locals.errors && errors.city) ? 'input-danger' : null %> city">
+                    class="input-1  <%= (locals.errors && errors.city) ? 'input-danger' : null %> city">
                     
                 </div>
                 <div id="errors-city" class="warning-text"></div>
@@ -76,7 +76,7 @@
                     type="number" 
                     name="zip" 
                     value="<%= locals.oldData ? oldData.zip : user.zip %>"
-                    class="input-cp <%= (locals.errors && errors.zip) ? 'input-danger' : null %> zip">
+                    class="input-1 <%= (locals.errors && errors.zip) ? 'input-danger' : null %> zip">
                     
                 </div>
                 <div id="errors-zip" class="warning-text"></div>
@@ -93,7 +93,7 @@
                 name="email" 
                 value="<%= user.email %>"
                 class="input-1 <%= (locals.errors && errors.email) ? 'input-danger' : null %> email"
-                disabled>
+                disabled style="background-color: darkgray;">
                 
             </div>
             <div id="errors-email" class="warning-text"></div>
@@ -109,7 +109,7 @@
                     type="password" 
                     name="password" 
                     placeholder="Ingresa tu contraseña para guardar cambios"
-                    class="input-pass <%= (locals.errors && errors.password) ? 'input-danger' : null %> password">
+                    class="input-1 <%= (locals.errors && errors.password) ? 'input-danger' : null %> password">
                     
                 </div>
                 <div id="errors-password" class="warning-text"></div>
@@ -119,13 +119,14 @@
                         </div>
                         <% } %>
                 <div class="linea-ciudad">
+    
                     <div class="casillero">
-                        <label for="profileimage" class="label-1">Foto de perfil:</label>
+                        <label class="label-1">Foto de perfil:</label>
                         <div class="div-avatar-edit"><img class="avatar-edit" src="/images/users/<%= user.avatar %>" alt=""></div>
-                        <input 
-                        type="file" 
-                        name="profileimage" 
-                        class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
+                        <label for="profileimage" class="label-profile-image"><i class="fas fa-upload"></i><p class="toShow"></p></label>
+                        
+                        <input type="file" name="profileimage" id="profileimage"
+                                class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
                         
                     </div>
                     <div id="errors-image" class="warning-text"></div>
@@ -137,7 +138,7 @@
                             <% } %>
             </div>
             <div class="casillero">
-                <button type="submit" class="boton-login">GUARDAR CAMBIOS</button>
+                <button type="submit" class="boton-allproducts" style="width: 200px; align-self: center;">GUARDAR CAMBIOS</button>
             </div>
         </form>
 

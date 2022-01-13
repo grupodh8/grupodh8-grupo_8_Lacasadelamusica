@@ -250,7 +250,7 @@ window.addEventListener("load", function () {
 
     // VALIDACION CAMPO IMAGEN
     let errorsImage = '';
-    let image = document.querySelector('input.image');
+    let image = document.querySelector('#profileimage');
     let divImage = document.querySelector('#errors-image');
     let backImage = document.querySelector('#validation10');
 

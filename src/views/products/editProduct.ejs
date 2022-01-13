@@ -3,7 +3,7 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <h3 class="titulo-login">EDITAR PRODUCTO</h3>
+                <div class="forms-title-container"><div class="forms-title">EDITAR PRODUCTO</div><div class="forms-title-bar"></div></div>
 
                 <form action="/products/<%= product.id %>?_method=PUT" method="POST" class="formulario-login"
                     enctype="multipart/form-data">
@@ -177,12 +177,19 @@
                             <% } %>
                     </div>
 
-                    <div class="linea-ciudad">
-                        <div class="casillero">
-                            <label for="imagen1" class="label-1">Imagen:</label>
-                        <div class="div-avatar-edit"><img class="avatar-edit" src="/images/products/<%= product.image %>" alt=""></div>
-                            <input type="file" name="image1"
-                                class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
+        
+                               
+                                <div class="casillero">
+                    
+                                    <label class="label-1">Imagen:</label>
+                                    <div class="div-avatar-edit"><img class="avatar-edit" src="/images/products/<%= product.image %>" alt=""></div>
+                                    <label for="profileimage" class="label-profile-image"><i class="fas fa-upload"></i><p class="toShow"></p></label>
+                                    <input type="file" name="profileimage" id="profileimage"
+                                        class="input-file <%= (locals.errors && errors.image1) ? 'input-danger' : null %> image">
+                                </div>
+                               
+                               
+                               
                                 <div id="errors-image" class="warning-text"></div>
                             <% if (locals.errors && errors.image1) { %>
                                 <div id="validation10" class="warning-text">
@@ -194,7 +201,7 @@
 
                     </div>
                     <div class="casillero">
-                        <button type="submit" class="boton-login">EDITAR PRODUCTO</button>
+                        <button type="submit" class="boton-allproducts" style="width: 200px; align-self: center;">EDITAR PRODUCTO</button>
                     </div>
                 </form>
                 <div class="casillero">
@@ -212,6 +219,17 @@
 
             <%- include('./partials/footer') %>
             <script type="text/javascript" src="/js/editProductForm.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $('input[type="file"]').change(function(e){
+                        var fileName = e.target.files[0].name;
+                        let inputToShow = document.querySelector('input.image')
+                        let toShow = document.querySelector('.toShow')
+                        toShow.innerHTML = fileName
+                    });
+                });
+            </script>
     </body>
 
     </html>
