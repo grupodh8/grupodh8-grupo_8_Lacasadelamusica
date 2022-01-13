@@ -1,56 +1,77 @@
-<%- include('./partials/head', {title: 'Detalle de producto - La Casa de la Musica'}) %>
+<%- include('./partials/head', {title: 'Detalle de producto - La Casa de la Musica' }) %>
 
-<body>
-    <%- include('./partials/header') %>
+    <body>
+        <%- include('./partials/header') %>
 
-    <main>
-        <div class="detalle-producto">
-            <p class="clasificacion-productos"> <a href="">CATEGORIAS</a> > <a href=""><%= product.categories.name.toUpperCase() %></a> > <a href=""><%= product.name.toUpperCase() %></a></p>
-            <div class="titulo-2">
-                <h2 class="titulo-pagina-articulo"><%= product.name %> <%= product.brands.name %></h2>
-                <div class="iconos-titulo">
-                    <p><i class="fas fa-cart-plus"></i></p>
+            <main>
+                <div class="index-title-container">
+                    <div class="index-title">DETALLE DE PRODUCTO</div>
+                    <div class="index-title-bar"></div>
                 </div>
-            </div>
-            <div class="contenedor-imagen">
-            <img class="imagen-articulo-detalle" src="/images/products/<%= product.image %>" alt="imagen-de-producto">
-             </div>
-            <div class="detalle-1">
-                <p class="acerca-de">SOBRE ESTE PRODUCTO:</p>
-                <p class="acerca-de-detalle"><%= product.description %></p>
-                <div class="footer-producto">
-                    <p class="precio-articulo-detalle">$<%= product.price %></p>
-                    <div class="botones-detalle">
-                        <button class="boton-compra-detalle"><a href="/products/<%= product.id %>">Comprar</a></button>
-                        <% if (locals.isLogged) { %>
-                        <button class="boton-compra-detalle"><a href="/products/<%= product.id %>/edit">Editar</a></button>
-                        <% } %>
-                        <button class="boton-carro-detalle"><a href="/cart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                                   
+                <div class="detalle-articulo-nuevo">
+                    <div class="detalle-articulo-nuevo-izq">
+                        <img src="/images/products/<%= product.image %>" alt="" class="imagen-detalle-nuevo">
+                    </div>
+                    <div class="detalle-articulo-nuevo-cen">
+                        <p class="clasificacion-productos-nuevo"><a href="#">CATEGORIAS</a> > <a href="#">
+                                <%= product.categories.name.toUpperCase() %>
+                            </a> > <a href="#">
+                                <%= product.brands.name.toUpperCase() %>
+                            </a> > <a href="#">
+                                <%= product.name.toUpperCase() %>
+                            </a></p>
+                        <p class="producto-nombre-nuevo">
+                            <%= product.name.toUpperCase() %>
+                                <%= product.brands.name.toUpperCase() %>
+                        </p>
+                        <p class="sku-producto-nuevo">SKU #: <%= product.sku %>
+                        </p>
+                        <div class="division-producto-nuevo"></div>
+                        <div class="features-detalle-producto">
+                            <p class="feature-item"><i class="fas fa-circle circulo-prod-nuevo"></i>Categoria: <%=
+                                    product.categories.name.toUpperCase() %>
+                            </p>
+                            <p class="feature-item"><i class="fas fa-circle circulo-prod-nuevo"></i>Tipo: <%=
+                                    product.type.toUpperCase() %>
+                            </p>
+                            <p class="feature-item"><i class="fas fa-circle circulo-prod-nuevo"></i>Marca: <%=
+                                    product.brands.name.toUpperCase() %>
+                            </p>
+                            <p class="feature-item"><i class="fas fa-circle circulo-prod-nuevo"></i>Stock: <%=
+                                    product.stock %>
+                            </p>
+                            <p class="feature-item description"><i
+                                    class="fas fa-circle circulo-prod-nuevo"></i>Descripcion: <%= product.description %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="div-a-ocultarse-desktop"></div>
+                    <div class="detalle-articulo-nuevo-der">
+                        <div class="der-top">
+                        <p class="feature-item description-der"><i
+                            class="fas fa-undo-alt icono-der"></i>Devolución gratis. Tenés 30 días desde que lo recibís.
+                        </p>
+                        <p class="feature-item description-der"><i
+                            class="fas fa-shield-alt icono-der"></i>Compra Protegida. Recibí el producto que esperabas o te devolvemos tu dinero.
+                        </p>
+                        <p class="feature-item description-der"><i
+                            class="fas fa-medal icono-der"></i>12 meses de garantía de fábrica.
+                        </p>
+                        <p class="feature-item description-der"><i
+                            class="fas fa-shipping-fast icono-der"></i>Envío gratis a todo el país
+                        </p>
+                        </div>
+                        <div class="der-bottom">
+                        <div class="articulo-precio-nuevo">$<%= product.price %></div>
+                        <div class="botones-der">
+                            <button class="boton-allproducts-nuevo"><a href="/cart">COMPRAR AHORA</a></button>
+                            <button class="articulo-boton-carro-nuevo"><a href="/cart"><i id="iconos-barra" class="fas fa-shopping-cart"></i></a></button>
+                        </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="detalle-2">
-                <div class="descripcion-2">
-                    <p class="acerca-de-2">SOBRE ESTE PRODUCTO:</p>
-                    <p class="acerca-de-detalle-2"><%= product.description %></p>
-                </div>
-                <div class="footer-producto-2">
-                    <p class="precio-articulo-detalle">$<%= product.price %></p>
-                    <div class="botones-detalle-2">
-                        <button class="boton-compra"><a href="/products/<%= product.id %>">Comprar</a></button>
-                        <button class="boton-compra"><a href="/cart"><i id="iconos-barra"
-                                    class="fas fa-shopping-cart"></i></a></button>
-                        <% if (locals.isLogged) { %>
-                        <button class="boton-compra"><a href="/products/<%= product.id %>/edit">Editar</a></button>
-                        <% } %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
-</body>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
-</html>
+    </html>
