@@ -15,7 +15,7 @@ router.get('/', mainController.index);
 router.get("/search", mainController.search);
 
 // Shopping cart route
-router.get('/cart', mainController.cart);
+router.get('/cart', authMiddleware, mainController.cart);
 
 
 // Exports
