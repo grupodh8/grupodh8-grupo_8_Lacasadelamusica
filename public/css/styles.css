@@ -852,12 +852,12 @@ footer a {
 
 .input-search-bar:hover {
     width: 120px;
-    background-color: white;
+    background-color: transparent;
 }
 
 .input-search-bar:focus-within {
     width: 120px;
-    background-color: white;
+    background-color: transparent;
 }
 
 .search-title {
