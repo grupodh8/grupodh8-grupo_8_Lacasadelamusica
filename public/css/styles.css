@@ -386,6 +386,7 @@ footer a {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 .titulo-carro-compras {
@@ -398,7 +399,7 @@ footer a {
     align-items: center;
     height: 100px;
     width: 90%;
-    border-top: 3px solid grey;
+    border-top: 1px solid grey;
 }
 
 .datos-carro-compras {
@@ -426,14 +427,6 @@ footer a {
     align-items: center;
 }
 
-#icono-carrito {
-    margin-right: 20px;
-    padding: 5px;
-    border-radius: 3px;
-    border: 2px solid black;
-    background-color: white;
-}
-
 .cantidad-carrito {
     font-size: 20px;
     font-weight: 700;
@@ -442,8 +435,8 @@ footer a {
 
 .fotos-carrito {
     padding: 5px;
-    border: 2px solid black;
-    border-radius: 3px;
+    border: none;
+    border-radius: 10px;
     background-color: white;
 }
 
@@ -452,7 +445,9 @@ footer a {
     flex-direction: column;
     width: 90%;
     font-weight: 700;
-    background-color: #DEE2E6;
+    background-color: #f6f9fc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .subtotal {
@@ -460,7 +455,7 @@ footer a {
     justify-content: space-between;
     margin: 0px;
     padding: 0px;
-    border-top: 2px solid black; 
+    border-top: 1px solid black; 
     font-size: 20px;
     font-weight: 700;
     padding: 0 10px 0 10px;
@@ -472,7 +467,7 @@ footer a {
     margin: 0px;
     padding: 0px;
     font-size: 20px;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     font-weight: 700;
     padding: 0 10px 0 10px;
 }
