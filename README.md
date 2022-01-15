@@ -6,7 +6,7 @@ https://lacasadelamusica.herokuapp.com/
 
 DASHBOARD REACT EN HEROKU
 
-hhtps://lcdm-dashboard.herokuapp.com/
+https://lcdm-dashboard.herokuapp.com/
 
 TABLERO DE TRABAJO
 
