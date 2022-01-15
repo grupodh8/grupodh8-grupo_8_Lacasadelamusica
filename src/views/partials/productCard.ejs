@@ -1,14 +1,18 @@
 <a href="/products/<%= product.id %>">
-    <div class="articulo-nuevo">
-    <div class="articulo-imagen">
-        <img class="articulo-imagen-file" src="/images/products/<%= product.image %>" alt="">
-    </div>
-    <div class="articulo-descripcion">
-        <div class="articulo-nombre"><%= product.name %></div>
-        <div class="articulo-descripcion-inferior">
-        <div class="articulo-precio">$<%= product.price %></div>
-        <button class="articulo-boton-carro"><a href="/cart"><i id="iconos-barra" class="fas fa-shopping-cart"></i></a></button>
+        <div class="articulo-nuevo">
+            <div class="articulo-imagen">
+                <img class="articulo-imagen-file" src="/images/products/<%= product.image %>" alt="">
+            </div>
+            <div class="articulo-descripcion">
+                <div class="articulo-nombre">
+                    <%= product.name %>
+                </div>
+                <div class="articulo-descripcion-inferior">
+                    <div class="articulo-precio">$<%= product.price %>
+                    </div>
+                    <button class="articulo-boton-carro"><a href="/cart"><i id="iconos-barra"
+                                class="fas fa-shopping-cart"></i></a></button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</a>
+    </a>

@@ -1,8 +1,12 @@
-# grupodh8-grupo_8_LaCasaDeLaMusica
+PROYECTO INTEGRADOR CURSO FULL STACK DEVELOPER - DIGITAL HOUSE - GRUPO 8
 
 PROYECTO EN HEROKU
 
 https://lacasadelamusica.herokuapp.com/
+
+DASHBOARD REACT EN HEROKU
+
+hhtps://lcdm-dashboard.herokuapp.com/
 
 TABLERO DE TRABAJO
 
@@ -25,11 +29,7 @@ NUESTRO EQUIPO
 
 Los integrantes del grupo esta formado por:
 
--Ezequiel Echeverría: trabaja en un local de venta y reparacion de equipos electronicos. actualmente estudiando codigo.
-
 -Gonzalo Villagra: trabaja en una agencia de viajes, incursionando en el mundo de la programacion web.
-
--Leonardo Espinoza: técnico electrónico y actualmente se dedica a la video seguridad urbana, Iot para el agro dando cobertura en zonas rurales para el monitoreo remoto de los campos y por ultimo realiza gestión de proyectos de tecnología para empresas
 
 
 NUESTROS REFERENTES
