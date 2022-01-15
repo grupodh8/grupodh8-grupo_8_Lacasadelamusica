@@ -45,7 +45,7 @@ const apiUsers = {
               city: user.city,
               zip: user.zip,
               email: user.email,
-              avatar: user.avatar,
+              avatar: `http://localhost:3001/images/products/${user.avatar}`,
             },
             apiUrl: `/api/users/${user.id}`,
           });

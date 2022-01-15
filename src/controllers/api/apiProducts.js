@@ -114,7 +114,7 @@ const apiProducts = {
           configurable: true
         },
         image: {
-          value: product.image,
+          value: `http://localhost:3001/images/products/${product.image}`,
           writable: true,
           enumerable: true,
           configurable: true
